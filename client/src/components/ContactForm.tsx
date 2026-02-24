@@ -1,0 +1,210 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertContactMessageSchema, type InsertContactMessage } from "@shared/routes";
+import { useSubmitContact } from "@/hooks/use-contact";
+import { motion } from "framer-motion";
+import { CheckCircle2, Loader2 } from "lucide-react";
+
+export function ContactForm() {
+  const { mutate: submitContact, isPending, isSuccess } = useSubmitContact();
+
+  const form = useForm<InsertContactMessage>({
+    resolver: zodResolver(insertContactMessageSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      companyName: "",
+      businessType: "E-commerce",
+      currentPlatform: "Klaviyo",
+      revenueRange: "Under $10k/mo",
+      implementedFeatures: [],
+      painPoints: "",
+    },
+  });
+
+  const onSubmit = (data: InsertContactMessage) => {
+    submitContact(data);
+  };
+
+  const featureOptions = [
+    "Welcome Series",
+    "Abandoned Cart",
+    "Post-Purchase Upsell",
+    "VIP/Loyalty Flows",
+    "Winback Campaigns",
+    "Regular Newsletters",
+  ];
+
+  if (isSuccess) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-card rounded-3xl p-8 md:p-12 text-center border border-border/30 shadow-2xl flex flex-col items-center justify-center min-h-[400px]"
+      >
+        <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+          <CheckCircle2 className="w-10 h-10 text-primary" />
+        </div>
+        <h3 className="text-3xl font-display font-bold text-white mb-4">Application Received</h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          Thank you for reaching out. We are reviewing your details and will be in touch within 24 hours to schedule your free audit.
+        </p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div className="bg-card rounded-3xl p-6 md:p-10 border border-border/30 shadow-2xl relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
+      
+      <div className="mb-8">
+        <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Apply for a Free Audit</h3>
+        <p className="text-muted-foreground">Fill out the form below to see if we're a good fit to scale your revenue.</p>
+      </div>
+
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">First Name</label>
+            <input
+              {...form.register("firstName")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+              placeholder="John"
+            />
+            {form.formState.errors.firstName && (
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.firstName.message}</p>
+            )}
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Last Name</label>
+            <input
+              {...form.register("lastName")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+              placeholder="Doe"
+            />
+            {form.formState.errors.lastName && (
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.lastName.message}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Work Email</label>
+            <input
+              {...form.register("email")}
+              type="email"
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+              placeholder="john@company.com"
+            />
+            {form.formState.errors.email && (
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
+            )}
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Company Name</label>
+            <input
+              {...form.register("companyName")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+              placeholder="Acme Corp"
+            />
+            {form.formState.errors.companyName && (
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.companyName.message}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Business Type</label>
+            <select
+              {...form.register("businessType")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+            >
+              <option value="E-commerce">E-commerce</option>
+              <option value="SaaS">SaaS</option>
+              <option value="B2B Services">B2B Services</option>
+              <option value="Info Product">Info Product</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Current Platform</label>
+            <select
+              {...form.register("currentPlatform")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+            >
+              <option value="Klaviyo">Klaviyo</option>
+              <option value="Mailchimp">Mailchimp</option>
+              <option value="ActiveCampaign">ActiveCampaign</option>
+              <option value="HubSpot">HubSpot</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-foreground/90">Monthly Revenue</label>
+            <select
+              {...form.register("revenueRange")}
+              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+            >
+              <option value="Under $10k/mo">Under $10k/mo</option>
+              <option value="$10k - $50k/mo">$10k - $50k/mo</option>
+              <option value="$50k - $100k/mo">$50k - $100k/mo</option>
+              <option value="$100k+/mo">$100k+/mo</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <label className="text-sm font-medium text-foreground/90">What features are currently implemented? (Select all that apply)</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {featureOptions.map((feature) => (
+              <label key={feature} className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors">
+                <input
+                  type="checkbox"
+                  value={feature}
+                  {...form.register("implementedFeatures")}
+                  className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border"
+                />
+                <span className="text-sm text-foreground/80">{feature}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-foreground/90">What is your biggest pain point with email right now?</label>
+          <textarea
+            {...form.register("painPoints")}
+            rows={4}
+            className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
+            placeholder="E.g., High cart abandonment, low open rates, inconsistent sending..."
+          />
+          {form.formState.errors.painPoints && (
+            <p className="text-xs text-destructive mt-1">{form.formState.errors.painPoints.message}</p>
+          )}
+        </div>
+
+        <button
+          type="submit"
+          disabled={isPending}
+          className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
+        >
+          {isPending ? (
+            <>
+              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+              Submitting Application...
+            </>
+          ) : (
+            "Apply for Free Audit"
+          )}
+        </button>
+        <p className="text-center text-xs text-muted-foreground mt-4">
+          Your information is secure. We never share your data.
+        </p>
+      </form>
+    </div>
+  );
+}
