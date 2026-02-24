@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "wouter";
+import { useLocation } from "wouter";
 import { adminApi } from "@/lib/admin-api";
 import type { Lead } from "@shared/schema";
 import { LEAD_STATUSES } from "@shared/schema";
@@ -124,8 +124,9 @@ export default function AdminLeads() {
                 {filtered.map((lead, i) => (
                   <tr
                     key={lead.id}
-                    className={`border-b border-border/20 last:border-0 hover:bg-background/50 transition-colors ${i % 2 === 0 ? "" : "bg-background/20"}`}
+                    className={`border-b border-border/20 last:border-0 hover:bg-background/50 transition-colors cursor-pointer ${i % 2 === 0 ? "" : "bg-background/20"}`}
                     data-testid={`row-lead-${lead.id}`}
+                    onClick={() => setLocation(`/admin/leads/${lead.id}`)}
                   >
                     <td className="px-6 py-4">
                       <div className="font-medium text-white text-sm">{lead.firstName} {lead.lastName}</div>
@@ -140,11 +141,7 @@ export default function AdminLeads() {
                       {lead.createdAt ? new Date(lead.createdAt).toLocaleDateString() : "—"}
                     </td>
                     <td className="px-6 py-4">
-                      <Link href={`/admin/leads/${lead.id}`}>
-                        <a className="text-primary hover:text-primary/80 transition-colors" data-testid={`link-lead-${lead.id}`}>
-                          <ChevronRight className="w-4 h-4" />
-                        </a>
-                      </Link>
+                      <ChevronRight className="w-4 h-4 text-primary" data-testid={`link-lead-${lead.id}`} />
                     </td>
                   </tr>
                 ))}
