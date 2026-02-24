@@ -73,10 +73,11 @@
     animation: marquee 10s linear infinite;
   }
 
-  @keyframes hero-glow {
-    0%, 100% { opacity: 0.25; transform: scale(1) rotate(0deg); }
-    33% { opacity: 0.45; transform: scale(1.08) rotate(2deg); }
-    66% { opacity: 0.3; transform: scale(0.95) rotate(-1deg); }
+  @keyframes hero-glow-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(3%, -2%) scale(1.03); }
+    50% { transform: translate(-2%, 3%) scale(0.97); }
+    75% { transform: translate(1%, -1%) scale(1.02); }
   }
 
   .hero-gradient-glow {
@@ -90,52 +91,58 @@
   .hero-gradient-glow::before {
     content: '';
     position: absolute;
-    top: 5%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at center, hsl(216 91% 52% / 0.35), transparent 70%);
-    animation: hero-glow 20s ease-in-out infinite;
-    filter: blur(40px);
+    background: radial-gradient(ellipse at center, hsl(216 91% 52% / 0.14), hsl(216 91% 52% / 0.06) 40%, transparent 70%);
+    animation: hero-glow-drift 30s ease-in-out infinite;
+    filter: blur(60px);
   }
 
   .hero-gradient-glow::after {
     content: '';
     position: absolute;
-    bottom: 0%;
-    right: 5%;
-    width: 70%;
-    height: 70%;
+    bottom: 5%;
+    right: 10%;
+    width: 60%;
+    height: 60%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at center, hsl(165 19% 40% / 0.3), transparent 70%);
-    animation: hero-glow 16s ease-in-out infinite reverse;
-    filter: blur(30px);
+    background: radial-gradient(ellipse at center, hsl(165 19% 45% / 0.10), hsl(165 19% 40% / 0.04) 40%, transparent 70%);
+    animation: hero-glow-drift 38s ease-in-out infinite reverse;
+    filter: blur(50px);
   }
 
-  @keyframes float-particle {
-    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
-    25% { transform: translateY(-30px) translateX(15px); opacity: 0.8; }
-    50% { transform: translateY(-8px) translateX(-12px); opacity: 0.4; }
-    75% { transform: translateY(-25px) translateX(8px); opacity: 0.9; }
-  }
-
-  .hero-particles {
+  .hero-vignette {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
-    overflow: hidden;
+    background: radial-gradient(ellipse at center, transparent 40%, hsl(199 25% 12% / 0.55) 100%);
   }
 
-  .hero-particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: hsl(216 91% 70% / 0.5);
-    box-shadow: 0 0 8px hsl(216 91% 52% / 0.4);
-    animation: float-particle linear infinite;
+  @keyframes hero-text-sweep {
+    0%, 100% { background-position: -100% center; }
+    40%, 60% { background-position: 200% center; }
+  }
+
+  .hero-gradient-text {
+    background: linear-gradient(
+      90deg,
+      hsl(216 91% 52%) 0%,
+      hsl(216 91% 52%) 35%,
+      hsl(53 100% 87%) 50%,
+      hsl(216 80% 72%) 55%,
+      hsl(53 100% 87%) 65%,
+      hsl(53 100% 87%) 100%
+    );
+    background-size: 300% 100%;
+    background-position: -100% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-text-sweep 8s ease-in-out infinite;
   }
 
   .marquee-container {
@@ -196,8 +203,9 @@
     .hero-gradient-glow::after {
       animation: none;
     }
-    .hero-particle {
+    .hero-gradient-text {
       animation: none;
+      background-position: 0% center;
     }
     .cta-hero,
     .cta-hero .cta-arrow,

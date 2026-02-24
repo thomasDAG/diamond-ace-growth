@@ -30,16 +30,6 @@ const MARQUEE_SERVICES = [
   "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
 ];
 
-const PARTICLES = [
-  { top: "12%", left: "18%", duration: "22s", delay: "0s" },
-  { top: "35%", left: "75%", duration: "28s", delay: "4s" },
-  { top: "60%", left: "30%", duration: "25s", delay: "2s" },
-  { top: "25%", left: "55%", duration: "32s", delay: "6s" },
-  { top: "70%", left: "82%", duration: "20s", delay: "1s" },
-  { top: "50%", left: "10%", duration: "27s", delay: "5s" },
-  { top: "15%", left: "90%", duration: "30s", delay: "3s" },
-  { top: "80%", left: "45%", duration: "24s", delay: "7s" },
-];
 
 export default function Home() {
   return (
@@ -58,20 +48,9 @@ export default function Home() {
       </Helmet>
       <Navbar />
 
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="hero-section relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="hero-gradient-glow" aria-hidden="true" />
-        <div className="hero-particles" aria-hidden="true">
-          {PARTICLES.map((p, i) => (
-            <div
-              key={i}
-              className="hero-particle"
-              style={{ top: p.top, left: p.left, animationDuration: p.duration, animationDelay: p.delay }}
-            />
-          ))}
-        </div>
-
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[150px] -z-10" />
+        <div className="hero-vignette" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div 
@@ -85,7 +64,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
-              Turn Your Email List Into an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Automated Revenue Engine</span>
+              Turn Your Email List Into an <span className="hero-gradient-text">Automated Revenue Engine</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">

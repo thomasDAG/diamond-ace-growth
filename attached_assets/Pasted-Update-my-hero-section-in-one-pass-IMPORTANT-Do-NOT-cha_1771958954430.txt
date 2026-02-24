@@ -1,0 +1,61 @@
+Update my hero section in one pass.
+
+IMPORTANT:
+- Do NOT change my copy, layout, fonts, spacing, navigation, or overall structure.
+- Do NOT rewrite any text.
+- Keep the same brand palette (no new colors).
+- Keep it premium, subtle, and readable.
+- All motion must respect prefers-reduced-motion.
+- Keep it lightweight (no heavy libraries).
+
+GOALS (do all of these):
+
+-----------------------------------
+1) REMOVE FLOATING PARTICLES
+-----------------------------------
+- Remove the floating particle effect entirely.
+- Delete any particle HTML elements, canvas, JS files, and related CSS.
+
+-----------------------------------
+2) MAKE THE GRADIENT BACKGROUND MORE PROMINENT (BUT STILL CLASSY)
+-----------------------------------
+- Improve the hero background depth using multiple layered radial gradients.
+- Make it more noticeable than it is now (target ~12–18% total opacity across layers).
+- Anchor the glow behind the headline area.
+- Add a subtle dark vignette at the edges for contrast and a more “cinematic” feel.
+- Animate the gradient drift slowly and smoothly (25–40s loop), no harsh movement.
+
+Implementation notes:
+- Prefer pure CSS using pseudo-elements like ::before/::after on the hero container.
+- Ensure z-index keeps the gradient behind content.
+- Ensure text readability stays strong.
+
+-----------------------------------
+3) ADD A HIGH-END “LIGHT SWEEP” TO THE GRADIENT HEADLINE TEXT
+-----------------------------------
+Apply a subtle animated light sweep ONLY to the gradient-styled headline words (the part that already uses a gradient — e.g., “Automated Revenue Engine”).
+- Create a shimmer/sweep that moves left-to-right slowly.
+- Very subtle highlight band (not glittery, not chrome).
+- Loop should be slow (6–10s) with a pause-like feel.
+- Must look premium and understated.
+
+Technical requirements:
+- Keep the existing gradient text look.
+- Implement with background-size/background-position animation OR a masked pseudo-element overlay.
+- The sweep should not affect layout or cause jank.
+- Respect prefers-reduced-motion: disable the sweep animation.
+
+-----------------------------------
+4) KEEP CTA MICRO-INTERACTIONS (IF THEY EXIST)
+-----------------------------------
+- Preserve the CTA hover/focus micro-interactions already added.
+- If they don’t exist, add: hover glow + arrow nudges 2–4px right + focus-visible outline.
+- Do NOT change button size.
+
+-----------------------------------
+OUTPUT REQUIREMENTS
+-----------------------------------
+- Implement changes directly in the appropriate files.
+- Do not explain.
+- Do not summarize.
+- Do not output anything except the final code edits (or just apply them if your mode supports it).
