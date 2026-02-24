@@ -65,19 +65,33 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Metrics banner */}
-            <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { label: "Open Rate", value: "75%" },
-                { label: "Click Rate", value: "10%" },
-                { label: "Incremental Revenue", value: "$5,000+" },
-                { label: "Client Satisfaction", value: "100%" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-3xl font-display font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+            {/* Scrolling Banner */}
+            <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative">
+              <div className="flex whitespace-nowrap animate-marquee">
+                {[
+                  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
+                  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
+                  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
+                  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
+                  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
+                ].map((service, i) => (
+                  <span key={i} className="mx-8 text-lg font-display font-medium text-white/70 flex items-center">
+                    {service} <span className="ml-8 text-primary">•</span>
+                  </span>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {[
+                  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
+                  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
+                  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
+                  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
+                  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
+                ].map((service, i) => (
+                  <span key={`dup-${i}`} className="mx-8 text-lg font-display font-medium text-white/70 flex items-center">
+                    {service} <span className="ml-8 text-primary">•</span>
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -206,7 +220,7 @@ export default function Home() {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              How I Scale You
+              The Process
             </h2>
           </motion.div>
 
@@ -270,8 +284,8 @@ export default function Home() {
           >
             {[
               { 
-                stat: "75%", 
-                metric: "Average Open Rate", 
+                stat: "$5,000+", 
+                metric: "Incremental Sales", 
                 quote: "Thomas is an email marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.", 
                 author: "Mary, Marketing & Branding Strategist" 
               },
@@ -367,8 +381,13 @@ export default function Home() {
       <footer className="py-12 border-t border-border/20 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
           <img src={logoWhite} alt="Diamond Ace Growth" className="h-12 w-auto mb-6" />
-          <p className="text-muted-foreground mb-8">Elevating e-commerce retention.</p>
+          <p className="text-muted-foreground mb-8">Engineering predictable revenue.</p>
           
+          <div className="flex gap-6 mb-8">
+            <a href="/privacy" className="text-sm text-muted-foreground hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-sm text-muted-foreground hover:text-white transition-colors">Terms of Service</a>
+          </div>
+
           <div className="text-sm text-muted-foreground/60">
             &copy; {new Date().getFullYear()} Diamond Ace Growth. All rights reserved.
           </div>

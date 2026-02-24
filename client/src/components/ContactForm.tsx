@@ -15,9 +15,9 @@ export function ContactForm() {
       lastName: "",
       email: "",
       companyName: "",
-      businessType: "E-commerce",
-      currentPlatform: "Klaviyo",
-      revenueRange: "Under $10k/mo",
+      businessType: "" as any,
+      currentPlatform: "" as any,
+      revenueRange: "" as any,
       implementedFeatures: [],
       painPoints: "",
     },
@@ -123,6 +123,7 @@ export function ContactForm() {
               {...form.register("businessType")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
             >
+              <option value="" disabled>Select one</option>
               <option value="E-commerce">E-commerce</option>
               <option value="SaaS">SaaS</option>
               <option value="B2B Services">B2B Services</option>
@@ -136,6 +137,7 @@ export function ContactForm() {
               {...form.register("currentPlatform")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
             >
+              <option value="" disabled>Select one</option>
               <option value="Klaviyo">Klaviyo</option>
               <option value="Mailchimp">Mailchimp</option>
               <option value="ActiveCampaign">ActiveCampaign</option>
@@ -149,6 +151,7 @@ export function ContactForm() {
               {...form.register("revenueRange")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
             >
+              <option value="" disabled>Select one</option>
               <option value="Under $10k/mo">Under $10k/mo</option>
               <option value="$10k - $50k/mo">$10k - $50k/mo</option>
               <option value="$50k - $100k/mo">$50k - $100k/mo</option>
