@@ -87,16 +87,13 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative marquee-container">
               <div className="flex whitespace-nowrap animate-marquee">
-                {MARQUEE_SERVICES.map((service, i) => (
-                  <span key={i} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
-                    {service} <span className="ml-8 text-primary">•</span>
-                  </span>
-                ))}
-                {MARQUEE_SERVICES.map((service, i) => (
-                  <span key={`dup-${i}`} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
-                    {service} <span className="ml-8 text-primary">•</span>
-                  </span>
-                ))}
+                {[0, 1, 2].map((copy) =>
+                  MARQUEE_SERVICES.map((service, i) => (
+                    <span key={`${copy}-${i}`} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
+                      {service} <span className="ml-8 text-primary">•</span>
+                    </span>
+                  ))
+                )}
               </div>
             </motion.div>
           </motion.div>
