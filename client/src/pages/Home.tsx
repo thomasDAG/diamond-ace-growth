@@ -232,18 +232,18 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "The Deep Dive Audit",
-                desc: "I analyze your current setup, find the leaks where money is escaping, and project exact revenue targets I can hit in 90 days."
+                title: "Audit",
+                desc: "A structured evaluation of your existing email infrastructure to uncover revenue gaps, lifecycle inefficiencies, and untapped growth leverage."
               },
               {
                 num: "02",
-                title: "Infrastructure & Flows",
-                desc: "First 14 days: I rebuild your core automated flows. This is the foundation that prints money while you sleep."
+                title: "Architect",
+                desc: "Design and build scalable lifecycle systems aligned to your growth model, customer journey, and revenue objectives."
               },
               {
                 num: "03",
-                title: "Aggressive Campaigning",
-                desc: "Month 1 and beyond: I deploy my high-converting campaign calendar, pushing sales without annoying your subscribers."
+                title: "Optimize",
+                desc: "Ongoing refinement through structured testing, segmentation evolution, and performance analysis to increase revenue efficiency over time."
               }
             ].map((step, i) => (
               <motion.div 
@@ -272,9 +272,10 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              The Proof is in the Dashboard
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+              Measured Results.
             </h2>
+            <p className="text-xl text-primary font-display font-medium">Clean Execution.</p>
           </motion.div>
 
           <motion.div 

@@ -16,12 +16,12 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Problem", href: "#problem" },
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Proof", href: "#proof" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/#" },
+    { name: "Problem", href: "/#problem" },
+    { name: "Services", href: "/#services" },
+    { name: "Process", href: "/#process" },
+    { name: "Proof", href: "/#proof" },
+    { name: "About", href: "/#about" },
   ];
 
   return (
