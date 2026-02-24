@@ -155,10 +155,10 @@ export function ContactForm() {
               data-testid="select-business-type"
             >
               <option value="" disabled>Select one</option>
-              <option value="E-commerce">E-commerce</option>
               <option value="SaaS">SaaS</option>
-              <option value="B2B Services">B2B Services</option>
-              <option value="Info Product">Info Product</option>
+              <option value="Ecommerce">Ecommerce</option>
+              <option value="Service-based">Service-based</option>
+              <option value="Agency">Agency</option>
               <option value="Other">Other</option>
             </select>
           </div>

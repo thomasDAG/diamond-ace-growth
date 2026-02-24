@@ -103,7 +103,7 @@ export const contactFormSchema = z.object({
   lastName: z.string().min(1, "Required"),
   email: z.string().email("Invalid email").transform(v => v.trim().toLowerCase()),
   companyName: z.string().min(1, "Required"),
-  businessType: z.enum(["E-commerce", "SaaS", "B2B Services", "Info Product", "Other"]),
+  businessType: z.enum(["SaaS", "Ecommerce", "Service-based", "Agency", "Other"]),
   currentPlatform: z.enum(["Klaviyo", "Mailchimp", "ActiveCampaign", "HubSpot", "Other"]),
   revenueRange: z.enum(["Under $10k/mo", "$10k - $50k/mo", "$50k - $100k/mo", "$100k+/mo"]),
   implementedFeatures: z.array(z.string()).default([]),
