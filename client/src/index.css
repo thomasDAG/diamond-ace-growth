@@ -91,12 +91,12 @@
   .hero-gradient-glow::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 15%;
-    width: 70%;
-    height: 70%;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at center, hsl(216 91% 52% / 0.14), hsl(216 91% 52% / 0.06) 40%, transparent 70%);
+    background: radial-gradient(ellipse at center, hsl(216 91% 52% / 0.28), hsl(216 91% 52% / 0.12) 40%, transparent 70%);
     animation: hero-glow-drift 30s ease-in-out infinite;
     filter: blur(60px);
   }
@@ -104,12 +104,12 @@
   .hero-gradient-glow::after {
     content: '';
     position: absolute;
-    bottom: 5%;
-    right: 10%;
-    width: 60%;
-    height: 60%;
+    bottom: 0%;
+    right: 5%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at center, hsl(165 19% 45% / 0.10), hsl(165 19% 40% / 0.04) 40%, transparent 70%);
+    background: radial-gradient(ellipse at center, hsl(165 19% 45% / 0.20), hsl(165 19% 40% / 0.08) 40%, transparent 70%);
     animation: hero-glow-drift 38s ease-in-out infinite reverse;
     filter: blur(50px);
   }
@@ -120,29 +120,6 @@
     z-index: 1;
     pointer-events: none;
     background: radial-gradient(ellipse at center, transparent 40%, hsl(199 25% 12% / 0.55) 100%);
-  }
-
-  @keyframes hero-text-sweep {
-    0%, 100% { background-position: -100% center; }
-    40%, 60% { background-position: 200% center; }
-  }
-
-  .hero-gradient-text {
-    background: linear-gradient(
-      90deg,
-      hsl(216 91% 52%) 0%,
-      hsl(216 91% 52%) 35%,
-      hsl(53 100% 87%) 50%,
-      hsl(216 80% 72%) 55%,
-      hsl(53 100% 87%) 65%,
-      hsl(53 100% 87%) 100%
-    );
-    background-size: 300% 100%;
-    background-position: -100% center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hero-text-sweep 8s ease-in-out infinite;
   }
 
   .marquee-container {
@@ -202,10 +179,6 @@
     .hero-gradient-glow::before,
     .hero-gradient-glow::after {
       animation: none;
-    }
-    .hero-gradient-text {
-      animation: none;
-      background-position: 0% center;
     }
     .cta-hero,
     .cta-hero .cta-arrow,
