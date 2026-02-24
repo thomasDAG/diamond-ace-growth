@@ -6,6 +6,7 @@ import {
   Zap, XCircle, CheckCircle2, TrendingUp, Users 
 } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
+import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
 // Animation variants
 const fadeInUp = {
