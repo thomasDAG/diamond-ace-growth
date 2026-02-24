@@ -251,10 +251,10 @@ export default function Home() {
                 variants={fadeInUp}
                 className="flex flex-col md:flex-row items-start md:items-center p-8 md:p-10 bg-card rounded-3xl border border-border/30 hover:border-primary/40 transition-colors"
               >
-                <div className="text-6xl md:text-8xl font-display font-extrabold text-white/5 mr-8 mb-4 md:mb-0">
+                <div className="w-24 md:w-32 text-6xl md:text-8xl font-display font-extrabold text-white/5 mr-8 mb-4 md:mb-0 shrink-0 text-center">
                   {step.num}
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-lg text-muted-foreground max-w-3xl">{step.desc}</p>
                 </div>
@@ -275,7 +275,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
               Measured Results.
             </h2>
-            <p className="text-xl text-primary font-display font-medium">Clean Execution.</p>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-primary mb-16">
+              Clean Execution.
+            </h2>
           </motion.div>
 
           <motion.div 
