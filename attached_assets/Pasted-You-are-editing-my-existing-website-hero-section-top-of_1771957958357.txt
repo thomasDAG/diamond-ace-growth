@@ -1,0 +1,68 @@
+You are editing my existing website hero section (top of page).
+
+IMPORTANT:
+- Do NOT change my copy, layout structure, spacing, fonts, brand colors, or navigation.
+- Do NOT rewrite any text.
+- Only enhance with subtle motion and polish.
+- Keep everything clean, premium, and minimal.
+- All motion must respect prefers-reduced-motion.
+- Keep performance strong (no heavy libraries).
+
+Your job is to implement the following upgrades:
+
+-----------------------------------
+HERO ENHANCEMENTS
+-----------------------------------
+
+1) Add a slow animated gradient glow behind the hero
+- Use a pseudo-element or background layer.
+- 2–3 subtle radial gradients.
+- Very low opacity (6–12%).
+- Slow animation loop (20–40 seconds).
+- Must not reduce text readability.
+
+2) Add very faint floating particles
+- Behind hero content (z-index correct).
+- Extremely subtle (1–3px dots, low opacity).
+- Slow movement.
+- Must use pointer-events: none.
+- Keep lightweight (pure CSS preferred, or minimal JS canvas if needed).
+
+3) Upgrade the scrolling banner/marquee
+- Add left/right gradient fade masks so items fade at edges.
+- Add subtle hover interaction (slight brighten + animated underline).
+- Maintain continuous smooth scroll.
+- Slightly slower speed on mobile.
+- Respect prefers-reduced-motion.
+
+4) Add micro-interactions to main CTA button
+- Hover: subtle glow + arrow shifts 2–4px right.
+- Smooth transitions.
+- Focus-visible state for accessibility.
+- Do NOT change size or layout.
+
+-----------------------------------
+DELIVERABLE FORMAT
+-----------------------------------
+
+- Show me EXACTLY which files you modified.
+- Provide the FULL updated code blocks for each file.
+- Clearly comment sections like:
+  /* HERO GRADIENT GLOW */
+  /* FLOATING PARTICLES */
+  /* MARQUEE ENHANCEMENTS */
+  /* CTA MICRO INTERACTIONS */
+
+- Do NOT explain anything.
+- Do NOT summarize.
+- Only output code and file names.
+
+-----------------------------------
+ADDITIONAL CHANGES TO INCLUDE
+-----------------------------------
+
+I want the picture of me in the "Meet the Operator" section to be crystal clear. I don't like how it kind of fades off and makes it difficult to see clearly. Just make that look more crisp and polished.
+
+I would like an option in the CRM portion of this thing to have an option included where I can delete a lead. Right now, I only have the option to change their status, but for test leads or leads I don't want in there, I want the ability to delete them entirely.
+
+As you make these changes, be sure to optimize for SEO on the alt image descriptions, the names of the pages, and everything where I can be optimized as possible for prospects to discover me.

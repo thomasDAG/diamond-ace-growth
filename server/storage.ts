@@ -52,6 +52,7 @@ export interface IStorage {
   createTask(data: CreateTaskData): Promise<Task>;
   getTasksForLead(leadId: number): Promise<Task[]>;
   completeTask(id: number): Promise<Task | undefined>;
+  deleteLead(id: number): Promise<Lead | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -186,6 +187,14 @@ export class DatabaseStorage implements IStorage {
       .where(eq(tasks.id, id))
       .returning();
     return task;
+  }
+
+  async deleteLead(id: number): Promise<Lead | undefined> {
+    const [deleted] = await db
+      .delete(leads)
+      .where(eq(leads.id, id))
+      .returning();
+    return deleted;
   }
 }
 

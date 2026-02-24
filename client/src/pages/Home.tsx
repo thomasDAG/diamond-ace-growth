@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
+import { Helmet } from "react-helmet-async";
 import { 
   ArrowRight, BarChart3, Mail, Target, 
   Zap, XCircle, CheckCircle2, TrendingUp, Users 
@@ -8,7 +9,6 @@ import {
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
-// Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -22,14 +22,54 @@ const staggerContainer = {
   }
 };
 
+const MARQUEE_SERVICES = [
+  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
+  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
+  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
+  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
+  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
+];
+
+const PARTICLES = [
+  { top: "12%", left: "18%", duration: "22s", delay: "0s" },
+  { top: "35%", left: "75%", duration: "28s", delay: "4s" },
+  { top: "60%", left: "30%", duration: "25s", delay: "2s" },
+  { top: "25%", left: "55%", duration: "32s", delay: "6s" },
+  { top: "70%", left: "82%", duration: "20s", delay: "1s" },
+  { top: "50%", left: "10%", duration: "27s", delay: "5s" },
+  { top: "15%", left: "90%", duration: "30s", delay: "3s" },
+  { top: "80%", left: "45%", duration: "24s", delay: "7s" },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Diamond Ace Growth | Email Marketing & Lifecycle Automation Consulting</title>
+        <meta name="description" content="Diamond Ace Growth helps SaaS, ecommerce, and growth-stage brands turn their email lists into automated revenue engines through lifecycle automation, segmentation strategy, and retention systems." />
+        <meta property="og:title" content="Diamond Ace Growth | Email Marketing & Lifecycle Automation Consulting" />
+        <meta property="og:description" content="Turn your email list into an automated revenue engine. Expert lifecycle automation, segmentation strategy, and email retention systems for growth-stage brands." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Diamond Ace Growth" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Diamond Ace Growth | Email Marketing Consulting" />
+        <meta name="twitter:description" content="Expert email lifecycle automation and retention systems for SaaS, ecommerce, and growth-stage brands." />
+        <link rel="canonical" href="https://diamondacegrowth.com" />
+      </Helmet>
       <Navbar />
 
-      {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        {/* Abstract background shapes */}
+        <div className="hero-gradient-glow" aria-hidden="true" />
+        <div className="hero-particles" aria-hidden="true">
+          {PARTICLES.map((p, i) => (
+            <div
+              key={i}
+              className="hero-particle"
+              style={{ top: p.top, left: p.left, animationDuration: p.duration, animationDelay: p.delay }}
+            />
+          ))}
+        </div>
+
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10" />
         <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[150px] -z-10" />
 
@@ -55,39 +95,26 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
               <a 
                 href="#contact"
-                className="px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
+                className="cta-hero px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
+                data-testid="link-hero-cta"
               >
                 Get Your Free Audit
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
               <p className="text-sm text-muted-foreground">
                 No commitment. Just actionable insights.
               </p>
             </motion.div>
 
-            {/* Scrolling Banner */}
-            <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative">
+            <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative marquee-container">
               <div className="flex whitespace-nowrap animate-marquee">
-                {[
-                  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
-                  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
-                  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
-                  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
-                  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
-                ].map((service, i) => (
-                  <span key={i} className="mx-8 text-lg font-display font-medium text-white/70 flex items-center">
+                {MARQUEE_SERVICES.map((service, i) => (
+                  <span key={i} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
                     {service} <span className="ml-8 text-primary">•</span>
                   </span>
                 ))}
-                {/* Duplicate for seamless loop */}
-                {[
-                  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
-                  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
-                  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
-                  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
-                  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
-                ].map((service, i) => (
-                  <span key={`dup-${i}`} className="mx-8 text-lg font-display font-medium text-white/70 flex items-center">
+                {MARQUEE_SERVICES.map((service, i) => (
+                  <span key={`dup-${i}`} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
                     {service} <span className="ml-8 text-primary">•</span>
                   </span>
                 ))}
@@ -97,7 +124,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM SECTION */}
       <section id="problem" className="py-24 bg-card/30 border-y border-border/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -155,7 +181,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
       <section id="services" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -209,7 +234,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS SECTION */}
       <section id="process" className="py-24 bg-background relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         
@@ -264,7 +288,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROOF SECTION */}
       <section id="proof" className="py-24 bg-card/20 border-y border-border/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -316,7 +339,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
       <section id="about" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -327,10 +349,9 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="w-full md:w-2/5 h-[400px] md:h-auto relative">
               <img 
                 src={operatorPhoto} 
-                alt="Thomas Nilsen - Diamond Ace Growth" 
+                alt="Thomas Nilsen, email marketing and lifecycle automation consultant at Diamond Ace Growth" 
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/90 to-transparent" />
             </motion.div>
             
             <motion.div variants={fadeInUp} className="w-full md:w-3/5 p-10 md:p-16 flex flex-col justify-center">
@@ -366,7 +387,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
       <section id="contact" className="py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
         
@@ -380,10 +400,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="py-12 border-t border-border/20 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <img src={logoWhite} alt="Diamond Ace Growth" className="h-12 w-auto mb-6" />
+          <img src={logoWhite} alt="Diamond Ace Growth - Email marketing and lifecycle automation consulting" className="h-12 w-auto mb-6" />
           <p className="text-muted-foreground mb-8">Engineering predictable revenue.</p>
           
           <div className="flex gap-6 mb-8">

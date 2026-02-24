@@ -5,7 +5,7 @@ import type { Lead, Activity, Task } from "@shared/schema";
 import { LEAD_STATUSES } from "@shared/schema";
 import {
   ArrowLeft, Mail, FileText, Phone, MessageSquare, Users,
-  CheckCircle2, Circle, Plus, Loader2, CalendarDays
+  CheckCircle2, Circle, Plus, Loader2, CalendarDays, Trash2
 } from "lucide-react";
 
 const STATUS_COLORS: Record<string, string> = {
@@ -105,6 +105,16 @@ export default function AdminLeadDetail() {
     setTasks(prev => prev.map(t => t.id === taskId ? updated : t));
   };
 
+  const handleDeleteLead = async () => {
+    if (!confirm(`Delete ${lead?.firstName} ${lead?.lastName}? This will also remove all their activities and tasks.`)) return;
+    try {
+      await adminApi.deleteLead(leadId);
+      setLocation("/admin/leads");
+    } catch {
+      alert("Failed to delete lead");
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -131,19 +141,28 @@ export default function AdminLeadDetail() {
             <h1 className="font-display font-bold text-white">{lead.firstName} {lead.lastName}</h1>
             <p className="text-sm text-muted-foreground">{lead.companyName} · {lead.email}</p>
           </div>
-          {/* Status selector */}
-          <select
-            value={lead.status}
-            onChange={e => handleStatusChange(e.target.value)}
-            className={`text-xs font-medium px-3 py-1.5 rounded-full border bg-transparent outline-none cursor-pointer ${STATUS_COLORS[lead.status]}`}
-            data-testid="select-status"
-          >
-            {LEAD_STATUSES.map(s => (
-              <option key={s} value={s} className="bg-background text-white">
-                {s.replace("_", " ")}
-              </option>
-            ))}
-          </select>
+          <div className="flex items-center gap-3">
+            <select
+              value={lead.status}
+              onChange={e => handleStatusChange(e.target.value)}
+              className={`text-xs font-medium px-3 py-1.5 rounded-full border bg-transparent outline-none cursor-pointer ${STATUS_COLORS[lead.status]}`}
+              data-testid="select-status"
+            >
+              {LEAD_STATUSES.map(s => (
+                <option key={s} value={s} className="bg-background text-white">
+                  {s.replace("_", " ")}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={handleDeleteLead}
+              className="px-3 py-1.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-medium hover:bg-red-500/30 transition-colors flex items-center gap-1.5"
+              data-testid="button-delete-lead"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+              Delete
+            </button>
+          </div>
         </div>
       </div>
 

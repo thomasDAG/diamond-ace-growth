@@ -52,4 +52,7 @@ export const adminApi = {
 
   completeTask: (taskId: number) =>
     request<Task>(`/api/admin/tasks/${taskId}/complete`, { method: "PATCH" }),
+
+  deleteLead: (id: number) =>
+    request<{ success: boolean }>(`/api/admin/leads/${id}`, { method: "DELETE" }),
 };

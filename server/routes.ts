@@ -138,6 +138,16 @@ export async function registerRoutes(
     res.json(updated);
   });
 
+  app.delete("/api/admin/leads/:id", adminAuthMiddleware, async (req, res) => {
+    const id = parseInt(String(req.params.id), 10);
+    if (isNaN(id)) return res.status(400).json({ message: "Invalid ID" });
+
+    const deleted = await storage.deleteLead(id);
+    if (!deleted) return res.status(404).json({ message: "Lead not found" });
+
+    res.json({ success: true });
+  });
+
   // ── Admin activities ───────────────────────────────────────────────────────
   app.post("/api/admin/leads/:id/activities", adminAuthMiddleware, async (req, res) => {
     const leadId = parseInt(String(req.params.id), 10);
