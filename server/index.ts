@@ -1,11 +1,16 @@
 import express, { type Request, Response, NextFunction } from "express";
 import session from "express-session";
+import connectPgSimple from "connect-pg-simple";
+import { Pool } from "pg";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 
 const app = express();
 const httpServer = createServer(app);
+
+// Trust the reverse proxy (required for secure cookies on Replit deployments)
+app.set("trust proxy", 1);
 
 declare module "http" {
   interface IncomingMessage {
@@ -23,14 +28,24 @@ app.use(
 
 app.use(express.urlencoded({ extended: false }));
 
+// Use PostgreSQL-backed session store so sessions survive restarts in production
+const PgSession = connectPgSimple(session);
+const sessionPool = new Pool({ connectionString: process.env.DATABASE_URL });
+
 app.use(
   session({
+    store: new PgSession({
+      pool: sessionPool,
+      tableName: "session",
+      createTableIfMissing: true,
+    }),
     secret: process.env.SESSION_SECRET || "diamond-ace-secret-dev",
     resave: false,
     saveUninitialized: false,
     cookie: {
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     },
   })
