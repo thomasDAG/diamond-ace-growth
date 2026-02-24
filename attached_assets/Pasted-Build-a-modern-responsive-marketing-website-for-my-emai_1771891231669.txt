@@ -1,0 +1,284 @@
+Build a modern, responsive marketing website for my email/lifecycle consulting brand called Diamond Ace Growth. Recreate the layout and vibe from the screenshots I will attach (GHL build), as closely as possible, while keeping it sleek and clean.
+
+Tech + structure
+
+Use Next.js (App Router) + Tailwind CSS.
+
+One-page layout with anchored sections and smooth scrolling.
+
+Sticky top nav with section links: Home, Problem, Services, Process, Proof, About and a primary CTA button.
+
+Mobile responsive (stack sections, hamburger menu, readable type sizes).
+
+Fast loading, accessible (labels, focus states, contrast, aria).
+
+Branding + assets
+
+I will attach:
+
+My logos (use in top-left nav; support dark/light usage).
+
+A photo of me (use in About section).
+
+Brand palette:
+
+Main: #cad2c5 #84a98c #52796f #354f52 #2f3e46
+
+Buttons/Highlights: #146ef4 #fff7bb #000000 #ffffff
+
+Overall look: dark, muted green/teal theme with soft contrast and plenty of spacing. Rounded corners. Subtle shadows.
+
+Typography: clean modern sans (use something like Inter). Large bold headers, calm body copy.
+
+Page sections (match screenshots)
+1) Hero (Home)
+
+Full-width hero with subtle grid/texture background overlay (tasteful, not loud).
+
+Headline (large):
+
+“Precision-Built Email Systems.”
+
+Second line highlighted in soft yellow: “Predictable Revenue.”
+
+Subheadline:
+
+“Diamond Ace Growth engineers lifecycle automation that converts attention into measurable sales performance.”
+
+Primary CTA button centered:
+
+Text: “See What Your Email Is Missing”
+
+Small line under CTA:
+
+“Based in Utah County • Available for Fractional Consulting”
+
+Keep spacing similar to the screenshots: centered, high-impact.
+
+2) Problem
+
+Dark section with label “PROBLEM” and headline:
+
+“Your Email System Is Leaving Money on the Table.”
+
+Supporting lines:
+
+“The inputs are there. Traffic. Subscribers. Demand.”
+
+“The revenue system connecting them isn’t.”
+
+Two-column grid of pill/box statements (6 total), like the screenshot:
+
+“Subscribers, no conversion system.”
+
+“Segmentation exists, barely used.”
+
+“Campaigns sent. Automation underbuilt.”
+
+“Automation is reactive, not engineered.”
+
+“Core revenue flows missing.”
+
+“Revenue feels inconsistent.”
+
+CTA button below: “Fix My Email System”
+
+3) Services
+
+Label “SERVICES”
+
+Headline:
+
+“Revenue Systems.”
+
+Subhead line: “Not Just Email Campaigns.”
+
+Short description about engineered email systems + lifecycle strategy.
+
+3 service cards with simple line icons (email/cart/box style):
+
+Email Revenue Architecture
+
+“End-to-end design of automated lifecycle systems that convert subscribers into predictable revenue.”
+
+Lifecycle & Segmentation Strategy
+
+“Audience architecture and behavioral segmentation built to increase conversion efficiency and revenue per subscriber.”
+
+Ongoing Optimization & Fractional Leadership
+
+“Embedded lifecycle expertise for growth-stage teams needing senior-level strategy and implementation without full-time overhead.”
+
+CTA: “Get a Systems Audit”
+
+4) Process
+
+Label “PROCESS”
+
+Headline: “A Structured Path to Predictable Revenue”
+
+3 large cards with big numbers and titles:
+
+Audit
+
+Bullets:
+
+Lifecycle flow analysis
+
+Audience & segmentation audit
+
+Revenue attribution mapping
+
+Deliverability & infrastructure review
+
+Architect
+
+Bullets:
+
+Automated lifecycle frameworks
+
+Trigger logic & behavioral sequencing
+
+Audience architecture design
+
+Conversion-driven content structure
+
+Optimize
+
+Bullets:
+
+Structured experimentation (A/B testing)
+
+Revenue per send optimization
+
+Engagement depth improvement
+
+List health & scalability monitoring
+
+5) Proof
+
+Label “PROOF”
+
+Headline:
+
+“Measured Results.”
+
+“Clean Execution.”
+
+Subheadline: “A track record built on systems, not hype.”
+
+3 proof columns with icons and short blurbs:
+
+Enterprise Email Ops: lifecycle + ops experience at a publicly traded SaaS company; built systems designed to scale.
+
+Welcome Flow Revenue Lift: welcome flows generating $2,000+ incremental revenue without paid traffic changes.
+
+Works Inside Your Stack: improve what’s already there; no platform overhaul necessary.
+
+Below: Testimonials (2 cards visible, with star rating and “Read more” link). Use placeholder testimonial text that I can edit.
+
+6) About
+
+Two-column layout:
+
+Left: my photo (attached)
+
+Right: “Meet the Operator” headline + short bio matching the screenshot tone:
+
+Focused on lifecycle automation, segmentation strategy, and revenue infrastructure.
+
+Enterprise-level systems thinking for growth-stage teams, agencies, ecommerce brands.
+
+Include small “mini stats” row like:
+
+Focus: Lifecycle Systems & Revenue Architecture
+
+Location: Utah County, UT
+
+Experience: Public SaaS • Ecommerce • Agencies
+
+Engagement: Project-Based & Fractional
+
+7) Contact / Systems Audit Form (CTA target)
+
+Clicking any CTA button should scroll to the form section.
+
+Title: “Get a Systems Audit” (or similar)
+
+Add a short friendly line that sets expectation: I’ll review and follow up within X business days (use 1–2 days).
+
+Build the form with these fields:
+
+Text inputs (required):
+
+First name
+
+Last name
+
+Email
+
+Company name
+
+Select (required):
+
+What best describes your business? (SaaS, Ecommerce, Service-based, Agency, Other)
+
+Current email platform? (HubSpot, Klaviyo, Salesforce Marketing Cloud, Marketo, Kit, Other, Not sure)
+
+Monthly revenue range? (Under $25k, $25k–$100k, $100k–$500k, $500k+)
+
+Checkbox group (optional or required if you think best):
+
+Which of these, if any, are currently in place?
+
+Welcome sequence
+
+Abandoned cart flow
+
+Lead nurture
+
+Re-engagement
+
+None / Not sure
+
+Textarea (required):
+
+What feels broken or underperforming in your marketing systems right now?
+
+Form behavior:
+
+Client-side validation with clear error messages.
+
+On submit: show success message.
+
+Store submissions using a simple backend:
+
+Option A: save to a local JSON/db (SQLite) in the app
+
+Option B: send to an email address via an API (make it easy to swap)
+
+Implement whichever is simplest inside Replit, but keep the code clean and documented.
+
+UI details to match screenshots
+
+Buttons: primary blue #146ef4 with white text; hover darken slightly.
+
+Highlight color for emphasized words: #fff7bb.
+
+Use deep background sections with #2f3e46 / #354f52 and lighter text.
+
+Section labels (PROBLEM/SERVICES/PROCESS/PROOF/ABOUT) in small caps with subtle tracking.
+
+Consistent max width and generous vertical padding.
+
+Add subtle dividers/lines where appropriate (as in screenshots).
+
+Deliverables
+
+Working Next.js app with Tailwind
+
+Components split cleanly (Navbar, Hero, Problem, Services, Process, Proof, About, ContactForm, Footer)
+
+Readme with instructions to run + where to edit copy/assets
+
+Use my uploaded logos/photo in the correct places; if missing, use placeholders and clearly mark where to drop files.
