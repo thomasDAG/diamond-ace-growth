@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,13 +30,12 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
-            DA
-          </div>
-          <span className="font-display font-bold text-lg tracking-wide hidden sm:block">
-            DIAMOND ACE <span className="text-primary">GROWTH</span>
-          </span>
+        <a href="#" className="flex items-center group">
+          <img 
+            src={logoWhite} 
+            alt="Diamond Ace Growth" 
+            className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
+          />
         </a>
 
         {/* Desktop Nav */}

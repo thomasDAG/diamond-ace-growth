@@ -48,7 +48,7 @@ export function ContactForm() {
         </div>
         <h3 className="text-3xl font-display font-bold text-white mb-4">Application Received</h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for reaching out. We are reviewing your details and will be in touch within 24 hours to schedule your free audit.
+          Thank you for reaching out. I am reviewing your details and will be in touch within 24 hours to schedule your free audit.
         </p>
       </motion.div>
     );
@@ -61,7 +61,7 @@ export function ContactForm() {
       
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Apply for a Free Audit</h3>
-        <p className="text-muted-foreground">Fill out the form below to see if we're a good fit to scale your revenue.</p>
+        <p className="text-muted-foreground">Fill out the form below to see if I'm a good fit to scale your revenue.</p>
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

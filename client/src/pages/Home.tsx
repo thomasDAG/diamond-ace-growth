@@ -44,14 +44,14 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
-              We Turn Your Email List Into an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Automated Revenue Engine</span>
+              Turn Your Email List Into an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Automated Revenue Engine</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Diamond Ace Growth helps e-commerce brands add 20-30% to their top-line revenue without spending another dime on ads.
+              Diamond Ace Growth helps you convert attention into measurable sales performance.
             </motion.p>
             
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
               <a 
                 href="#contact"
                 className="px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
@@ -59,18 +59,18 @@ export default function Home() {
                 Get Your Free Audit
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <p className="text-sm text-muted-foreground sm:ml-4">
+              <p className="text-sm text-muted-foreground">
                 No commitment. Just actionable insights.
               </p>
             </motion.div>
 
-            {/* Trusted By / Metrics banner */}
+            {/* Metrics banner */}
             <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { label: "Average Revenue Bump", value: "25%+" },
-                { label: "Emails Sent", value: "10M+" },
-                { label: "ROI on Retainer", value: "5x-10x" },
-                { label: "Client Retention", value: "98%" }
+                { label: "Open Rate", value: "75%" },
+                { label: "Click Rate", value: "10%" },
+                { label: "Incremental Revenue", value: "$5,000+" },
+                { label: "Client Satisfaction", value: "100%" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl font-display font-bold text-white mb-1">{stat.value}</div>
@@ -95,14 +95,14 @@ export default function Home() {
                 You're working too hard for <span className="text-highlight">new traffic</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Most brands pour all their profit into Zuck's pockets trying to acquire new customers, while ignoring the goldmine sitting right in their database.
+                Most brands pour all their profit into ad platforms trying to acquire new customers, while ignoring the goldmine sitting right in their database.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Paying increasingly high CAC on Meta & Google",
+                  "Paying increasingly high CAC on advertising platforms",
                   "Sending occasional, unsegmented blast emails",
-                  "Leaking 70% of potential buyers at checkout",
+                  "Leaking potential buyers at checkout",
                   "Lacking a clear strategy to turn 1-time buyers into loyalists"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
@@ -152,7 +152,7 @@ export default function Home() {
               Full-Stack Email Retention
             </h2>
             <p className="text-lg text-muted-foreground">
-              We don't just write copy. We handle the entire ecosystem from technical setup to high-converting design.
+              I don't just write copy. I handle the entire ecosystem from technical setup to high-converting design.
             </p>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Home() {
               {
                 icon: <Mail className="w-8 h-8 text-accent" />,
                 title: "Campaign Management",
-                desc: "2-4 strategic broadcasts per week. Full copywriting, custom design, and rigorous A/B testing for constant improvement."
+                desc: "Strategic broadcasts that drive sales without fatiguing your audience. Full copywriting, custom design, and rigorous A/B testing."
               },
               {
                 icon: <Target className="w-8 h-8 text-accent" />,
@@ -205,7 +205,7 @@ export default function Home() {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              How We Scale You
+              How I Scale You
             </h2>
           </motion.div>
 
@@ -218,17 +218,17 @@ export default function Home() {
               {
                 num: "01",
                 title: "The Deep Dive Audit",
-                desc: "We analyze your current setup, find the leaks where money is escaping, and project exact revenue targets we can hit in 90 days."
+                desc: "I analyze your current setup, find the leaks where money is escaping, and project exact revenue targets I can hit in 90 days."
               },
               {
                 num: "02",
                 title: "Infrastructure & Flows",
-                desc: "First 14 days: We rebuild your core automated flows. This is the foundation that prints money while you sleep."
+                desc: "First 14 days: I rebuild your core automated flows. This is the foundation that prints money while you sleep."
               },
               {
                 num: "03",
                 title: "Aggressive Campaigning",
-                desc: "Month 1 and beyond: We deploy our high-converting campaign calendar, pushing sales without annoying your subscribers."
+                desc: "Month 1 and beyond: I deploy my high-converting campaign calendar, pushing sales without annoying your subscribers."
               }
             ].map((step, i) => (
               <motion.div 
@@ -265,12 +265,21 @@ export default function Home() {
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {[
-              { stat: "+32%", metric: "Total Store Revenue", quote: "Diamond Ace came in and completely revamped our Klaviyo. Within 45 days, email was driving 30% of our total sales. Absolutely incredible.", author: "Sarah J., Skincare Brand" },
-              { stat: "4.8x", metric: "ROI on Retainer", quote: "We were hesitant to outsource, but their team operates like an in-house partner. The designs are stunning and the copy actually converts.", author: "Mike T., Tech Apparel" },
-              { stat: "$120k", metric: "Added in 90 Days", quote: "The abandoned cart flow they built alone paid for their service for the entire year. Professional, fast, and highly skilled.", author: "Elena R., Home Goods" }
+              { 
+                stat: "75%", 
+                metric: "Average Open Rate", 
+                quote: "Thomas is an email marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.", 
+                author: "Mary, Marketing & Branding Strategist" 
+              },
+              { 
+                stat: "High Impact", 
+                metric: "Strategic Execution", 
+                quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.", 
+                author: "Heather, Marketing Specialist" 
+              }
             ].map((testimonial, i) => (
               <motion.div 
                 key={i} 
@@ -281,7 +290,7 @@ export default function Home() {
                   <div className="text-4xl font-display font-bold text-primary mb-1">{testimonial.stat}</div>
                   <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">{testimonial.metric}</div>
                 </div>
-                <p className="text-foreground/90 italic mb-6">"{testimonial.quote}"</p>
+                <p className="text-foreground/90 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 <div className="text-sm font-bold text-white/70">{testimonial.author}</div>
               </motion.div>
             ))}
@@ -298,10 +307,9 @@ export default function Home() {
             className="bg-gradient-to-br from-card to-background border border-border/50 rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-2xl"
           >
             <motion.div variants={fadeInUp} className="w-full md:w-2/5 h-[400px] md:h-auto relative">
-              {/* HTML comment required for stock images, but this is a user asset */}
               <img 
                 src={operatorPhoto} 
-                alt="Founder of Diamond Ace Growth" 
+                alt="Thomas Nilsen - Diamond Ace Growth" 
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/90 to-transparent" />
@@ -309,20 +317,30 @@ export default function Home() {
             
             <motion.div variants={fadeInUp} className="w-full md:w-3/5 p-10 md:p-16 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Your Dedicated Growth Partner
+                Meet the Operator
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I founded Diamond Ace Growth after watching too many incredible brands struggle with sub-par retention strategies. Agencies charge astronomical fees and assign junior account managers to do the actual work.
+                I'm a marketing operations professional focused on lifecycle automation, segmentation strategy, and revenue infrastructure.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We do things differently. When you work with us, you get senior-level strategy, copywriting, and design on every single campaign. We limit our client roster to ensure quality never drops.
+                My background includes building and optimizing email systems at a publicly traded SaaS company — bringing enterprise-level systems thinking to growth-stage teams, agencies, and ecommerce brands.
               </p>
-              <div className="flex gap-4">
-                <div className="flex items-center gap-2 text-white font-medium">
-                  <BarChart3 className="w-5 h-5 text-primary" /> Data-Driven
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
+                  <div className="text-sm font-bold text-white">Lifecycle Systems & Revenue Architecture</div>
                 </div>
-                <div className="flex items-center gap-2 text-white font-medium">
-                  <Users className="w-5 h-5 text-primary" /> Boutique Approach
+                <div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
+                  <div className="text-sm font-bold text-white">Utah County, UT</div>
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div>
+                  <div className="text-sm font-bold text-white">Public SaaS • Ecommerce • Agencies</div>
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div>
+                  <div className="text-sm font-bold text-white">Project-Based & Fractional</div>
                 </div>
               </div>
             </motion.div>
@@ -347,10 +365,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-12 border-t border-border/20 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-white font-display font-bold text-xl mb-6 shadow-lg">
-            DA
-          </div>
-          <h3 className="text-xl font-display font-bold text-white mb-2">DIAMOND ACE GROWTH</h3>
+          <img src={logoWhite} alt="Diamond Ace Growth" className="h-12 w-auto mb-6" />
           <p className="text-muted-foreground mb-8">Elevating e-commerce retention.</p>
           
           <div className="text-sm text-muted-foreground/60">
