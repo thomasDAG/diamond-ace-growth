@@ -7,6 +7,9 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import AdminLogin from "@/pages/AdminLogin";
+import AdminLeads from "@/pages/AdminLeads";
+import AdminLeadDetail from "@/pages/AdminLeadDetail";
 
 function Router() {
   return (
@@ -14,6 +17,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
+      <Route path="/admin/login" component={AdminLogin} />
+      <Route path="/admin/leads" component={AdminLeads} />
+      <Route path="/admin/leads/:id" component={AdminLeadDetail} />
+      <Route path="/admin" component={AdminLogin} />
       <Route component={NotFound} />
     </Switch>
   );

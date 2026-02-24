@@ -1,30 +1,56 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactMessageSchema, type InsertContactMessage } from "@shared/routes";
-import { useSubmitContact } from "@/hooks/use-contact";
+import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { motion } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { useState } from "react";
 
 export function ContactForm() {
-  const { mutate: submitContact, isPending, isSuccess } = useSubmitContact();
+  const [isPending, setIsPending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [serverError, setServerError] = useState("");
 
-  const form = useForm<InsertContactMessage>({
-    resolver: zodResolver(insertContactMessageSchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
       companyName: "",
-      businessType: "" as any,
-      currentPlatform: "" as any,
-      revenueRange: "" as any,
+      businessType: undefined as any,
+      currentPlatform: undefined as any,
+      revenueRange: undefined as any,
       implementedFeatures: [],
       painPoints: "",
+      marketingOptIn: false,
     },
   });
 
-  const onSubmit = (data: InsertContactMessage) => {
-    submitContact(data);
+  const onSubmit = async (data: ContactFormData) => {
+    setIsPending(true);
+    setServerError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          email: data.email.trim().toLowerCase(),
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ message: "Submission failed" }));
+        setServerError(err.message || "Submission failed");
+        return;
+      }
+
+      setIsSuccess(true);
+    } catch {
+      setServerError("Something went wrong. Please try again.");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   const featureOptions = [
@@ -38,7 +64,7 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-card rounded-3xl p-8 md:p-12 text-center border border-border/30 shadow-2xl flex flex-col items-center justify-center min-h-[400px]"
@@ -56,9 +82,8 @@ export function ContactForm() {
 
   return (
     <div className="bg-card rounded-3xl p-6 md:p-10 border border-border/30 shadow-2xl relative overflow-hidden">
-      {/* Decorative background glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
-      
+
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Apply for a Free Audit</h3>
         <p className="text-muted-foreground">Fill out the form below to see if I'm a good fit to scale your revenue.</p>
@@ -72,6 +97,7 @@ export function ContactForm() {
               {...form.register("firstName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
               placeholder="John"
+              data-testid="input-first-name"
             />
             {form.formState.errors.firstName && (
               <p className="text-xs text-destructive mt-1">{form.formState.errors.firstName.message}</p>
@@ -83,6 +109,7 @@ export function ContactForm() {
               {...form.register("lastName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
               placeholder="Doe"
+              data-testid="input-last-name"
             />
             {form.formState.errors.lastName && (
               <p className="text-xs text-destructive mt-1">{form.formState.errors.lastName.message}</p>
@@ -98,6 +125,7 @@ export function ContactForm() {
               type="email"
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
               placeholder="john@company.com"
+              data-testid="input-email"
             />
             {form.formState.errors.email && (
               <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
@@ -109,6 +137,7 @@ export function ContactForm() {
               {...form.register("companyName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
               placeholder="Acme Corp"
+              data-testid="input-company"
             />
             {form.formState.errors.companyName && (
               <p className="text-xs text-destructive mt-1">{form.formState.errors.companyName.message}</p>
@@ -121,7 +150,9 @@ export function ContactForm() {
             <label className="text-sm font-medium text-foreground/90">Business Type</label>
             <select
               {...form.register("businessType")}
+              defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+              data-testid="select-business-type"
             >
               <option value="" disabled>Select one</option>
               <option value="E-commerce">E-commerce</option>
@@ -135,7 +166,9 @@ export function ContactForm() {
             <label className="text-sm font-medium text-foreground/90">Current Platform</label>
             <select
               {...form.register("currentPlatform")}
+              defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+              data-testid="select-platform"
             >
               <option value="" disabled>Select one</option>
               <option value="Klaviyo">Klaviyo</option>
@@ -149,7 +182,9 @@ export function ContactForm() {
             <label className="text-sm font-medium text-foreground/90">Monthly Revenue</label>
             <select
               {...form.register("revenueRange")}
+              defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
+              data-testid="select-revenue"
             >
               <option value="" disabled>Select one</option>
               <option value="Under $10k/mo">Under $10k/mo</option>
@@ -170,6 +205,7 @@ export function ContactForm() {
                   value={feature}
                   {...form.register("implementedFeatures")}
                   className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border"
+                  data-testid={`checkbox-${feature.replace(/\s+/g, "-").toLowerCase()}`}
                 />
                 <span className="text-sm text-foreground/80">{feature}</span>
               </label>
@@ -184,16 +220,35 @@ export function ContactForm() {
             rows={4}
             className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
             placeholder="E.g., High cart abandonment, low open rates, inconsistent sending..."
+            data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
             <p className="text-xs text-destructive mt-1">{form.formState.errors.painPoints.message}</p>
           )}
         </div>
 
+        {/* Marketing opt-in */}
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            {...form.register("marketingOptIn")}
+            className="w-4 h-4 mt-0.5 rounded text-primary focus:ring-primary bg-background border-border"
+            data-testid="checkbox-marketing-opt-in"
+          />
+          <span className="text-sm text-muted-foreground">
+            I'd like to receive occasional email tips, strategies, and updates from Diamond Ace Growth. I can unsubscribe at any time.
+          </span>
+        </label>
+
+        {serverError && (
+          <p className="text-sm text-destructive">{serverError}</p>
+        )}
+
         <button
           type="submit"
           disabled={isPending}
           className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
+          data-testid="button-submit"
         >
           {isPending ? (
             <>
