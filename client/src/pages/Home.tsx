@@ -64,11 +64,11 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
-              Turn Your Email List Into an <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Automated Revenue Engine</span>
+              Engineer a <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Predictable Revenue System</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Diamond Ace Growth helps you convert attention into measurable sales performance.
+              Diamond Ace Growth builds the infrastructure that turns traffic and customer data into predictable sales.
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
@@ -77,11 +77,11 @@ export default function Home() {
                 className="cta-hero px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
-                Get Your Free Audit
+                Get a Free Revenue Audit
                 <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
               <p className="text-sm text-muted-foreground">
-                No commitment. Just actionable insights.
+                Walk away with clarity — whether we work together or not.
               </p>
             </motion.div>
 
@@ -109,18 +109,18 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                You're working too hard for <span className="text-highlight">new traffic</span>.
+                Growth shouldn't rely on <span className="text-highlight">guesswork</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Most brands pour all their profit into ad platforms trying to acquire new customers, while ignoring the goldmine sitting right in their database.
+                Most brands rely on more ads, more campaigns, and more manual effort — without fixing the underlying revenue system driving conversions.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Paying increasingly high CAC on advertising platforms",
-                  "Sending occasional, unsegmented blast emails",
-                  "Leaking potential buyers at checkout",
-                  "Lacking a clear strategy to turn 1-time buyers into loyalists"
+                  "Rising acquisition costs without predictable ROI",
+                  "Disconnected tools and manual follow-up",
+                  "Leads and customers slipping through lifecycle gaps",
+                  "No clear system for turning traffic into long-term revenue"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
                     <XCircle className="w-6 h-6 text-destructive shrink-0 mr-3 mt-0.5" />
@@ -137,9 +137,9 @@ export default function Home() {
               <h3 className="text-2xl font-display font-bold text-white mb-6">The Diamond Ace Approach</h3>
               <div className="space-y-6">
                 {[
-                  { title: "Behavioral Segmentation", desc: "Sending the right message to the right person at the right time." },
-                  { title: "Automated Flow Systems", desc: "Setting up 24/7 revenue machines that trigger based on user actions." },
-                  { title: "Strategic Campaign Calendars", desc: "Consistent, high-converting sends that don't burn out your list." }
+                  { title: "Revenue Architecture", desc: "Mapping the full journey from first click to repeat purchase — eliminating friction and revenue leaks." },
+                  { title: "Lifecycle Automation", desc: "Building systems that capture, nurture, convert, and expand customers automatically." },
+                  { title: "Performance Optimization", desc: "Using data and financial insight to continuously improve revenue efficiency." }
                 ].map((item, i) => (
                   <div key={i} className="flex">
                     <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mr-4">
@@ -165,10 +165,10 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              Full-Stack Email Retention
+              Full-Stack Revenue Systems
             </h2>
             <p className="text-lg text-muted-foreground">
-              I don't just write copy. I handle the entire ecosystem from technical setup to high-converting design.
+              I design and optimize the full revenue ecosystem. From prospect capture to lifecycle automation and performance optimization.
             </p>
           </motion.div>
 
@@ -180,18 +180,18 @@ export default function Home() {
             {[
               {
                 icon: <Zap className="w-8 h-8 text-accent" />,
-                title: "Core Automations",
-                desc: "Welcome Series, Abandoned Cart, Browse Abandonment, and Post-Purchase flows designed to maximize LTV automatically."
+                title: "Revenue Architecture",
+                desc: "Mapping the full customer journey from first touch to repeat purchase — eliminating friction and revenue leaks."
               },
               {
                 icon: <Mail className="w-8 h-8 text-accent" />,
-                title: "Campaign Management",
-                desc: "Strategic broadcasts that drive sales without fatiguing your audience. Full copywriting, custom design, and rigorous A/B testing."
+                title: "Lifecycle Automation",
+                desc: "Building systems that capture, nurture, convert, and expand customers automatically."
               },
               {
                 icon: <Target className="w-8 h-8 text-accent" />,
-                title: "List Growth & Hygiene",
-                desc: "Optimizing pop-ups for higher capture rates and managing deliverability so you always land in the primary inbox."
+                title: "Revenue Optimization",
+                desc: "Using data, testing, and financial insight to continuously improve conversion efficiency and lifetime value."
               }
             ].map((service, i) => (
               <motion.div 
@@ -233,17 +233,17 @@ export default function Home() {
               {
                 num: "01",
                 title: "Audit",
-                desc: "A structured evaluation of your existing email infrastructure to uncover revenue gaps, lifecycle inefficiencies, and untapped growth leverage."
+                desc: "A structured evaluation of your revenue system to identify conversion leaks, lifecycle gaps, and untapped growth potential."
               },
               {
                 num: "02",
                 title: "Architect",
-                desc: "Design and build scalable lifecycle systems aligned to your growth model, customer journey, and revenue objectives."
+                desc: "Design and build scalable revenue systems aligned to your growth model, customer journey, and financial objectives."
               },
               {
                 num: "03",
                 title: "Optimize",
-                desc: "Ongoing refinement through structured testing, segmentation evolution, and performance analysis to increase revenue efficiency over time."
+                desc: "Continuous refinement through testing, automation evolution, and performance analysis to increase revenue efficiency and predictability over time."
               }
             ].map((step, i) => (
               <motion.div 
@@ -335,15 +335,15 @@ export default function Home() {
                 Meet the Operator
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I'm a marketing operations professional focused on lifecycle automation, segmentation strategy, and revenue infrastructure.
+                I design scalable revenue systems that connect prospect acquisition, lifecycle automation, and financial performance.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                My background includes building and optimizing email systems at a publicly traded SaaS company — bringing enterprise-level systems thinking to growth-stage teams, agencies, and ecommerce brands.
+                My background includes building and optimizing revenue infrastructure at a publicly traded SaaS company — bringing enterprise-level systems thinking to growth-stage teams and founder-led brands. I focus on building systems that make revenue more efficient, measurable, and predictable.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-sm font-bold text-white">Lifecycle Systems & Revenue Architecture</div>
+                  <div className="text-sm font-bold text-white">Revenue Systems & Lifecycle Architecture</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>

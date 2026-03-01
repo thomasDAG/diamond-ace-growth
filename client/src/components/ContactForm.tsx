@@ -54,12 +54,12 @@ export function ContactForm() {
   };
 
   const featureOptions = [
-    "Welcome Series",
-    "Abandoned Cart",
-    "Post-Purchase Upsell",
-    "VIP/Loyalty Flows",
-    "Winback Campaigns",
-    "Regular Newsletters",
+    "Lead Capture",
+    "CRM/Pipeline",
+    "Automated Nurtures",
+    "Sales Automation",
+    "Expansion Flows",
+    "Paid Traffic",
   ];
 
   if (isSuccess) {
@@ -119,7 +119,7 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Work Email</label>
+            <label className="text-sm font-medium text-foreground/90">Email</label>
             <input
               {...form.register("email")}
               type="email"
@@ -136,7 +136,7 @@ export function ContactForm() {
             <input
               {...form.register("companyName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="Acme Corp"
+              placeholder="Revenue Growth Co"
               data-testid="input-company"
             />
             {form.formState.errors.companyName && (
@@ -155,15 +155,17 @@ export function ContactForm() {
               data-testid="select-business-type"
             >
               <option value="" disabled>Select one</option>
-              <option value="SaaS">SaaS</option>
-              <option value="Ecommerce">Ecommerce</option>
-              <option value="Service-based">Service-based</option>
+              <option value="SaaS (B2B or B2C)">SaaS</option>
+              <option value="Ecommerce / DTC">Ecommerce</option>
+              <option value="Service-based business">Service-based</option>
               <option value="Agency">Agency</option>
+              <option value="Info / Digital Product">Info / Digital Product</option>
+              <option value="Marketplace / Platform">Marketplace / Platform</option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Current Platform</label>
+            <label className="text-sm font-medium text-foreground/90">Primary CRM / Automation Platform</label>
             <select
               {...form.register("currentPlatform")}
               defaultValue=""
@@ -171,10 +173,14 @@ export function ContactForm() {
               data-testid="select-platform"
             >
               <option value="" disabled>Select one</option>
+              <option value="HubSpot">HubSpot</option>
+              <option value="Salesforce">Salesforce</option>
+              <option value="Marketo">Marketo</option>
               <option value="Klaviyo">Klaviyo</option>
               <option value="Mailchimp">Mailchimp</option>
               <option value="ActiveCampaign">ActiveCampaign</option>
-              <option value="HubSpot">HubSpot</option>
+              <option value="GoHighLevel">GoHighLevel</option>
+              <option value="None / Early Stage">None / Early Stage</option>
               <option value="Other">Other</option>
             </select>
           </div>
@@ -196,7 +202,7 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-3">
-          <label className="text-sm font-medium text-foreground/90">What features are currently implemented? (Select all that apply)</label>
+          <label className="text-sm font-medium text-foreground/90">Which revenue systems are currently in place? (Select all that apply)</label>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {featureOptions.map((feature) => (
               <label key={feature} className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors">
@@ -214,12 +220,12 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground/90">What is your biggest pain point with email right now?</label>
+          <label className="text-sm font-medium text-foreground/90">What is the biggest challenge in your current revenue system?</label>
           <textarea
             {...form.register("painPoints")}
             rows={4}
             className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
-            placeholder="E.g., High cart abandonment, low open rates, inconsistent sending..."
+            placeholder="E.g., Leads not converting, sales cycles too long, poor automation, inconsistent revenue..."
             data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
