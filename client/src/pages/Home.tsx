@@ -23,11 +23,16 @@ const staggerContainer = {
 };
 
 const MARQUEE_SERVICES = [
-  "Email Revenue Architecture", "Lifecycle Automation", "Segmentation Strategy", 
-  "Welcome Flow Optimization", "Abandoned Cart Systems", "Lead Nurture Sequences", 
-  "Retention & Re-Engagement", "Revenue Attribution Mapping", "Deliverability & Infrastructure", 
-  "A/B Testing Frameworks", "CRM & ESP Optimization", "Marketing Automation Buildouts", 
-  "Behavioral Trigger Design", "Fractional Lifecycle Leadership"
+  "Revenue Architecture & Funnel Design",
+  "Lifecycle Automation Systems",
+  "Conversion Infrastructure",
+  "CRM & Data Layer Strategy",
+  "Attribution & Signal Mapping",
+  "Revenue Recovery Systems",
+  "Customer Lifecycle Expansion",
+  "Marketing Automation Buildouts",
+  "Experimentation & Optimization Frameworks",
+  "Fractional Revenue Systems Leadership"
 ];
 
 
@@ -90,10 +95,13 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative marquee-container">
-              <div className="flex whitespace-nowrap animate-marquee">
-                {[0, 1, 2].map((copy) =>
+              <div className="flex whitespace-nowrap gap-16 animate-marquee">
+                {[0, 1].map((copy) =>
                   MARQUEE_SERVICES.map((service, i) => (
-                    <span key={`${copy}-${i}`} className="marquee-item relative mx-8 text-lg font-display font-medium text-white/70 flex items-center cursor-default">
+                    <span
+                      key={`${copy}-${i}`}
+                      className="marquee-item relative shrink-0 text-lg font-display font-medium text-white/70 flex items-center cursor-default"
+                    >
                       {service} <span className="ml-8 text-primary">•</span>
                     </span>
                   ))
