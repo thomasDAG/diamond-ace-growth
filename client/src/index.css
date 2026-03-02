@@ -71,7 +71,7 @@
 
   .animate-marquee {
     display: inline-flex;
-    animation: marquee 35s linear infinite;
+    animation: marquee 25s linear infinite;
     will-change: transform;
     transform: translateZ(0);
   }
@@ -193,7 +193,7 @@
 
   @media (max-width: 768px) {
     .animate-marquee {
-      animation-duration: 8s;
+      animation-duration: 45s;
     }
   }
 }
