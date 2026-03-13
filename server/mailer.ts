@@ -9,6 +9,30 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+export async function sendAuditConfirmation(lead: Lead): Promise<void> {
+  const firstName = lead.firstName?.trim() || "";
+  const greeting = firstName ? `Hi ${firstName},` : "Hi there,";
+
+  const text = `${greeting}
+
+Thanks for submitting your audit request to Diamond Ace Growth.
+
+I got your request, and I'll be reviewing it shortly. I'll take a look at your current lead flow, follow-up process, and any gaps that may be costing you opportunities.
+
+If it looks like I can help, I'll follow up with next steps soon.
+
+Thanks again,
+Thomas
+Diamond Ace Growth`;
+
+  await transporter.sendMail({
+    from: '"Thomas @ Diamond Ace Growth" <thomas@diamondacegrowth.com>',
+    to: lead.email,
+    subject: "Audit Request Received",
+    text,
+  });
+}
+
 export async function sendNewLeadNotification(lead: Lead): Promise<void> {
   const features = Array.isArray(lead.implementedFeatures) && lead.implementedFeatures.length > 0
     ? lead.implementedFeatures.join(", ")

@@ -5,7 +5,7 @@ import { storage } from "./storage";
 import { contactFormSchema, LEAD_STATUSES } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
-import { sendNewLeadNotification } from "./mailer";
+import { sendNewLeadNotification, sendAuditConfirmation } from "./mailer";
 
 const adminAuthMiddleware = (req: Request, res: Response, next: NextFunction) => {
   const sess = req.session as any;
@@ -59,6 +59,12 @@ export async function registerRoutes(
         await sendNewLeadNotification(lead);
       } catch (emailErr) {
         console.error("Failed to send lead notification email:", emailErr);
+      }
+
+      try {
+        await sendAuditConfirmation(lead);
+      } catch (emailErr) {
+        console.error("Failed to send audit confirmation email:", emailErr);
       }
 
       res.status(201).json({ success: true, leadId: lead.id });
