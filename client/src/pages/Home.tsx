@@ -40,17 +40,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Diamond Ace Growth | Revenue Systems & Lifecycle Architecture</title>
+        <title>Diamond Ace Growth | Lead Conversion & Revenue Systems</title>
         <meta name="description"
         content="Diamond Ace Growth designs scalable revenue systems that turn traffic and customer data into predictable sales through lifecycle automation and revenue architecture." />
         <meta property="og:title"
-        content="Diamond Ace Growth | Predictable Revenue Systems Consulting" />
+        content="Diamond Ace Growth | Lead Conversion & Revenue Systems" />
         <meta property="og:description"
         content="We design revenue architecture that captures prospects, converts buyers, and increases lifetime value through scalable automation systems." />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Diamond Ace Growth" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Diamond Ace Growth | Predictable Revenue Systems Consulting" />
+        <meta name="twitter:title" content="Diamond Ace Growth | Lead Conversion & Revenue Systems" />
         <meta name="twitter:description"
         content="We design scalable revenue systems that capture prospects, convert buyers, and increase lifetime value through automation and lifecycle architecture." />
         <link rel="canonical" href="https://diamondacegrowth.com" />
