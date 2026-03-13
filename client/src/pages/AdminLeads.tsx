@@ -17,12 +17,36 @@ const STATUS_COLORS: Record<string, string> = {
   nurture: "bg-gray-500/20 text-gray-400 border-gray-500/30",
 };
 
-function StatusBadge({ status }: { status: string }) {
-  const label = STATUS_LABELS[status as keyof typeof STATUS_LABELS] ?? status;
+function InlineStatusSelect({ lead, onUpdate }: { lead: Lead; onUpdate: (id: number, status: string) => void }) {
+  const [saving, setSaving] = useState(false);
+
+  const handleChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.stopPropagation();
+    const newStatus = e.target.value;
+    setSaving(true);
+    try {
+      await adminApi.updateLead(lead.id, { status: newStatus });
+      onUpdate(lead.id, newStatus);
+    } finally {
+      setSaving(false);
+    }
+  };
+
   return (
-    <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${STATUS_COLORS[status] ?? STATUS_COLORS.new}`}>
-      {label}
-    </span>
+    <select
+      value={lead.status}
+      onChange={handleChange}
+      onClick={e => e.stopPropagation()}
+      disabled={saving}
+      className={`text-xs font-medium px-2.5 py-0.5 rounded-full border bg-transparent outline-none cursor-pointer transition-opacity ${saving ? "opacity-50" : ""} ${STATUS_COLORS[lead.status] ?? STATUS_COLORS.new}`}
+      data-testid={`select-status-inline-${lead.id}`}
+    >
+      {LEAD_STATUSES.map(s => (
+        <option key={s} value={s} className="bg-background text-white">
+          {STATUS_LABELS[s]}
+        </option>
+      ))}
+    </select>
   );
 }
 
@@ -48,6 +72,10 @@ export default function AdminLeads() {
   const handleLogout = async () => {
     await adminApi.logout();
     setLocation("/admin/login");
+  };
+
+  const handleStatusUpdate = (id: number, status: string) => {
+    setLeads(prev => prev.map(l => l.id === id ? { ...l, status } : l));
   };
 
   const filtered = filterStatus === "all"
@@ -138,7 +166,7 @@ export default function AdminLeads() {
                     <td className="px-6 py-4 hidden sm:table-cell text-sm text-foreground/80">{lead.companyName}</td>
                     <td className="px-6 py-4 hidden md:table-cell text-sm text-foreground/80">{lead.revenueRange}</td>
                     <td className="px-6 py-4">
-                      <StatusBadge status={lead.status} />
+                      <InlineStatusSelect lead={lead} onUpdate={handleStatusUpdate} />
                     </td>
                     <td className="px-6 py-4 hidden lg:table-cell text-xs text-muted-foreground">
                       {lead.createdAt ? new Date(lead.createdAt).toLocaleDateString() : "—"}
