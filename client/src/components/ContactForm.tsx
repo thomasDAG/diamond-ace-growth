@@ -40,7 +40,9 @@ export function ContactForm() {
       });
 
       if (!res.ok) {
-        const err = await res.json().catch(() => ({ message: "Submission failed" }));
+        const err = await res
+          .json()
+          .catch(() => ({ message: "Submission failed" }));
         setServerError(err.message || "Submission failed");
         return;
       }
@@ -72,9 +74,12 @@ export function ContactForm() {
         <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
           <CheckCircle2 className="w-10 h-10 text-primary" />
         </div>
-        <h3 className="text-3xl font-display font-bold text-white mb-4">Audit Request Received</h3>
+        <h3 className="text-3xl font-display font-bold text-white mb-4">
+          Audit Request Received
+        </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for reaching out. I am reviewing your details and will be in touch within 24 hours to schedule your free audit.
+          Thank you for reaching out. I am reviewing your details and will be in
+          touch within 24 hours to schedule your free audit.
         </p>
       </motion.div>
     );
@@ -85,14 +90,20 @@ export function ContactForm() {
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -z-10 pointer-events-none" />
 
       <div className="mb-8">
-        <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Apply for a Free Audit</h3>
-        <p className="text-muted-foreground">Fill out the form below to see if I'm a good fit to scale your revenue.</p>
+        <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+          Apply for a Free Audit
+        </h3>
+        <p className="text-muted-foreground">
+          Tell me a little about your business and I'll review your lead and follow-up system.
+        </p>
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">First Name</label>
+            <label className="text-sm font-medium text-foreground/90">
+              First Name
+            </label>
             <input
               {...form.register("firstName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
@@ -100,11 +111,15 @@ export function ContactForm() {
               data-testid="input-first-name"
             />
             {form.formState.errors.firstName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.firstName.message}</p>
+              <p className="text-xs text-destructive mt-1">
+                {form.formState.errors.firstName.message}
+              </p>
             )}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Last Name</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Last Name
+            </label>
             <input
               {...form.register("lastName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
@@ -112,14 +127,18 @@ export function ContactForm() {
               data-testid="input-last-name"
             />
             {form.formState.errors.lastName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.lastName.message}</p>
+              <p className="text-xs text-destructive mt-1">
+                {form.formState.errors.lastName.message}
+              </p>
             )}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Email</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Email
+            </label>
             <input
               {...form.register("email")}
               type="email"
@@ -128,11 +147,15 @@ export function ContactForm() {
               data-testid="input-email"
             />
             {form.formState.errors.email && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
+              <p className="text-xs text-destructive mt-1">
+                {form.formState.errors.email.message}
+              </p>
             )}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Company Name</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Company Name
+            </label>
             <input
               {...form.register("companyName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
@@ -140,39 +163,53 @@ export function ContactForm() {
               data-testid="input-company"
             />
             {form.formState.errors.companyName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.companyName.message}</p>
+              <p className="text-xs text-destructive mt-1">
+                {form.formState.errors.companyName.message}
+              </p>
             )}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Business Type</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Business Type
+            </label>
             <select
               {...form.register("businessType")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-business-type"
             >
-              <option value="" disabled>Select one</option>
+              <option value="" disabled>
+                Select one
+              </option>
               <option value="SaaS (B2B or B2C)">SaaS</option>
               <option value="Ecommerce / DTC">Ecommerce</option>
               <option value="Service-based business">Service-based</option>
               <option value="Agency">Agency</option>
-              <option value="Info / Digital Product">Info / Digital Product</option>
-              <option value="Marketplace / Platform">Marketplace / Platform</option>
+              <option value="Info / Digital Product">
+                Info / Digital Product
+              </option>
+              <option value="Marketplace / Platform">
+                Marketplace / Platform
+              </option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Primary CRM / Automation Platform</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Primary CRM / Automation Platform
+            </label>
             <select
               {...form.register("currentPlatform")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-platform"
             >
-              <option value="" disabled>Select one</option>
+              <option value="" disabled>
+                Select one
+              </option>
               <option value="HubSpot">HubSpot</option>
               <option value="Salesforce">Salesforce</option>
               <option value="Marketo">Marketo</option>
@@ -185,14 +222,18 @@ export function ContactForm() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Monthly Revenue</label>
+            <label className="text-sm font-medium text-foreground/90">
+              Monthly Revenue
+            </label>
             <select
               {...form.register("revenueRange")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-revenue"
             >
-              <option value="" disabled>Select one</option>
+              <option value="" disabled>
+                Select one
+              </option>
               <option value="Under $10k/mo">Under $10k/mo</option>
               <option value="$10k - $50k/mo">$10k - $50k/mo</option>
               <option value="$50k - $100k/mo">$50k - $100k/mo</option>
@@ -202,10 +243,16 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-3">
-          <label className="text-sm font-medium text-foreground/90">Which revenue systems are currently in place? (Select all that apply)</label>
+          <label className="text-sm font-medium text-foreground/90">
+            Which revenue systems are currently in place? (Select all that
+            apply)
+          </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {featureOptions.map((feature) => (
-              <label key={feature} className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors">
+              <label
+                key={feature}
+                className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors"
+              >
                 <input
                   type="checkbox"
                   value={feature}
@@ -220,7 +267,9 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground/90">What is the biggest challenge in your current revenue system?</label>
+          <label className="text-sm font-medium text-foreground/90">
+            What is the biggest challenge in your current revenue system?
+          </label>
           <textarea
             {...form.register("painPoints")}
             rows={4}
@@ -229,7 +278,9 @@ export function ContactForm() {
             data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
-            <p className="text-xs text-destructive mt-1">{form.formState.errors.painPoints.message}</p>
+            <p className="text-xs text-destructive mt-1">
+              {form.formState.errors.painPoints.message}
+            </p>
           )}
         </div>
 
@@ -242,7 +293,8 @@ export function ContactForm() {
             data-testid="checkbox-marketing-opt-in"
           />
           <span className="text-sm text-muted-foreground">
-            I'd like to receive occasional email tips, strategies, and updates from Diamond Ace Growth. I can unsubscribe at any time.
+            I'd like to receive occasional email tips, strategies, and updates
+            from Diamond Ace Growth. I can unsubscribe at any time.
           </span>
         </label>
 

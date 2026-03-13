@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
 import { 
   ArrowRight, BarChart3, Mail, Target, 
-  Zap, XCircle, CheckCircle2, TrendingUp, Users 
+  Zap, MessageSquare, XCircle, CheckCircle2, TrendingUp, Users 
 } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
@@ -69,7 +69,7 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={fadeInUp} className="inline-block mb-6 px-4 py-1.5 rounded-full bg-card border border-border/50 text-sm font-medium text-accent">
-              Stop leaving money on the table
+              Stop losing leads
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
@@ -77,7 +77,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Diamond Ace Growth builds the infrastructure that turns traffic and customer data into predictable sales.
+             Install systems that capture, respond to, and convert every inquiry.
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
@@ -86,7 +86,7 @@ export default function Home() {
                 className="cta-hero px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
-                Get a Free Revenue Audit
+                Get a Free Lead & Revenue Audit
                 <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
               <p className="text-sm text-muted-foreground">
@@ -121,18 +121,23 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                Growth shouldn't rely on <span className="text-highlight">guesswork</span>.
+                Slow responses cost <span className="text-highlight">real revenue</span>.
               </h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                Most businesses focus on getting more traffic, more ads, and more campaigns —
+                while the real problem happens after someone reaches out.
+              </p>
+
               <p className="text-lg text-muted-foreground mb-8">
-                Most brands rely on more ads, more campaigns, and more manual effort — without fixing the underlying revenue system driving conversions.
+                Leads go unanswered. Follow-ups are inconsistent. Opportunities slip through the cracks.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Rising acquisition costs without predictable ROI",
-                  "Disconnected tools and manual follow-up",
-                  "Leads and customers slipping through lifecycle gaps",
-                  "No clear system for turning traffic into long-term revenue"
+                  "Leads sitting unanswered for hours",
+                  "Manual follow-ups that get forgotten",
+                  "Inquiries lost across disconnected tools",
+                  "No clear system for converting leads into customers"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
                     <XCircle className="w-6 h-6 text-destructive shrink-0 mr-3 mt-0.5" />
@@ -150,7 +155,7 @@ export default function Home() {
               <div className="space-y-6">
                 {[
                   { title: "Revenue Architecture", desc: "Mapping the full journey from first click to repeat purchase — eliminating friction and revenue leaks." },
-                  { title: "Lifecycle Automation", desc: "Building systems that capture, nurture, convert, and expand customers automatically." },
+                  { title: "Lead Engagement Automation", desc: "Installing systems that instantly capture, respond to, and follow up with every lead." },
                   { title: "Performance Optimization", desc: "Using data and financial insight to continuously improve revenue efficiency." }
                 ].map((item, i) => (
                   <div key={i} className="flex">
@@ -180,32 +185,37 @@ export default function Home() {
               Full-Stack Revenue Systems
             </h2>
             <p className="text-lg text-muted-foreground">
-              I design and optimize the full revenue ecosystem. From prospect capture to lifecycle automation and performance optimization.
+              I design systems that capture, respond to, and convert every lead — turning inquiries into predictable revenue.
             </p>
           </motion.div>
 
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-              {
-                icon: <Zap className="w-8 h-8 text-accent" />,
-                title: "Revenue Architecture",
-                desc: "Mapping the full customer journey from first touch to repeat purchase — eliminating friction and revenue leaks."
-              },
-              {
-                icon: <Mail className="w-8 h-8 text-accent" />,
-                title: "Lifecycle Automation",
-                desc: "Building systems that capture, nurture, convert, and expand customers automatically."
-              },
-              {
-                icon: <Target className="w-8 h-8 text-accent" />,
-                title: "Revenue Optimization",
-                desc: "Using data, testing, and financial insight to continuously improve conversion efficiency and lifetime value."
-              }
-            ].map((service, i) => (
+                {
+                  icon: <Zap className="w-8 h-8 text-accent" />,
+                  title: "Lead & Revenue Architecture",
+                  desc: "Designing the system that captures every inquiry, routes leads instantly, and ensures no opportunity slips through the cracks."
+                },
+                {
+                  icon: <MessageSquare className="w-8 h-8 text-accent" />,
+                  title: "Lead Response Systems",
+                  desc: "Installing automated systems that instantly respond to new inquiries, qualify prospects, and route leads to booking or sales conversations."
+                },
+                {
+                  icon: <Mail className="w-8 h-8 text-accent" />,
+                  title: "Lifecycle Automation",
+                  desc: "Automating lead response, follow-ups, and customer nurturing so every opportunity moves toward a sale."
+                },
+                {
+                  icon: <Target className="w-8 h-8 text-accent" />,
+                  title: "Revenue Optimization",
+                  desc: "Using data and testing to improve lead conversion, revenue efficiency, and long-term customer value."
+                }
+              ].map((service, i) => (
               <motion.div 
                 key={i} 
                 variants={fadeInUp}
@@ -227,13 +237,19 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
             variants={fadeInUp}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
               The Process
             </h2>
+
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              A simple framework for turning inquiries into predictable revenue.
+            </p>
           </motion.div>
 
           <motion.div 
@@ -245,17 +261,17 @@ export default function Home() {
               {
                 num: "01",
                 title: "Audit",
-                desc: "A structured evaluation of your revenue system to identify conversion leaks, lifecycle gaps, and untapped growth potential."
+                desc: "A structured evaluation of how leads are captured, responded to, and converted — identifying revenue leaks, lifecycle gaps, and missed opportunities."
               },
               {
                 num: "02",
                 title: "Architect",
-                desc: "Design and build scalable revenue systems aligned to your growth model, customer journey, and financial objectives."
+                desc: "Design and implement systems that capture leads, respond instantly, and move prospects through a structured conversion journey."
               },
               {
                 num: "03",
                 title: "Optimize",
-                desc: "Continuous refinement through testing, automation evolution, and performance analysis to increase revenue efficiency and predictability over time."
+                desc: "Continuous refinement through testing, automation improvements, and performance analysis to increase conversion rates and predictable revenue."
               }
             ].map((step, i) => (
               <motion.div 
@@ -347,33 +363,22 @@ export default function Home() {
                 Meet the Operator
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I design scalable revenue systems that connect prospect acquisition, lifecycle automation, and financial performance.
+                I design systems that capture leads, respond instantly, and turn inquiries into predictable revenue.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                My background includes building and optimizing revenue infrastructure at a publicly traded SaaS company — bringing enterprise-level systems thinking to growth-stage teams and founder-led brands. I focus on building systems that make revenue more efficient, measurable, and predictable.
+                My background includes building and optimizing revenue infrastructure at a publicly traded SaaS company — bringing enterprise-level systems thinking to growing businesses that want more consistent leads and better follow-up.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-sm font-bold text-white">Revenue Systems & Lifecycle Architecture</div>
+                  <div className="text-sm font-bold text-white">Lead Conversion & Revenue Systems</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
-                  <div className="text-sm font-bold text-white">Utah County, UT</div>
+                  <div className="text-sm font-bold text-white">Based in Utah County, UT</div>
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div>
-                  <div className="text-sm font-bold text-white">Public SaaS • Ecommerce • Agencies</div>
-                </div>
-                <div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div>
-                  <div className="text-sm font-bold text-white">Project-Based & Fractional</div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div> <div className="text-sm font-bold text-white">Public SaaS • Ecommerce • Agencies</div> </div> <div> <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div> <div className="text-sm font-bold text-white">Project-Based & Fractional</div> </div> </div> </motion.div> </motion.div> </div> </section>
 
       <section id="contact" className="py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
