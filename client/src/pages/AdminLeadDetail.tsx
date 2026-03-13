@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useParams, Link } from "wouter";
 import { adminApi } from "@/lib/admin-api";
 import type { Lead, Activity, Task } from "@shared/schema";
-import { LEAD_STATUSES } from "@shared/schema";
+import { LEAD_STATUSES, STATUS_LABELS } from "@shared/schema";
 import {
   ArrowLeft, Mail, FileText, Phone, MessageSquare, Users,
   CheckCircle2, Circle, Plus, Loader2, CalendarDays, Trash2
@@ -10,7 +10,9 @@ import {
 
 const STATUS_COLORS: Record<string, string> = {
   new: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  contacted: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+  audit_in_progress: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+  audit_sent: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
+  conversation: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
   qualified: "bg-purple-500/20 text-purple-400 border-purple-500/30",
   proposal_sent: "bg-orange-500/20 text-orange-400 border-orange-500/30",
   won: "bg-green-500/20 text-green-400 border-green-500/30",
@@ -150,7 +152,7 @@ export default function AdminLeadDetail() {
             >
               {LEAD_STATUSES.map(s => (
                 <option key={s} value={s} className="bg-background text-white">
-                  {s.replace("_", " ")}
+                  {STATUS_LABELS[s]}
                 </option>
               ))}
             </select>

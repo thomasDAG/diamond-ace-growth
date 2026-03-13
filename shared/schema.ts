@@ -25,8 +25,30 @@ export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
 export type ContactMessage = typeof contactMessages.$inferSelect;
 
 // ── Leads ───────────────────────────────────────────────────────────────────
-export const LEAD_STATUSES = ["new", "contacted", "qualified", "proposal_sent", "won", "lost", "nurture"] as const;
+export const LEAD_STATUSES = [
+  "new",
+  "audit_in_progress",
+  "audit_sent",
+  "conversation",
+  "qualified",
+  "proposal_sent",
+  "won",
+  "lost",
+  "nurture",
+] as const;
 export type LeadStatus = typeof LEAD_STATUSES[number];
+
+export const STATUS_LABELS: Record<LeadStatus, string> = {
+  new: "New",
+  audit_in_progress: "Audit In Progress",
+  audit_sent: "Audit Sent (Waiting)",
+  conversation: "Conversation",
+  qualified: "Qualified",
+  proposal_sent: "Proposal Sent",
+  won: "Won",
+  lost: "Lost",
+  nurture: "Nurture",
+};
 
 export const leads = pgTable("leads", {
   id: serial("id").primaryKey(),
