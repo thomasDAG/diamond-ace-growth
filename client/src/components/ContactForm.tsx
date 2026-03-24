@@ -56,12 +56,15 @@ export function ContactForm() {
   };
 
   const featureOptions = [
-    "Lead Capture",
-    "CRM/Pipeline",
-    "Automated Nurtures",
-    "Sales Automation",
-    "Expansion Flows",
-    "Paid Traffic",
+    "Lead Capture Forms",
+    "CRM / Pipeline",
+    "Automated Follow-Up",
+    "Missed Call Text Back",
+    "Online Booking",
+    "Email Nurture",
+    "SMS Follow-Up",
+    "Paid Ads",
+    "No Real System Yet",
   ];
 
   if (isSuccess) {
@@ -91,19 +94,29 @@ export function ContactForm() {
 
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Apply for a Free Audit
+          Get Your Free Lead Response Audit
         </h3>
-        <p className="text-muted-foreground">
-          Tell me a little about your business and I'll review your lead and follow-up system.
+        <p className="text-muted-foreground mb-5">
+          I'll review how your leads are handled and show you exactly where opportunities are being missed—and how to fix them.
         </p>
+        <ul className="space-y-2">
+          {[
+            "Where leads are slipping through the cracks",
+            "How fast you're actually responding",
+            "Simple fixes to increase conversions",
+          ].map((point) => (
+            <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              First Name
-            </label>
+            <label className="text-sm font-medium text-foreground/90">First Name</label>
             <input
               {...form.register("firstName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
@@ -111,15 +124,11 @@ export function ContactForm() {
               data-testid="input-first-name"
             />
             {form.formState.errors.firstName && (
-              <p className="text-xs text-destructive mt-1">
-                {form.formState.errors.firstName.message}
-              </p>
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.firstName.message}</p>
             )}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Last Name
-            </label>
+            <label className="text-sm font-medium text-foreground/90">Last Name</label>
             <input
               {...form.register("lastName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
@@ -127,18 +136,14 @@ export function ContactForm() {
               data-testid="input-last-name"
             />
             {form.formState.errors.lastName && (
-              <p className="text-xs text-destructive mt-1">
-                {form.formState.errors.lastName.message}
-              </p>
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.lastName.message}</p>
             )}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Email
-            </label>
+            <label className="text-sm font-medium text-foreground/90">Email</label>
             <input
               {...form.register("email")}
               type="email"
@@ -147,105 +152,93 @@ export function ContactForm() {
               data-testid="input-email"
             />
             {form.formState.errors.email && (
-              <p className="text-xs text-destructive mt-1">
-                {form.formState.errors.email.message}
-              </p>
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
             )}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Company Name
-            </label>
+            <label className="text-sm font-medium text-foreground/90">Company Name</label>
             <input
               {...form.register("companyName")}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="Revenue Growth Co"
+              placeholder="Your Business Name"
               data-testid="input-company"
             />
             {form.formState.errors.companyName && (
-              <p className="text-xs text-destructive mt-1">
-                {form.formState.errors.companyName.message}
-              </p>
+              <p className="text-xs text-destructive mt-1">{form.formState.errors.companyName.message}</p>
             )}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Business Type
-            </label>
+            <label className="text-sm font-medium text-foreground/90">What kind of business do you run?</label>
             <select
               {...form.register("businessType")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-business-type"
             >
-              <option value="" disabled>
-                Select one
-              </option>
-              <option value="SaaS (B2B or B2C)">SaaS</option>
-              <option value="Ecommerce / DTC">Ecommerce</option>
-              <option value="Service-based business">Service-based</option>
-              <option value="Agency">Agency</option>
-              <option value="Info / Digital Product">
-                Info / Digital Product
-              </option>
-              <option value="Marketplace / Platform">
-                Marketplace / Platform
-              </option>
+              <option value="" disabled>Select one</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Landscaping">Landscaping</option>
+              <option value="Cleaning Services">Cleaning Services</option>
+              <option value="Pest Control">Pest Control</option>
+              <option value="Home Services">Home Services</option>
+              <option value="Med Spa / Aesthetics">Med Spa / Aesthetics</option>
+              <option value="Health & Wellness">Health &amp; Wellness</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Ecommerce">Ecommerce</option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Primary CRM / Automation Platform
-            </label>
+            <label className="text-sm font-medium text-foreground/90">What tools are you currently using?</label>
             <select
               {...form.register("currentPlatform")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-platform"
             >
-              <option value="" disabled>
-                Select one
-              </option>
+              <option value="" disabled>Select one</option>
+              <option value="None / Manual Follow-Up">None / Manual Follow-Up</option>
+              <option value="GoHighLevel">GoHighLevel</option>
               <option value="HubSpot">HubSpot</option>
               <option value="Salesforce">Salesforce</option>
-              <option value="Marketo">Marketo</option>
+              <option value="ActiveCampaign">ActiveCampaign</option>
               <option value="Klaviyo">Klaviyo</option>
               <option value="Mailchimp">Mailchimp</option>
-              <option value="ActiveCampaign">ActiveCampaign</option>
-              <option value="GoHighLevel">GoHighLevel</option>
-              <option value="None / Early Stage">None / Early Stage</option>
+              <option value="Zapier">Zapier</option>
+              <option value="Calendly">Calendly</option>
+              <option value="Multiple Tools / Mixed Stack">Multiple Tools / Mixed Stack</option>
+              <option value="Not Sure">Not Sure</option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">
-              Monthly Revenue
-            </label>
+            <label className="text-sm font-medium text-foreground/90">Approx. Monthly Revenue</label>
             <select
               {...form.register("revenueRange")}
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-revenue"
             >
-              <option value="" disabled>
-                Select one
-              </option>
-              <option value="Under $10k/mo">Under $10k/mo</option>
-              <option value="$10k - $50k/mo">$10k - $50k/mo</option>
-              <option value="$50k - $100k/mo">$50k - $100k/mo</option>
-              <option value="$100k+/mo">$100k+/mo</option>
+              <option value="" disabled>Select one</option>
+              <option value="Under $10k">Under $10k</option>
+              <option value="$10k-$25k">$10k–$25k</option>
+              <option value="$25k-$50k">$25k–$50k</option>
+              <option value="$50k-$100k">$50k–$100k</option>
+              <option value="$100k-$250k">$100k–$250k</option>
+              <option value="$250k+">$250k+</option>
+              <option value="Prefer not to say">Prefer not to say</option>
             </select>
           </div>
         </div>
 
         <div className="space-y-3">
           <label className="text-sm font-medium text-foreground/90">
-            Which revenue systems are currently in place? (Select all that
-            apply)
+            Which of these do you currently have in place? (Select all that apply)
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {featureOptions.map((feature) => (
@@ -268,23 +261,20 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground/90">
-            What is the biggest challenge in your current revenue system?
+            What's the biggest issue with your lead follow-up right now?
           </label>
           <textarea
             {...form.register("painPoints")}
             rows={4}
             className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
-            placeholder="E.g., Leads not converting, sales cycles too long, poor automation, inconsistent revenue..."
+            placeholder="E.g., We respond too slowly, missed calls don't get followed up, leads go cold, or we don't have a consistent process."
             data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
-            <p className="text-xs text-destructive mt-1">
-              {form.formState.errors.painPoints.message}
-            </p>
+            <p className="text-xs text-destructive mt-1">{form.formState.errors.painPoints.message}</p>
           )}
         </div>
 
-        {/* Marketing opt-in */}
         <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
@@ -293,8 +283,7 @@ export function ContactForm() {
             data-testid="checkbox-marketing-opt-in"
           />
           <span className="text-sm text-muted-foreground">
-            I'd like to receive occasional email tips, strategies, and updates
-            from Diamond Ace Growth. I can unsubscribe at any time.
+            I'd like to receive occasional email tips, strategies, and updates from Diamond Ace Growth. I can unsubscribe at any time.
           </span>
         </label>
 
@@ -311,13 +300,16 @@ export function ContactForm() {
           {isPending ? (
             <>
               <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-              Submitting Application...
+              Submitting...
             </>
           ) : (
-            "Request My Free Audit"
+            "Get My Free Audit"
           )}
         </button>
-        <p className="text-center text-xs text-muted-foreground mt-4">
+        <p className="text-center text-xs text-muted-foreground mt-1">
+          Takes less than 2 minutes. No pressure. Just clarity.
+        </p>
+        <p className="text-center text-xs text-muted-foreground">
           Your information is secure. We never share your data.
         </p>
       </form>
