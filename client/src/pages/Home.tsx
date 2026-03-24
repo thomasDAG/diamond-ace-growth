@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
 import { 
   ArrowRight, BarChart3, Mail, Target, 
-  Zap, MessageSquare, XCircle, CheckCircle2, TrendingUp, Users 
+  Zap, MessageSquare, XCircle, CheckCircle2, TrendingUp, Users, PhoneCall
 } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
@@ -23,18 +23,17 @@ const staggerContainer = {
 };
 
 const MARQUEE_SERVICES = [
-  "Revenue Architecture & Funnel Design",
-  "Lifecycle Automation Systems",
-  "Conversion Infrastructure",
-  "CRM & Data Layer Strategy",
-  "Attribution & Signal Mapping",
-  "Revenue Recovery Systems",
-  "Customer Lifecycle Expansion",
-  "Marketing Automation Buildouts",
-  "Experimentation & Optimization Frameworks",
-  "Fractional Revenue Systems Leadership"
+  "Instant Lead Response Setup",
+  "Missed Call Text-Back Systems",
+  "Speed-to-Lead Optimization",
+  "Automated Follow-Up Sequences",
+  "Lead Capture & Routing Fixes",
+  "Booking & Scheduling Integration",
+  "Stop Losing Leads to Slow Response",
+  "Reactivation Campaigns for Old Leads",
+  "Simple CRM & Pipeline Setup",
+  "Lead Conversion System Install"
 ];
-
 
 export default function Home() {
   return (
@@ -69,15 +68,15 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={fadeInUp} className="inline-block mb-6 px-4 py-1.5 rounded-full bg-card border border-border/50 text-sm font-medium text-accent">
-              Stop losing leads
+              Stop losing high-intent leads
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
-              Engineer a <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Predictable Revenue System</span>
+              Turn Every Lead Into a <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Real Opportunity</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-             Install systems that capture, respond to, and convert every inquiry.
+              We make sure every call, form, and inquiry gets an instant response—so you stop losing business to faster competitors.
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
@@ -86,11 +85,11 @@ export default function Home() {
                 className="cta-hero px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
-                Get a Free Lead & Revenue Audit
+                Get Your Free Lead Response Audit
                 <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
               <p className="text-sm text-muted-foreground">
-                Walk away with clarity — whether we work together or not.
+                Walk away knowing exactly where leads are slipping through the cracks.
               </p>
             </motion.div>
 
@@ -121,23 +120,25 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                Slow responses cost <span className="text-highlight">real revenue</span>.
+                Slow responses are costing you <span className="text-highlight">real opportunities</span>.
               </h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Most businesses focus on getting more traffic, more ads, and more campaigns —
-                while the real problem happens after someone reaches out.
+                Most businesses focus on getting more leads.
+                But the real problem starts after someone reaches out.
               </p>
 
-              <p className="text-lg text-muted-foreground mb-8">
-                Leads go unanswered. Follow-ups are inconsistent. Opportunities slip through the cracks.
+              <p className="text-lg text-muted-foreground mb-4">
+                Calls get missed.
+                Forms sit unanswered.
+                Follow-ups don’t happen.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Leads sitting unanswered for hours",
-                  "Manual follow-ups that get forgotten",
-                  "Inquiries lost across disconnected tools",
-                  "No clear system for converting leads into customers"
+                  "Leads sitting unanswered for 30+ minutes",
+                  "Missed calls that never get followed up",
+                  "No system to consistenly follow up",
+                  "Potential customers choosing faster competitors"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
                     <XCircle className="w-6 h-6 text-destructive shrink-0 mr-3 mt-0.5" />
@@ -149,14 +150,15 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} className="bg-card border border-border p-8 rounded-3xl relative">
               <div className="absolute -top-4 -right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-6">
-                THE SOLUTION
+                HOW WE FIX IT
               </div>
-              <h3 className="text-2xl font-display font-bold text-white mb-6">The Diamond Ace Approach</h3>
+              <h3 className="text-2xl font-display font-bold text-white mb-6">The Lead Response System We Install</h3>
               <div className="space-y-6">
                 {[
-                  { title: "Revenue Architecture", desc: "Mapping the full journey from first click to repeat purchase — eliminating friction and revenue leaks." },
-                  { title: "Lead Engagement Automation", desc: "Installing systems that instantly capture, respond to, and follow up with every lead." },
-                  { title: "Performance Optimization", desc: "Using data and financial insight to continuously improve revenue efficiency." }
+                  { title: "⚡ Instant Lead Response", desc: "Every call, form, or inquiry gets an immediate response—so you’re first to engage, not last." },
+                  { title: "🔁 Automated Follow-Up", desc: "We set up simple follow-ups (text + email) so no lead gets forgotten or falls through the cracks." },
+                  { title: "📅 Conversion-Ready Booking", desc: "We guide leads toward booking or taking action—turning interest into real jobs." },
+            { title: "♻️ Reactivation Campaigns", desc: "We help you re-engage old leads you’ve already paid for—and turn them into new revenue." }
                 ].map((item, i) => (
                   <div key={i} className="flex">
                     <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mr-4">
@@ -182,10 +184,10 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              Full-Stack Revenue Systems
+              What We Actually Set Up For You
             </h2>
             <p className="text-lg text-muted-foreground">
-              I design systems that capture, respond to, and convert every lead — turning inquiries into predictable revenue.
+              Simple, practical systems that make sure every lead gets a response, a follow-up, and a clear path to becoming a customer.
             </p>
           </motion.div>
 
@@ -195,26 +197,26 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-                {
-                  icon: <Zap className="w-8 h-8 text-accent" />,
-                  title: "Lead & Revenue Architecture",
-                  desc: "Designing the system that captures every inquiry, routes leads instantly, and ensures no opportunity slips through the cracks."
-                },
-                {
-                  icon: <MessageSquare className="w-8 h-8 text-accent" />,
-                  title: "Lead Response Systems",
-                  desc: "Installing automated systems that instantly respond to new inquiries, qualify prospects, and route leads to booking or sales conversations."
-                },
-                {
-                  icon: <Mail className="w-8 h-8 text-accent" />,
-                  title: "Lifecycle Automation",
-                  desc: "Automating lead response, follow-ups, and customer nurturing so every opportunity moves toward a sale."
-                },
-                {
-                  icon: <Target className="w-8 h-8 text-accent" />,
-                  title: "Revenue Optimization",
-                  desc: "Using data and testing to improve lead conversion, revenue efficiency, and long-term customer value."
-                }
+            {
+              icon: <Zap className="w-8 h-8 text-accent" />,
+              title: "Instant Lead Response",
+              desc: "Every new lead gets a response within seconds—not hours. Be the first to reply and win more jobs."
+            },
+            {
+              icon: <PhoneCall className="w-8 h-8 text-accent" />,
+              title: "Missed Call Recovery",
+              desc: "Turn missed calls into opportunities with automatic text follow-ups that keep the conversation going."
+            },
+            {
+              icon: <Repeat className="w-8 h-8 text-accent" />,
+              title: "Automated Follow-Up",
+              desc: "No more forgotten leads. We set up simple follow-ups so prospects stay engaged until they book."
+            },
+            {
+              icon: <CalendarCheck className="w-8 h-8 text-accent" />,
+              title: "Booking & Conversion System",
+              desc: "Make it easy for leads to take action with clear next steps and frictionless booking."
+            }
               ].map((service, i) => (
               <motion.div 
                 key={i} 
