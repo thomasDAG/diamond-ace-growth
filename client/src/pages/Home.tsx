@@ -156,14 +156,14 @@ export default function Home() {
               <h3 className="text-2xl font-display font-bold text-white mb-6">The Lead Response System We Install</h3>
               <div className="space-y-6">
                 {[
-                  { title: "⚡ Instant Lead Response", desc: "Every call, form, or inquiry gets an immediate response—so you’re first to engage, not last." },
-                  { title: "🔁 Automated Follow-Up", desc: "We set up simple follow-ups (text + email) so no lead gets forgotten or falls through the cracks." },
-                  { title: "📅 Conversion-Ready Booking", desc: "We guide leads toward booking or taking action—turning interest into real jobs." },
-            { title: "♻️ Reactivation Campaigns", desc: "We help you re-engage old leads you’ve already paid for—and turn them into new revenue." }
+                  { emoji: "⚡", title: "Instant Lead Response", desc: "Every call, form, or inquiry gets an immediate response—so you’re first to engage, not last." },
+                  { emoji: "🔁", title: "Automated Follow-Up", desc: "We set up simple follow-ups (text + email) so no lead gets forgotten or falls through the cracks." },
+                  { emoji: "📅", title: "Conversion-Ready Booking", desc: "We guide leads toward booking or taking action—turning interest into real jobs." },
+            { emoji: "♻️", title: "Reactivation Campaigns", desc: "We help you re-engage old leads you’ve already paid for—and turn them into new revenue." }
                 ].map((item, i) => (
                   <div key={i} className="flex">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mr-4 text-xl leading-none">
-                      {item.title.split(" ")[0]}
+                    <div className="w-10 h-10 flex items-center justify-center shrink-0 mr-4 text-2xl leading-none">
+                      {item.emoji}
                     </div>
                     <div>
                       <h4 className="font-bold text-white mb-1">{item.title}</h4>
