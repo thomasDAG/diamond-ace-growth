@@ -247,11 +247,11 @@ export default function Home() {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              The Process
+              How It Works
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-2xl">
-              A simple framework for turning inquiries into predictable revenue.
+              A simple 3-step system to make sure every lead gets a response, a follow-up, and a clear path to becoming a customer.
             </p>
           </motion.div>
 
@@ -263,18 +263,18 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "Audit",
-                desc: "A structured evaluation of how leads are captured, responded to, and converted — identifying revenue leaks, lifecycle gaps, and missed opportunities."
+                title: "Audit Your Lead Flow",
+                desc: "We look at how leads come in, how fast you respond, and where opportunities are slipping through the cracks—so you know exactly what’s being missed."
               },
               {
                 num: "02",
-                title: "Architect",
-                desc: "Design and implement systems that capture leads, respond instantly, and move prospects through a structured conversion journey."
+                title: "Install the System",
+                desc: "We set up instant responses, follow-ups, and simple booking flows so every lead is handled automatically—without adding more to your plate."
               },
               {
                 num: "03",
-                title: "Optimize",
-                desc: "Continuous refinement through testing, automation improvements, and performance analysis to increase conversion rates and predictable revenue."
+                title: "Improve & Optimize",
+                desc: "We refine what’s working, fix what’s not, and make sure your system continues turning more leads into real customers."
               }
             ].map((step, i) => (
               <motion.div 
@@ -303,10 +303,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              Measured Results.
+              Real Results.
             </h2>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-primary mb-16">
-              Clean Execution.
+              Real Businesses.
             </h2>
           </motion.div>
 
@@ -316,32 +316,42 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {[
-              { 
-                stat: "$5,000+", 
-                metric: "Incremental Sales", 
-                quote: "Thomas is an email marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.", 
-                author: "Mary, Marketing & Branding Strategist" 
-              },
-              { 
-                stat: "High Impact", 
-                metric: "Strategic Execution", 
-                quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.", 
-                author: "Heather, Marketing Specialist" 
-              }
-            ].map((testimonial, i) => (
-              <motion.div 
-                key={i} 
-                variants={fadeInUp}
-                className="bg-background border border-border/50 p-8 rounded-3xl relative"
-              >
-                <div className="mb-6">
-                  <div className="text-4xl font-display font-bold text-primary mb-1">{testimonial.stat}</div>
-                  <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">{testimonial.metric}</div>
-                </div>
-                <p className="text-foreground/90 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                <div className="text-sm font-bold text-white/70">{testimonial.author}</div>
-              </motion.div>
-            ))}
+                { 
+                  stat: "$5,000+", 
+                  metric: "Revenue Generated", 
+                  quote: "Thomas is a marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.", 
+                  author: "Mary, Marketing & Branding Strategist" 
+                },
+                { 
+                  stat: "High Impact", 
+                  metric: "Strategic Execution", 
+                  quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.", 
+                  author: "Heather, Marketing Specialist" 
+                }
+              ].map((testimonial, i) => (
+                <motion.div 
+                  key={i} 
+                  variants={fadeInUp}
+                  className="bg-background border border-border/50 p-8 rounded-3xl relative"
+                >
+                  <div className="mb-6">
+                    <div className="text-4xl font-display font-bold text-primary mb-1">
+                      {testimonial.stat}
+                    </div>
+                    <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      {testimonial.metric}
+                    </div>
+                  </div>
+
+                  <p className="text-foreground/90 italic mb-6 leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
+
+                  <div className="text-sm font-bold text-white/70">
+                    {testimonial.author}
+                  </div>
+                </motion.div>
+              ))}
           </motion.div>
         </div>
       </section>
@@ -363,25 +373,25 @@ export default function Home() {
             
             <motion.div variants={fadeInUp} className="w-full md:w-3/5 p-10 md:p-16 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Meet the Operator
+                Meet Thomas
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I design systems that capture leads, respond instantly, and turn inquiries into predictable revenue.
+                I help service businesses respond to leads faster, follow up more consistently, and turn more inquiries into real customers.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                My background includes building and optimizing revenue infrastructure at a publicly traded SaaS company — bringing enterprise-level systems thinking to growing businesses that want more consistent leads and better follow-up.
+                My background includes building and optimizing lead and lifecycle systems at a publicly traded SaaS company. Now I use that experience to help growing businesses create better follow-up, more booked opportunities, and less revenue slipping through the cracks.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-sm font-bold text-white">Lead Conversion & Revenue Systems</div>
+                  <div className="text-sm font-bold text-white">Lead Response & Conversion Systems</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
                   <div className="text-sm font-bold text-white">Based in Utah County, UT</div>
                 </div>
                 <div>
-      <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div> <div className="text-sm font-bold text-white">Public SaaS • Ecommerce • Agencies</div> </div> <div> <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div> <div className="text-sm font-bold text-white">Project-Based & Fractional</div> </div> </div> </motion.div> </motion.div> </div> </section>
+      <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div> <div className="text-sm font-bold text-white">SaaS • Ecommerce • Service Businesses</div> </div> <div> <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div> <div className="text-sm font-bold text-white">Project-Based & Fractional</div> </div> </div> </motion.div> </motion.div> </div> </section>
 
       <section id="contact" className="py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />

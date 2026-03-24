@@ -1,0 +1,158 @@
+Update the final CTA/contact form section of the Diamond Ace Growth website to align with our new positioning around lead response, follow-up, and conversion systems for service businesses.
+
+IMPORTANT:
+- Preserve the existing styling system, color palette, spacing rhythm, rounded corners, and responsive behavior.
+- Do not break the current form submission flow, CRM Lite integration, database mapping, email notifications, or admin views.
+- Any field label changes, option changes, or value changes must be updated consistently everywhere they are used:
+  - frontend form
+  - validation
+  - form submission payload
+  - CRM Lite record fields
+  - CRM Lite filters/views
+  - any lead detail pages
+  - any admin tables or summary cards
+  - any confirmation emails or internal notifications
+  - any dropdown menus or enums tied to these fields
+- If a displayed label changes but the stored value should remain stable for compatibility, handle that cleanly.
+- After updating, verify the form still saves correctly and that new submissions appear correctly inside CRM Lite with the right field values.
+
+GOAL:
+Make this section feel more valuable, clearer, and more aligned with the promise: helping service businesses stop losing leads because of slow or inconsistent follow-up.
+
+MAKE THESE COPY CHANGES:
+
+1) Section headline
+Change:
+“Apply for a Free Audit”
+To:
+“Get Your Free Lead Response Audit”
+
+2) Section subheadline
+Change:
+“Tell me a little about your business and I'll review your lead and follow-up system.”
+To:
+“I’ll review how your leads are handled and show you exactly where opportunities are being missed—and how to fix them.”
+
+3) Add a short “what you’ll get” value list directly under the subheadline and above the form fields.
+Use 3 simple bullet points:
+- Where leads are slipping through the cracks
+- How fast you’re actually responding
+- Simple fixes to increase conversions
+
+Style this in a way that matches the current site aesthetic. Keep it clean, compact, and premium. Do not make it look like a generic browser bullet list if a better styled version fits the design.
+
+UPDATE FORM FIELD LABELS:
+
+4) Change field labels:
+- “Business Type” → “What kind of business do you run?”
+- “Primary CRM / Automation Platform” → “What tools are you currently using?”
+- “Monthly Revenue” → “Approx. Monthly Revenue”
+
+5) Change the checkbox group heading:
+From:
+“Which revenue systems are currently in place? (Select all that apply)”
+To:
+“Which of these do you currently have in place? (Select all that apply)”
+
+6) Change the long-form question label:
+From:
+“What is the biggest challenge in your current revenue system?”
+To:
+“What’s the biggest issue with your lead follow-up right now?”
+
+7) Update the textarea placeholder so it is aligned with lead response/follow-up problems.
+Use something like:
+“E.g., We respond too slowly, missed calls don’t get followed up, leads go cold, or we don’t have a consistent process.”
+
+UPDATE BUTTON + SUPPORTING TEXT:
+
+8) Change the CTA button text:
+From:
+“Request My Free Audit”
+To:
+“Get My Free Audit”
+
+9) Add a small reassurance line near the button:
+“Takes less than 2 minutes. No pressure. Just clarity.”
+
+10) Keep or lightly refine the privacy/security note so it still feels trustworthy and low-friction.
+
+UPDATE DROPDOWN OPTIONS TO MATCH NEW POSITIONING:
+Review all current dropdowns tied to this form and make sure their options reflect the new lead-response/service-business positioning instead of broad revenue-systems consulting language.
+
+For the “What kind of business do you run?” dropdown, use practical service-business-friendly options like:
+- HVAC
+- Plumbing
+- Roofing
+- Landscaping
+- Cleaning Services
+- Pest Control
+- Home Services
+- Med Spa / Aesthetics
+- Health & Wellness
+- Professional Services
+- Ecommerce
+- Other
+
+For the “What tools are you currently using?” dropdown, use options like:
+- None / Manual Follow-Up
+- GoHighLevel
+- HubSpot
+- Salesforce
+- ActiveCampaign
+- Klaviyo
+- Mailchimp
+- Zapier
+- Calendly
+- Multiple Tools / Mixed Stack
+- Not Sure
+- Other
+
+For the “Approx. Monthly Revenue” dropdown, keep it simple and practical for qualification:
+- Under $10k
+- $10k–$25k
+- $25k–$50k
+- $50k–$100k
+- $100k–$250k
+- $250k+
+- Prefer not to say
+
+CHECKBOX OPTIONS:
+Review the current checkbox options and update them to better reflect lead response and conversion systems. Replace overly broad revenue-ops language with practical operational systems. Use options like:
+- Lead Capture Forms
+- CRM / Pipeline
+- Automated Follow-Up
+- Missed Call Text Back
+- Online Booking
+- Email Nurture
+- SMS Follow-Up
+- Paid Ads
+- No Real System Yet
+
+Make sure these checkbox labels also update consistently anywhere they appear in CRM Lite, filters, tables, exports, or admin views.
+
+CRM LITE / DATA MODEL REQUIREMENTS:
+- Ensure the CRM Lite continues to store and display these updated fields correctly.
+- Update any enums, option lists, select values, display mappings, and filtering logic so the admin side reflects the new options.
+- Preserve backward compatibility for older records if possible.
+- If older values exist, do not break rendering. Map or display them gracefully.
+- If there are analytics, counts, or dashboard widgets based on old option names, update them accordingly.
+
+UX REQUIREMENTS:
+- Keep the form easy to scan.
+- Maintain strong mobile responsiveness.
+- Preserve accessibility and label-input associations.
+- Make sure the new bullet/value section and reassurance text feel visually integrated.
+- Keep the whole section polished, high-trust, and conversion-focused.
+
+FINAL QA:
+After making changes, confirm:
+1. The form renders correctly on desktop and mobile.
+2. All dropdowns show the new options.
+3. Submission still works.
+4. CRM Lite receives and displays the updated values correctly.
+5. Any filters, detail views, and admin displays using these fields still work.
+6. No broken types, undefined values, or stale labels remain anywhere in the app.
+7. Existing old leads in CRM Lite still render safely.
+
+Please make the code changes directly and summarize exactly what you changed.
