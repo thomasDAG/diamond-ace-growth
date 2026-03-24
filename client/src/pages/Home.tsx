@@ -227,7 +227,7 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-background flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3 min-h-[3.5rem] flex items-start">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
