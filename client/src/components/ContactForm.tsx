@@ -82,7 +82,7 @@ export function ContactForm() {
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
           Thank you for reaching out. I am reviewing your details and will be in
-          touch within 24 hours to schedule your free audit.
+          touch soon to schedule your free audit.
         </p>
       </motion.div>
     );
@@ -101,9 +101,9 @@ export function ContactForm() {
         </p>
         <ul className="space-y-2">
           {[
-            "Where leads are slipping through the cracks",
-            "How fast you're actually responding",
-            "Simple fixes to increase conversions",
+            "Where you're losing real opportunities",
+            "How quickly you're responding (and where it's costing you)",
+            "Simple changes to turn more leads into customers",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -178,7 +178,7 @@ export function ContactForm() {
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-business-type"
             >
-              <option value="" disabled>Select one</option>
+              <option value="" disabled>Select your answer</option>
               <option value="HVAC">HVAC</option>
               <option value="Plumbing">Plumbing</option>
               <option value="Roofing">Roofing</option>
@@ -201,7 +201,7 @@ export function ContactForm() {
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-platform"
             >
-              <option value="" disabled>Select one</option>
+              <option value="" disabled>Select your answer</option>
               <option value="None / Manual Follow-Up">None / Manual Follow-Up</option>
               <option value="GoHighLevel">GoHighLevel</option>
               <option value="HubSpot">HubSpot</option>
@@ -267,7 +267,7 @@ export function ContactForm() {
             {...form.register("painPoints")}
             rows={4}
             className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
-            placeholder="E.g., We respond too slowly, missed calls don't get followed up, leads go cold, or we don't have a consistent process."
+            placeholder="E.g., We respond too slowly, missed calls don’t get followed up, or leads go cold before we reach them…"
             data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
@@ -303,7 +303,7 @@ export function ContactForm() {
               Submitting...
             </>
           ) : (
-            "Get My Free Audit"
+            "Get My Free Lead Audit"
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">
