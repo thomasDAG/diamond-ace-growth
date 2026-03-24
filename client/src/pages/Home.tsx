@@ -4,7 +4,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
 import { 
   ArrowRight, BarChart3, Mail, Target, 
-  Zap, MessageSquare, XCircle, CheckCircle2, TrendingUp, Users, PhoneCall
+  Zap, MessageSquare, XCircle, CheckCircle2, TrendingUp, Users,
+  PhoneCall, Repeat, CalendarCheck
 } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
