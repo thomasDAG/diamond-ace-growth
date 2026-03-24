@@ -162,8 +162,8 @@ export default function Home() {
             { title: "♻️ Reactivation Campaigns", desc: "We help you re-engage old leads you’ve already paid for—and turn them into new revenue." }
                 ].map((item, i) => (
                   <div key={i} className="flex">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mr-4">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mr-4 text-xl leading-none">
+                      {item.title.split(" ")[0]}
                     </div>
                     <div>
                       <h4 className="font-bold text-white mb-1">{item.title}</h4>
