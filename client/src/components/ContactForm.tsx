@@ -171,7 +171,7 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">What kind of business do you run?</label>
+            <label className="text-sm font-medium text-foreground/90">What type of business do you run?</label>
             <select
               {...form.register("businessType")}
               defaultValue=""
@@ -185,12 +185,11 @@ export function ContactForm() {
               <option value="Landscaping">Landscaping</option>
               <option value="Cleaning Services">Cleaning Services</option>
               <option value="Pest Control">Pest Control</option>
-              <option value="Home Services">Home Services</option>
               <option value="Med Spa / Aesthetics">Med Spa / Aesthetics</option>
               <option value="Health & Wellness">Health &amp; Wellness</option>
               <option value="Professional Services">Professional Services</option>
               <option value="Ecommerce">Ecommerce</option>
-              <option value="Other">Other</option>
+              <option value="Other (Small Business / Service Company)">Other (Small Business / Service Company)</option>
             </select>
           </div>
           <div className="space-y-2">
