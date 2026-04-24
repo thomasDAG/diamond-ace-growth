@@ -195,7 +195,10 @@ export default function AdminLeadDetail() {
                 ["Marketing Opt-In", lead.marketingOptIn ? "Yes" : "No"],
                 ["Lifecycle", lead.lifecycle],
                 ["Follow-up Date", lead.nextFollowUpDate ?? "—"],
-                ["Submitted", lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "—"],
+                ["First submitted", lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "—"],
+                ...(lead.updatedAt && lead.createdAt && new Date(lead.updatedAt).getTime() !== new Date(lead.createdAt).getTime()
+                  ? [["Last submitted", new Date(lead.updatedAt).toLocaleString()]]
+                  : []),
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between text-sm gap-4">
                   <span className="text-muted-foreground shrink-0">{label}</span>

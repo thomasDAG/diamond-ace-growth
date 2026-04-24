@@ -147,7 +147,7 @@ export default function AdminLeads() {
                   <th className="text-left px-6 py-3 font-medium hidden sm:table-cell">Company</th>
                   <th className="text-left px-6 py-3 font-medium hidden md:table-cell">Revenue</th>
                   <th className="text-left px-6 py-3 font-medium">Status</th>
-                  <th className="text-left px-6 py-3 font-medium hidden lg:table-cell">Submitted</th>
+                  <th className="text-left px-6 py-3 font-medium hidden lg:table-cell">Last Active</th>
                   <th className="px-6 py-3"></th>
                 </tr>
               </thead>
@@ -169,7 +169,7 @@ export default function AdminLeads() {
                       <InlineStatusSelect lead={lead} onUpdate={handleStatusUpdate} />
                     </td>
                     <td className="px-6 py-4 hidden lg:table-cell text-xs text-muted-foreground">
-                      {lead.createdAt ? new Date(lead.createdAt).toLocaleDateString() : "—"}
+                      {lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : "—"}
                     </td>
                     <td className="px-6 py-4">
                       <ChevronRight className="w-4 h-4 text-primary" data-testid={`link-lead-${lead.id}`} />
