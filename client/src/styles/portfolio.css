@@ -1,5 +1,5 @@
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .portfolio-page *, .portfolio-page *::before, .portfolio-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     .portfolio-page {
       --background:   #223239;
@@ -24,7 +24,7 @@
       --serif:  'Outfit', sans-serif;
     }
 
-    .portfolio-page h1, h2, h3, h4, h5, h6 {
+    .portfolio-page h1, .portfolio-page h2, .portfolio-page h3, .portfolio-page h4, .portfolio-page h5, .portfolio-page h6 {
       font-family: var(--display);
     }
 
