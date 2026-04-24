@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
+  const alwaysSolid = location === "/ai-portfolio";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +31,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-nav py-3 shadow-lg" : "bg-transparent py-5"
+        isScrolled || alwaysSolid ? "glass-nav py-3 shadow-lg" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
