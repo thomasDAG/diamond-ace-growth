@@ -1018,10 +1018,34 @@
 
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 760px) {
-      /* Global spacing */
-      .hero-geo { display: none; }
-      .hero-content { padding: 80px 20px 64px; }
+      /* Hero — collapse to single column, overlay particle canvas behind text */
+      #hero { grid-template-columns: 1fr; }
+      .hero-content {
+        padding: 100px 24px 72px;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        z-index: 3;
+      }
       .hero-title { white-space: normal; }
+      .hero-geo {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.45;
+        pointer-events: none;
+        z-index: 1;
+      }
+      /* Nav buttons — 2×2 grid */
+      .hero-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        flex-direction: unset;
+      }
+      .hero-nav-btn { text-align: center; }
 
       /* About */
       .about-inner { grid-template-columns: 1fr; min-height: auto; }
@@ -1047,9 +1071,9 @@
     /* ── EXTRA SMALL (≤480px) ────────────────────── */
     @media (max-width: 480px) {
       .portfolio-page section { padding-top: 48px; padding-bottom: 48px; }
-      .hero-content { padding: 64px 16px 48px; }
-      .hero-nav { flex-direction: column; }
-      .hero-nav-btn { text-align: center; }
+      .hero-content { padding: 88px 20px 56px; }
+      .hero-nav { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .hero-nav-btn { font-size: 11px; padding: 10px 14px; text-align: center; }
       .about-photo-wrap { height: 240px; }
       .about-photo { object-position: center 30%; }
       .work-card { padding: 24px 20px; }
