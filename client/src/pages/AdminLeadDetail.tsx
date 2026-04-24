@@ -42,12 +42,10 @@ export default function AdminLeadDetail() {
   const [tab, setTab] = useState<Tab>("overview");
   const [loading, setLoading] = useState(true);
 
-  // Activity form
   const [activityType, setActivityType] = useState("note");
   const [activityNote, setActivityNote] = useState("");
   const [activitySaving, setActivitySaving] = useState(false);
 
-  // Task form
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDue, setTaskDue] = useState("");
   const [taskSaving, setTaskSaving] = useState(false);
@@ -131,19 +129,18 @@ export default function AdminLeadDetail() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <div className="border-b border-border/30 bg-card/30">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-4">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 py-4 flex items-center gap-4">
           <Link href="/admin/leads">
             <a className="text-muted-foreground hover:text-white transition-colors" data-testid="link-back">
               <ArrowLeft className="w-5 h-5" />
             </a>
           </Link>
-          <div className="flex-1">
-            <h1 className="font-display font-bold text-white">{lead.firstName} {lead.lastName}</h1>
-            <p className="text-sm text-muted-foreground">{lead.companyName} · {lead.email}</p>
+          <div className="flex-1 min-w-0">
+            <h1 className="font-display font-bold text-white truncate">{lead.firstName} {lead.lastName}</h1>
+            <p className="text-sm text-muted-foreground truncate">{lead.companyName} · {lead.email}</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <select
               value={lead.status}
               onChange={e => handleStatusChange(e.target.value)}
@@ -168,8 +165,7 @@ export default function AdminLeadDetail() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-6">
-        {/* Tabs */}
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-6">
         <div className="flex gap-1 mb-6 bg-card border border-border/30 rounded-xl p-1 w-fit">
           {(["overview", "timeline", "tasks"] as Tab[]).map(t => (
             <button
@@ -185,7 +181,6 @@ export default function AdminLeadDetail() {
           ))}
         </div>
 
-        {/* Overview */}
         {tab === "overview" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card border border-border/30 rounded-2xl p-6 space-y-4">
@@ -194,7 +189,7 @@ export default function AdminLeadDetail() {
                 ["Email", lead.email],
                 ["Company", lead.companyName],
                 ["Business Type", lead.businessType],
-                ["Platform", lead.currentPlatform],
+                ["Primary Tool", lead.currentPlatform],
                 ["Revenue Range", lead.revenueRange],
                 ["Lead Source", lead.leadSource ?? "—"],
                 ["Marketing Opt-In", lead.marketingOptIn ? "Yes" : "No"],
@@ -204,20 +199,20 @@ export default function AdminLeadDetail() {
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between text-sm gap-4">
                   <span className="text-muted-foreground shrink-0">{label}</span>
-                  <span className="text-foreground/90 text-right">{value as string}</span>
+                  <span className="text-foreground/90 text-right break-all">{value as string}</span>
                 </div>
               ))}
             </div>
 
             <div className="space-y-6">
               <div className="bg-card border border-border/30 rounded-2xl p-6">
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Pain Points</h3>
+                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Biggest Ops Gap</h3>
                 <p className="text-sm text-foreground/80 leading-relaxed">{lead.painPoints}</p>
               </div>
 
               {features.length > 0 && (
                 <div className="bg-card border border-border/30 rounded-2xl p-6">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Implemented Features</h3>
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Systems In Place</h3>
                   <div className="flex flex-wrap gap-2">
                     {features.map(f => (
                       <span key={f} className="text-xs bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full">
@@ -231,14 +226,12 @@ export default function AdminLeadDetail() {
           </div>
         )}
 
-        {/* Timeline */}
         {tab === "timeline" && (
           <div className="space-y-6">
-            {/* Log activity form */}
             <div className="bg-card border border-border/30 rounded-2xl p-6">
               <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Log Activity</h3>
               <form onSubmit={handleAddActivity} className="space-y-3">
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <select
                     value={activityType}
                     onChange={e => setActivityType(e.target.value)}
@@ -261,7 +254,7 @@ export default function AdminLeadDetail() {
                   <button
                     type="submit"
                     disabled={activitySaving || !activityNote.trim()}
-                    className="px-4 py-2 rounded-xl bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2"
+                    className="px-4 py-2 rounded-xl bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2 justify-center"
                     data-testid="button-add-activity"
                   >
                     {activitySaving ? <Loader2 className="w-3 h-3 animate-spin" /> : <Plus className="w-3 h-3" />}
@@ -271,7 +264,6 @@ export default function AdminLeadDetail() {
               </form>
             </div>
 
-            {/* Timeline entries */}
             {activities.length === 0 && (
               <p className="text-center text-muted-foreground text-sm py-8">No activities yet.</p>
             )}
@@ -282,7 +274,7 @@ export default function AdminLeadDetail() {
                     {ACTIVITY_ICONS[act.type] ?? <MessageSquare className="w-4 h-4 text-muted-foreground" />}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
                       <span className="text-xs font-medium text-foreground/60 capitalize">{act.type.replace("_", " ")}</span>
                       <span className="text-xs text-muted-foreground shrink-0">
                         {act.createdAt ? new Date(act.createdAt).toLocaleString() : ""}
@@ -296,13 +288,11 @@ export default function AdminLeadDetail() {
           </div>
         )}
 
-        {/* Tasks */}
         {tab === "tasks" && (
           <div className="space-y-6">
-            {/* Add task form */}
             <div className="bg-card border border-border/30 rounded-2xl p-6">
               <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">New Task</h3>
-              <form onSubmit={handleAddTask} className="flex gap-3">
+              <form onSubmit={handleAddTask} className="flex flex-col sm:flex-row gap-3">
                 <input
                   value={taskTitle}
                   onChange={e => setTaskTitle(e.target.value)}
@@ -320,7 +310,7 @@ export default function AdminLeadDetail() {
                 <button
                   type="submit"
                   disabled={taskSaving || !taskTitle.trim()}
-                  className="px-4 py-2 rounded-xl bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2"
+                  className="px-4 py-2 rounded-xl bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2 justify-center"
                   data-testid="button-add-task"
                 >
                   {taskSaving ? <Loader2 className="w-3 h-3 animate-spin" /> : <Plus className="w-3 h-3" />}
@@ -355,7 +345,7 @@ export default function AdminLeadDetail() {
                     {task.title}
                   </span>
                   {task.dueDate && (
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground shrink-0">
                       <CalendarDays className="w-3 h-3" />
                       {task.dueDate}
                     </div>

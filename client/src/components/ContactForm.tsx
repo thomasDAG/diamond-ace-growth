@@ -55,16 +55,15 @@ export function ContactForm() {
     }
   };
 
-  const featureOptions = [
+  const systemOptions = [
+    "CRM (any kind)",
+    "Marketing Automation",
+    "Email Sequences or Flows",
     "Lead Capture Forms",
-    "CRM / Pipeline",
-    "Automated Follow-Up",
-    "Missed Call Text Back",
-    "Online Booking",
-    "Email Nurture",
-    "SMS Follow-Up",
-    "Paid Ads",
-    "No Real System Yet",
+    "Pipeline Tracking",
+    "Analytics or Reporting Setup",
+    "Paid Ads Running",
+    "None / Starting from scratch",
   ];
 
   if (isSuccess) {
@@ -81,8 +80,7 @@ export function ContactForm() {
           Audit Request Received
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for reaching out. I am reviewing your details and will be in
-          touch soon to schedule your free audit.
+          Thank you for reaching out. I am reviewing your details and will be in touch soon to schedule your free audit.
         </p>
       </motion.div>
     );
@@ -94,16 +92,16 @@ export function ContactForm() {
 
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Get Your Free Lead Response Audit
+          Get Your Free Ops Audit
         </h3>
         <p className="text-muted-foreground mb-5">
-          I'll review how your leads are handled and show you exactly where opportunities are being missed—and how to fix them.
+          I'll review your current marketing ops setup and show you exactly where the gaps are and how to fix them.
         </p>
         <ul className="space-y-2">
           {[
-            "Where you're losing real opportunities",
-            "How quickly you're responding (and where it's costing you)",
-            "Simple changes to turn more leads into customers",
+            "Where your biggest ops gaps and bottlenecks are",
+            "Which tools and automations are working against you",
+            "A clear starting point for building your ops infrastructure",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -179,21 +177,18 @@ export function ContactForm() {
               data-testid="select-business-type"
             >
               <option value="" disabled>Select your answer</option>
-              <option value="HVAC">HVAC</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Roofing">Roofing</option>
-              <option value="Landscaping">Landscaping</option>
-              <option value="Cleaning Services">Cleaning Services</option>
-              <option value="Pest Control">Pest Control</option>
-              <option value="Med Spa / Aesthetics">Med Spa / Aesthetics</option>
-              <option value="Health & Wellness">Health &amp; Wellness</option>
-              <option value="Professional Services">Professional Services</option>
+              <option value="SaaS / Software">SaaS / Software</option>
               <option value="Ecommerce">Ecommerce</option>
-              <option value="Other (Small Business / Service Company)">Other (Small Business / Service Company)</option>
+              <option value="Agency or Consulting">Agency or Consulting</option>
+              <option value="Health and Wellness">Health and Wellness</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Home Services">Home Services</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">What tools are you currently using?</label>
+            <label className="text-sm font-medium text-foreground/90">What is your primary marketing or CRM tool?</label>
             <select
               {...form.register("currentPlatform")}
               defaultValue=""
@@ -201,16 +196,16 @@ export function ContactForm() {
               data-testid="select-platform"
             >
               <option value="" disabled>Select your answer</option>
-              <option value="None / Manual Follow-Up">None / Manual Follow-Up</option>
+              <option value="None / Manual">None / Manual</option>
               <option value="GoHighLevel">GoHighLevel</option>
               <option value="HubSpot">HubSpot</option>
               <option value="Salesforce">Salesforce</option>
               <option value="ActiveCampaign">ActiveCampaign</option>
               <option value="Klaviyo">Klaviyo</option>
               <option value="Mailchimp">Mailchimp</option>
-              <option value="Zapier">Zapier</option>
-              <option value="Calendly">Calendly</option>
-              <option value="Multiple Tools / Mixed Stack">Multiple Tools / Mixed Stack</option>
+              <option value="Pipedrive">Pipedrive</option>
+              <option value="Zoho">Zoho</option>
+              <option value="Multiple / Mixed Stack">Multiple / Mixed Stack</option>
               <option value="Not Sure">Not Sure</option>
               <option value="Other">Other</option>
             </select>
@@ -225,10 +220,10 @@ export function ContactForm() {
             >
               <option value="" disabled>Select one</option>
               <option value="Under $10k">Under $10k</option>
-              <option value="$10k-$25k">$10k–$25k</option>
-              <option value="$25k-$50k">$25k–$50k</option>
-              <option value="$50k-$100k">$50k–$100k</option>
-              <option value="$100k-$250k">$100k–$250k</option>
+              <option value="$10k-$25k">$10k-$25k</option>
+              <option value="$25k-$50k">$25k-$50k</option>
+              <option value="$50k-$100k">$50k-$100k</option>
+              <option value="$100k-$250k">$100k-$250k</option>
               <option value="$250k+">$250k+</option>
               <option value="Prefer not to say">Prefer not to say</option>
             </select>
@@ -237,22 +232,22 @@ export function ContactForm() {
 
         <div className="space-y-3">
           <label className="text-sm font-medium text-foreground/90">
-            Which of these do you currently have in place? (Select all that apply)
+            Which of these does your business currently have? (Select all that apply)
           </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {featureOptions.map((feature) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {systemOptions.map((option) => (
               <label
-                key={feature}
+                key={option}
                 className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors"
               >
                 <input
                   type="checkbox"
-                  value={feature}
+                  value={option}
                   {...form.register("implementedFeatures")}
-                  className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border"
-                  data-testid={`checkbox-${feature.replace(/\s+/g, "-").toLowerCase()}`}
+                  className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border shrink-0"
+                  data-testid={`checkbox-${option.replace(/[\s/()]/g, "-").toLowerCase()}`}
                 />
-                <span className="text-sm text-foreground/80">{feature}</span>
+                <span className="text-sm text-foreground/80">{option}</span>
               </label>
             ))}
           </div>
@@ -260,13 +255,13 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground/90">
-            What's the biggest issue with your lead follow-up right now?
+            What is the biggest gap or bottleneck in your marketing ops right now?
           </label>
           <textarea
             {...form.register("painPoints")}
             rows={4}
             className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
-            placeholder="E.g., We respond too slowly, missed calls don’t get followed up, or leads go cold before we reach them…"
+            placeholder="For example: our CRM is a mess, automations are broken, our tools do not connect, or we have no real system at all..."
             data-testid="textarea-pain-points"
           />
           {form.formState.errors.painPoints && (
@@ -278,7 +273,7 @@ export function ContactForm() {
           <input
             type="checkbox"
             {...form.register("marketingOptIn")}
-            className="w-4 h-4 mt-0.5 rounded text-primary focus:ring-primary bg-background border-border"
+            className="w-4 h-4 mt-0.5 rounded text-primary focus:ring-primary bg-background border-border shrink-0"
             data-testid="checkbox-marketing-opt-in"
           />
           <span className="text-sm text-muted-foreground">
@@ -293,7 +288,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
+          className="w-full py-4 min-h-[52px] rounded-xl font-bold text-lg bg-gradient-to-r from-primary to-primary/80 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
           data-testid="button-submit"
         >
           {isPending ? (
@@ -302,7 +297,7 @@ export function ContactForm() {
               Submitting...
             </>
           ) : (
-            "Get My Free Lead Audit"
+            "Get My Free Ops Audit"
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">

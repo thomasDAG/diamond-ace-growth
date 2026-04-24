@@ -1,0 +1,249 @@
+I need you to update the copy, contact form, and CRM field mapping on my consultancy website (Diamond Ace Growth) to reposition it from a lead response specialist to a Fractional Marketing Operations consultant.
+
+Do NOT change any design, layout, animations, colors, button styles, emojis, or visual structure unless specifically instructed below. Only update text content, form fields, dropdown options, grid layout for the services section, and CRM field mappings.
+
+Also: do NOT use em dashes (--) anywhere in any copy. Use commas, periods, or rewrite the sentence to avoid them entirely.
+
+---
+
+## MOBILE OPTIMIZATION
+
+Review every section for mobile responsiveness. Ensure the following throughout the entire site:
+
+- All section padding and font sizes scale correctly on screens under 768px
+- No text overflows its container on small screens
+- All buttons are full-width on mobile and have a minimum touch target height of 48px
+- All grid layouts collapse to a single column on mobile (unless already doing so)
+- The contact form fields stack vertically in a single column on mobile
+- The checkbox group in the contact form wraps cleanly on small screens, with each checkbox label staying on one line or wrapping gracefully
+- The navbar collapses properly and the mobile menu is fully functional and accessible
+- The marquee/ticker strip does not cause horizontal overflow on mobile
+- Testimonial cards are readable and not clipped on small screens
+- The hero headline font size scales down gracefully so it does not overflow on phones (suggested: clamp or responsive text sizing)
+- All images and emoji icons are not oversized on mobile
+
+---
+
+## 1. BROWSER TAB / META
+
+- Page title: "Diamond Ace Growth | Fractional Marketing Operations"
+- Meta description: "Fractional marketing ops for growing businesses. I build and run the systems your marketing and revenue engine needs: CRM, automation, email, and ops infrastructure."
+
+---
+
+## 2. NAVIGATION
+
+- Keep all nav links as-is: Home, Problem, Services, Process, Proof, About
+- CTA button: Change "Get a Free Audit" to "Get a Free Ops Audit"
+
+---
+
+## 3. HERO SECTION
+
+- Eyebrow pill tag: Change "Stop losing high-intent leads" to "Fractional Marketing Operations"
+- Main headline line 1 (white text): Change "Turn Every Lead Into a" to "Your Marketing Ops,"
+- Main headline line 2 (gradient text with Tailwind classes `text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent`): Change "Real Opportunity" to "Finally Built Right"
+  - IMPORTANT: Preserve the exact gradient styling on this line. The span must keep the classes: `text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent`
+- Sub-headline: Change to "I embed as your fractional marketing ops partner, building the systems, automations, and infrastructure your business needs to grow without the overhead of a full-time hire."
+- Hero CTA button: Change "Get Your Free Lead Response Audit" to "Get Your Free Ops Audit"
+- Sub-CTA text below button: Change "Walk away knowing exactly where leads are slipping through the cracks." to "Walk away with a clear picture of what's broken, what's missing, and exactly how to fix it."
+
+---
+
+## 4. MARQUEE / TICKER STRIP
+
+Replace all ticker items with:
+CRM Setup and Optimization • Marketing Automation Builds • Lead and Lifecycle Systems • Email Flow Architecture • Pipeline and Revenue Ops • Fractional Marketing Ops • Stack Audit and Cleanup • Campaign Operations • Systems Integration • Reporting and Analytics Infrastructure • Onboarding Automation • Retention and Reactivation Flows
+
+---
+
+## 5. PROBLEM SECTION
+
+- Section headline: Change to "Your marketing stack is holding you back."
+  - In this headline, apply the `.text-highlight` class to the words "holding you back" so they render with the yellow accent color and the subtle underline highlight effect (matching the existing `.text-highlight` CSS already in the stylesheet: `color: hsl(var(--accent))`, `font-weight: 600`, and the `::after` pseudo-element underline at `background-color: hsl(var(--accent) / 0.2)`, `rotate: -1deg`).
+- Sub-copy: Change to "Most growing businesses have the ambition but not the infrastructure. Tools are scattered, automations are broken, no one owns the system, and the team is patching problems instead of building for scale."
+- Replace the four bullet pain points with:
+  - Your CRM is a mess and no one trusts the data
+  - Automations are broken, patched, or just never built
+  - Marketing and sales tools do not talk to each other
+  - No one owns the ops layer, so it falls through the cracks
+
+---
+
+## 6. "HOW WE FIX IT" SERVICES SUMMARY CARD
+
+- Keep the "HOW WE FIX IT" badge
+- Card headline: Change "The Lead Response System We Install" to "The Ops Infrastructure We Build"
+- Replace the 4 service items with these 5, keeping the emoji format:
+
+  ⚙️ CRM and Pipeline Architecture
+  We design, build, and clean up your CRM so your data is reliable and your team actually uses it.
+
+  🔁 Marketing Automation
+  We build the automations that run your lead, lifecycle, and customer journeys without manual babysitting.
+
+  📧 Email Flow Design and Build
+  From welcome sequences to re-engagement campaigns, we write and deploy emails that convert.
+
+  🔗 Stack Integration and Ops Cleanup
+  We connect your tools, remove the redundancies, and make sure your marketing stack works as one system.
+
+  ♻️ Reactivation and Retention Campaigns
+  We re-engage cold leads and past customers, turning sunk ad spend into new revenue.
+
+---
+
+## 7. "WHAT WE ACTUALLY SET UP FOR YOU" SERVICES DETAIL SECTION
+
+Replace the current 4-card grid with 5 cards. The current grid uses `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4`. Update it as follows:
+
+GRID LAYOUT CHANGE: Use a layout that displays cleanly on all screen sizes. Recommended approach:
+- On mobile (default): single column, `grid-cols-1`
+- On medium screens: two columns, `md:grid-cols-2`
+- On large screens: use a 2-row layout where the first row has 3 cards and the second row has 2 cards centered. Implement this by either:
+  (a) Using `lg:grid-cols-3` for the full grid and centering the last two cards using `lg:col-start-2` and CSS centering on the last row, OR
+  (b) Splitting into two sub-grids: a `grid-cols-3` top row and a `grid-cols-2` bottom row with `max-w` and `mx-auto` applied so the bottom row is centered under the top row
+- The goal is that on large screens the layout looks intentional and balanced, NOT like a broken 4-column grid with one orphaned card
+
+Card content (preserve all existing card styling, hover effects, and border treatment):
+
+Card 1 - CRM and Pipeline Setup
+We build your CRM from scratch or clean up what is already there so your pipeline reflects reality and your team has a system they trust.
+
+Card 2 - Marketing Automation Builds
+We design and deploy the automations that handle your lead flow, nurture sequences, and internal ops so nothing falls through the cracks.
+
+Card 3 - Email Architecture and Deployment
+We build complete email programs including welcome flows, drip sequences, and re-engagement campaigns with copy and deployment included.
+
+Card 4 - Stack Integration and Cleanup
+We audit your full tool stack, identify the gaps and redundancies, and connect everything so your data flows cleanly across systems.
+
+Card 5 - Reactivation and Retention
+We build campaigns that bring back old leads and past customers, getting more revenue from the audience you have already built.
+
+---
+
+## 8. PROCESS SECTION
+
+- Section headline: Keep "How It Works"
+- Sub-copy: Change to "A simple 3-step engagement model that gets your ops infrastructure built fast and built right."
+- Step 01 title: Change "Audit Your Lead Flow" to "Audit Your Systems"
+- Step 01 copy: Change to "We map your current stack, automations, and ops workflows to find what's broken, what's missing, and where the biggest opportunities are."
+- Step 02 title: Change "Install the System" to "Build the Infrastructure"
+- Step 02 copy: Change to "We design and deploy the CRM, automation flows, email programs, and integrations your business needs, fast and without the agency markup."
+- Step 03 title: Keep "Improve and Optimize"
+- Step 03 copy: Change to "We monitor performance, iterate on what is working, and keep refining your ops as your business grows."
+
+---
+
+## 9. PROOF / TESTIMONIALS SECTION
+
+Keep all testimonials exactly as-is. Do not change any testimonial content.
+
+---
+
+## 10. ABOUT SECTION
+
+- Keep "Meet Thomas" heading
+- Bio copy: Change to "I help growing businesses build the marketing ops infrastructure they need to scale without the overhead of a full-time hire. My background includes building and optimizing lead, lifecycle, and CRM systems at a publicly traded SaaS company. Now I bring that same operational discipline to growing businesses as a fractional partner."
+- Focus stat: Change "Lead Response and Conversion Systems" to "Fractional Marketing Operations"
+- Location, Experience, and Engagement stats: Keep exactly as-is
+
+---
+
+## 11. CONTACT FORM SECTION
+
+- Section headline: Change "Get Your Free Lead Response Audit" to "Get Your Free Ops Audit"
+- Intro bullet points: Replace with:
+  - Where your biggest ops gaps and bottlenecks are
+  - Which tools and automations are working against you
+  - A clear starting point for building your ops infrastructure
+- Form submit button: Change "Get My Free Lead Audit" to "Get My Free Ops Audit"
+- Sub-copy below button: Keep "Takes less than 2 minutes. No pressure. Just clarity."
+
+### FORM FIELDS:
+
+Keep these fields exactly as-is:
+- First Name
+- Last Name
+- Email
+- Company Name
+
+Change "What type of business do you run?" dropdown options to:
+- SaaS / Software
+- Ecommerce
+- Agency or Consulting
+- Health and Wellness
+- Professional Services
+- Real Estate
+- Home Services
+- Other
+
+Change "What tools are you currently using?" field label to: "What is your primary marketing or CRM tool?"
+Update dropdown options to:
+- None / Manual
+- GoHighLevel
+- HubSpot
+- Salesforce
+- ActiveCampaign
+- Klaviyo
+- Mailchimp
+- Pipedrive
+- Zoho
+- Multiple / Mixed Stack
+- Not Sure
+- Other
+
+Keep "Approx. Monthly Revenue" dropdown exactly as-is.
+
+Change the checkbox group label from "Which of these do you currently have in place?" to "Which of these does your business currently have? (Select all that apply)"
+Update checkbox options to:
+- CRM (any kind)
+- Marketing Automation
+- Email Sequences or Flows
+- Lead Capture Forms
+- Pipeline Tracking
+- Analytics or Reporting Setup
+- Paid Ads Running
+- None / Starting from scratch
+
+Change the open text question from "What's the biggest issue with your lead follow-up right now?" to "What is the biggest gap or bottleneck in your marketing ops right now?"
+Update placeholder text to: "For example: our CRM is a mess, automations are broken, our tools do not connect, or we have no real system at all..."
+
+Keep the email opt-in checkbox copy exactly as-is.
+
+---
+
+## 12. FOOTER
+
+- Tagline: Change "Engineering predictable revenue." to "Building marketing ops that scale."
+- Keep all other footer elements as-is.
+
+---
+
+## 13. CRM BACKEND: FIELD MAPPING UPDATES
+
+Update all form-to-CRM field mappings so submissions continue to write correctly after the form changes above. Here is the complete updated field map:
+
+| Form Field | CRM Field Key | Notes |
+|---|---|---|
+| First Name | first_name | No change |
+| Last Name | last_name | No change |
+| Email | email | No change |
+| Company Name | company_name | No change |
+| What type of business do you run? | business_type | Update stored values to match new dropdown options |
+| What is your primary marketing or CRM tool? | primary_tool | Renamed from "tools_using": update field key, label, and dropdown values |
+| Approx. Monthly Revenue | monthly_revenue | No change |
+| Checkbox group (systems in place) | systems_in_place | Update stored values to match new checkbox labels. Use comma-separated string or array depending on existing CRM config |
+| Open text (biggest gap or bottleneck) | ops_gap | Renamed from "lead_followup_issue": update field key and label in CRM |
+| Email opt-in | email_opt_in | No change |
+
+After updating field mappings, also:
+- Update any webhook or API payload that submits form data so it uses the new field keys above
+- Update any CRM view, filter, pipeline stage trigger, or automation that references the old field names "tools_using" or "lead_followup_issue" to use the new names "primary_tool" and "ops_gap"
+- Confirm the CRM record created on submission still maps to the correct contact or lead object and does not create duplicate or orphaned records
+
+---
+
+That covers everything. To summarize what must NOT change: all design tokens, colors, animation classes, hover effects, border treatments, button shape and shadow styles, the logo, the DAG mark, and the overall page structure and section order.
