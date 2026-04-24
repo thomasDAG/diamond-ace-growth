@@ -167,7 +167,7 @@ export function ContactForm() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-end">
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground/90">What type of business do you run?</label>
             <select

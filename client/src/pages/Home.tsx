@@ -100,7 +100,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              I embed as your fractional marketing ops partner, building the systems, automations, and infrastructure your business needs to grow without the overhead of a full-time hire.
+              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow, without the overhead of a full-time hire.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
@@ -136,16 +136,17 @@ export default function Home() {
       </section>
 
       {/* PROBLEM */}
-      <section id="problem" className="py-24 bg-card/30 border-y border-border/20">
+      <section id="problem" className="py-16 md:py-24 bg-card/30 border-y border-border/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                Your marketing stack is <span className="text-highlight">holding you back</span>.
+                Your marketing stack is
+                <span className="block"><span className="text-highlight">holding you back</span>.</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Most growing businesses have the ambition but not the infrastructure. Tools are scattered, automations are broken, no one owns the system, and the team is patching problems instead of building for scale.
@@ -196,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-24">
+      <section id="services" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -256,7 +257,7 @@ export default function Home() {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-24 bg-background relative overflow-hidden">
+      <section id="process" className="py-16 md:py-24 bg-background relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         <div className="max-w-7xl mx-auto px-6">
@@ -316,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* PROOF */}
-      <section id="proof" className="py-24 bg-card/20 border-y border-border/20">
+      <section id="proof" className="py-16 md:py-24 bg-card/20 border-y border-border/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -376,7 +377,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24">
+      <section id="about" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -422,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-24 relative">
+      <section id="contact" className="py-16 md:py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6">
