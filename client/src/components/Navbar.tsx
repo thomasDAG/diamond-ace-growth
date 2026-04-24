@@ -22,7 +22,7 @@ export function Navbar() {
     { name: "Process", href: "/#process" },
     { name: "Proof", href: "/#proof" },
     { name: "About", href: "/#about" },
-    { name: "AI Work", href: "/portfolio" },
+    { name: "AI Work", href: "/ai-portfolio" },
   ];
 
   return (
