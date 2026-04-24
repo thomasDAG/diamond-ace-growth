@@ -1021,7 +1021,7 @@
       /* Hero — collapse to single column, overlay particle canvas behind text */
       #hero { grid-template-columns: 1fr; }
       .hero-content {
-        padding: 100px 24px 72px;
+        padding: 64px 24px 56px;
         width: 100%;
         max-width: 100%;
         position: relative;
@@ -1078,7 +1078,7 @@
     /* ── EXTRA SMALL (≤480px) ────────────────────── */
     @media (max-width: 480px) {
       .portfolio-page section { padding-top: 48px; padding-bottom: 48px; }
-      .hero-content { padding: 88px 20px 56px; }
+      .hero-content { padding: 56px 20px 48px; }
       .hero-nav { grid-template-columns: 1fr 1fr; gap: 8px; }
       .hero-nav-btn { font-size: 11px; padding: 10px 14px; min-height: 52px; display: flex; align-items: center; justify-content: center; text-align: center; }
       .about-photo-wrap { height: 240px; }
