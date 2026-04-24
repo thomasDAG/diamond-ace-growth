@@ -100,7 +100,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow, without the overhead of a full-time hire.
+              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow — all without the overhead of a full-time hire.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">

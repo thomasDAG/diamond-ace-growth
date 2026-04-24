@@ -169,7 +169,7 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-end">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">What type of business do you run?</label>
+            <label className="text-sm font-medium text-foreground/90">Type of business?</label>
             <select
               {...form.register("businessType")}
               defaultValue=""
@@ -188,7 +188,7 @@ export function ContactForm() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">What is your primary marketing or CRM tool?</label>
+            <label className="text-sm font-medium text-foreground/90">Primary marketing or CRM tool?</label>
             <select
               {...form.register("currentPlatform")}
               defaultValue=""
@@ -211,7 +211,7 @@ export function ContactForm() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Approx. Monthly Revenue</label>
+            <label className="text-sm font-medium text-foreground/90">Monthly revenue?</label>
             <select
               {...form.register("revenueRange")}
               defaultValue=""
