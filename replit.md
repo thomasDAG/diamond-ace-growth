@@ -61,6 +61,9 @@ Preferred communication style: Simple, everyday language.
 - **Features**: Status management, activity logging (note, email_sent, email_received, call, meeting), task creation/completion, lead deletion
 - **Client API**: `client/src/lib/admin-api.ts` wraps all admin fetch calls with credentials
 
+### Additional Pages
+- **AI Work Portfolio** (`/portfolio`): Thomas Nilsen's AI builder portfolio page. Integrated from a standalone HTML file (`attached_assets/portfolio_1777068585724.html`) using Vite's `?raw` import. Portfolio-specific CSS is in `client/src/styles/portfolio.css` (scoped to `.portfolio-page`). Body content injected via `dangerouslySetInnerHTML`, JS animations run in `useEffect`. The portfolio's own nav and footer were already stripped; it uses the site's Navbar and shared footer.
+
 ### Build System
 - **Dev**: `npm run dev` runs `tsx server/index.ts` with Vite middleware for HMR
 - **Build**: `npm run build` runs a custom `script/build.ts` that builds the client with Vite and bundles the server with esbuild

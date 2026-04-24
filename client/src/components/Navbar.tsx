@@ -22,6 +22,7 @@ export function Navbar() {
     { name: "Process", href: "/#process" },
     { name: "Proof", href: "/#proof" },
     { name: "About", href: "/#about" },
+    { name: "AI Work", href: "/portfolio" },
   ];
 
   return (
@@ -52,7 +53,7 @@ export function Navbar() {
             ))}
           </div>
           <a
-            href="#contact"
+            href="/#contact"
             className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all"
           >
             Get a Free Ops Audit
@@ -87,7 +88,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 min-h-[52px] text-center rounded-xl bg-primary text-white font-semibold flex items-center justify-center"
             >
