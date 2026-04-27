@@ -345,7 +345,7 @@ export default function Home() {
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
               {
@@ -359,6 +359,12 @@ export default function Home() {
                 metric: "Strategic Execution",
                 quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.",
                 author: "Heather, Marketing Specialist"
+              },
+              {
+                stat: "Critical",
+                metric: "Project Contributor",
+                quote: "I loved working with Thomas. He took on the project as if it was his own, was enthusiastic, and very flexible. The work spoke for itself! His contributions were critical to the success of the project and we couldn't have done it without him. I would absolutely recommend Thomas and would love to work with him again.",
+                author: "Hailey, Director of Content Strategy"
               }
             ].map((testimonial, i) => (
               <motion.div
