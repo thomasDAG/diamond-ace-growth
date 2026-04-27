@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useCallback } from "react";
 import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, XCircle } from "lucide-react";
+import { ArrowRight, XCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
@@ -62,6 +62,118 @@ const SERVICE_CARDS = [
     desc: "We build campaigns that bring back old leads and past customers, getting more revenue from the audience you have already built.",
   },
 ];
+
+const TESTIMONIALS = [
+  {
+    stat: "Ownership",
+    metric: "Mentality",
+    quote: "I loved working with Thomas. He took on the project as if it was his own, was enthusiastic, and very flexible. The work spoke for itself! His contributions were critical to the success of the project and we couldn't have done it without him. I would absolutely recommend Thomas and would love to work with him again.",
+    author: "Hailey, Director of Content Strategy"
+  },
+  {
+    stat: "$5,000+",
+    metric: "Revenue Generated",
+    quote: "Thomas is a marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.",
+    author: "Mary, Marketing & Branding Strategist"
+  },
+  {
+    stat: "High Impact",
+    metric: "Strategic Execution",
+    quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.",
+    author: "Heather, Marketing Specialist"
+  },
+];
+
+function TestimonialCarousel() {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [direction, setDirection] = useState(1);
+
+  const go = useCallback((next: number) => {
+    setDirection(next > index || (next === 0 && index === TESTIMONIALS.length - 1) ? 1 : -1);
+    setIndex(next);
+  }, [index]);
+
+  const prev = () => go((index - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const next = () => go((index + 1) % TESTIMONIALS.length);
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => {
+      setDirection(1);
+      setIndex(i => (i + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(t);
+  }, [paused]);
+
+  const testimonial = TESTIMONIALS[index];
+
+  return (
+    <motion.div
+      initial="hidden" whileInView="visible" viewport={{ once: true }}
+      variants={fadeInUp}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="relative">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={index}
+            custom={direction}
+            initial={{ opacity: 0, x: direction * 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction * -40 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="bg-background border border-border/50 p-8 md:p-12 rounded-3xl"
+          >
+            <div className="mb-6">
+              <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-1">
+                {testimonial.stat}
+              </div>
+              <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                {testimonial.metric}
+              </div>
+            </div>
+            <p className="text-foreground/90 italic mb-6 leading-relaxed text-lg">
+              "{testimonial.quote}"
+            </p>
+            <div className="text-sm font-bold text-white/70">
+              {testimonial.author}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <button
+          onClick={prev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
+          aria-label="Previous testimonial"
+        >
+          <ChevronLeft size={18} />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
+          aria-label="Next testimonial"
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+
+      <div className="flex justify-center gap-2 mt-8">
+        {TESTIMONIALS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => go(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === index ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground"
+            }`}
+            aria-label={`Go to testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
@@ -328,7 +440,7 @@ export default function Home() {
 
       {/* PROOF */}
       <section id="proof" className="py-16 md:py-24 bg-card/20 border-y border-border/20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
@@ -342,53 +454,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                stat: "$5,000+",
-                metric: "Revenue Generated",
-                quote: "Thomas is a marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.",
-                author: "Mary, Marketing & Branding Strategist"
-              },
-              {
-                stat: "High Impact",
-                metric: "Strategic Execution",
-                quote: "Thomas is exceptionally easy to work with and demonstrates a remarkable ability to learn quickly, even within a niche market. His ability to combine technical execution with compelling copy that grabs attention sets him apart. His work consistently reflects clarity, strategic thinking, and creativity.",
-                author: "Heather, Marketing Specialist"
-              },
-              {
-                stat: "Ownership",
-                metric: "Mentality",
-                quote: "I loved working with Thomas. He took on the project as if it was his own, was enthusiastic, and very flexible. The work spoke for itself! His contributions were critical to the success of the project and we couldn't have done it without him. I would absolutely recommend Thomas and would love to work with him again.",
-                author: "Hailey, Director of Content Strategy"
-              }
-            ].map((testimonial, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="bg-background border border-border/50 p-8 rounded-3xl relative"
-              >
-                <div className="mb-6">
-                  <div className="text-4xl font-display font-bold text-primary mb-1">
-                    {testimonial.stat}
-                  </div>
-                  <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                    {testimonial.metric}
-                  </div>
-                </div>
-                <p className="text-foreground/90 italic mb-6 leading-relaxed">
-                  "{testimonial.quote}"
-                </p>
-                <div className="text-sm font-bold text-white/70">
-                  {testimonial.author}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <TestimonialCarousel />
         </div>
       </section>
 
