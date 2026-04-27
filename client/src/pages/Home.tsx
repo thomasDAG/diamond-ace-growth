@@ -102,7 +102,7 @@ function TestimonialCarousel() {
     const t = setInterval(() => {
       setDirection(1);
       setIndex(i => (i + 1) % TESTIMONIALS.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(t);
   }, [paused]);
 
