@@ -361,8 +361,8 @@ export default function Home() {
                 author: "Heather, Marketing Specialist"
               },
               {
-                stat: "Critical",
-                metric: "Project Contributor",
+                stat: "Ownership",
+                metric: "Mentality",
                 quote: "I loved working with Thomas. He took on the project as if it was his own, was enthusiastic, and very flexible. The work spoke for itself! His contributions were critical to the success of the project and we couldn't have done it without him. I would absolutely recommend Thomas and would love to work with him again.",
                 author: "Hailey, Director of Content Strategy"
               }
