@@ -8,7 +8,8 @@ import portfolioHtml from "@assets/portfolio_1778614590355.html?raw";
 
 function getBodyContent(html: string): string {
   const match = html.match(/<body>([\s\S]*?)<\/body>/);
-  return match ? match[1] : "";
+  const body = match ? match[1] : "";
+  return body.replace('href="#contact"', 'href="/#get-in-touch"');
 }
 
 function getScriptContent(html: string): string {

@@ -33,6 +33,29 @@ Diamond Ace Growth`;
   });
 }
 
+export async function sendContactMessage(name: string, email: string, message: string): Promise<void> {
+  const safeMessage = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const html = `
+    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #146ef4;">New Contact Message</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr><td style="padding: 8px; font-weight: bold; color: #666;">Name</td><td style="padding: 8px;">${name}</td></tr>
+        <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold; color: #666;">Email</td><td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #666; vertical-align: top;">Message</td><td style="padding: 8px; white-space: pre-wrap;">${safeMessage}</td></tr>
+      </table>
+      <p style="margin-top: 24px; color: #888; font-size: 13px;">Submitted via diamondacegrowth.com</p>
+    </div>
+  `;
+
+  await transporter.sendMail({
+    from: '"Diamond Ace Growth" <thomas@diamondacegrowth.com>',
+    to: "thomas@diamondacegrowth.com",
+    replyTo: email,
+    subject: `New Message from ${name}`,
+    html,
+  });
+}
+
 export async function sendNewLeadNotification(lead: Lead): Promise<void> {
   const features = Array.isArray(lead.implementedFeatures) && lead.implementedFeatures.length > 0
     ? lead.implementedFeatures.join(", ")

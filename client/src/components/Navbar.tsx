@@ -25,6 +25,7 @@ export function Navbar() {
     { name: "Process", href: "/#process" },
     { name: "Proof", href: "/#proof" },
     { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#get-in-touch" },
     { name: "AI Work", href: "/ai-portfolio" },
   ];
 

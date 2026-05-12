@@ -5,7 +5,7 @@ import { storage } from "./storage";
 import { contactFormSchema, LEAD_STATUSES } from "@shared/schema";
 import { api } from "@shared/routes";
 import { z } from "zod";
-import { sendNewLeadNotification, sendAuditConfirmation } from "./mailer";
+import { sendNewLeadNotification, sendAuditConfirmation, sendContactMessage } from "./mailer";
 
 const adminAuthMiddleware = (req: Request, res: Response, next: NextFunction) => {
   const sess = req.session as any;
@@ -74,6 +74,26 @@ export async function registerRoutes(
           message: err.errors[0].message,
           field: err.errors[0].path.join("."),
         });
+      }
+      throw err;
+    }
+  });
+
+  // ── Simple contact message ─────────────────────────────────────────────────
+  app.post("/api/contact-message", async (req, res) => {
+    const schema = z.object({
+      name: z.string().min(1, "Name is required"),
+      email: z.string().email("Please enter a valid email address"),
+      message: z.string().min(1, "Message is required"),
+    });
+
+    try {
+      const { name, email, message } = schema.parse(req.body);
+      await sendContactMessage(name, email.trim().toLowerCase(), message);
+      res.status(200).json({ success: true });
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        return res.status(400).json({ message: err.errors[0].message });
       }
       throw err;
     }
