@@ -65,6 +65,12 @@ const SERVICE_CARDS = [
 
 const TESTIMONIALS = [
   {
+    stat: "Expert Guidance",
+    metric: "Start to Launch",
+    quote: "Thomas is a pro. We needed some help getting a new email marketing campaign going for a client and Thomas stepped in to help with everything we needed. He showed deep expertise and guided our team through setup and launch. Great work and would definitely recommend him.",
+    author: "Jordan, Founder & Partner"
+  },
+  {
     stat: "Ownership",
     metric: "Mentality",
     quote: "I loved working with Thomas. He took on the project as if it was his own, was enthusiastic, and very flexible. The work spoke for itself! His contributions were critical to the success of the project and we couldn't have done it without him. I would absolutely recommend Thomas and would love to work with him again.",
