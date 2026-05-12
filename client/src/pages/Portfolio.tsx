@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 import "@/styles/portfolio.css";
 
-import portfolioHtml from "@assets/portfolio_1777068585724.html?raw";
+import portfolioHtml from "@assets/portfolio_1778614590355.html?raw";
 
 function getBodyContent(html: string): string {
   const match = html.match(/<body>([\s\S]*?)<\/body>/);
