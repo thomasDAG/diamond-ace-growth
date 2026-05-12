@@ -194,15 +194,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Diamond Ace Growth | Fractional Marketing Operations</title>
-        <meta name="description" content="Fractional marketing ops for growing businesses. I build and run the systems your marketing and revenue engine needs: CRM, automation, email, and ops infrastructure." />
-        <meta property="og:title" content="Diamond Ace Growth | Fractional Marketing Operations" />
-        <meta property="og:description" content="Fractional marketing ops for growing businesses. I build and run the systems your marketing and revenue engine needs: CRM, automation, email, and ops infrastructure." />
+        <title>Diamond Ace Growth | Fractional Marketing Ops, CRM, Automation &amp; Email Systems</title>
+        <meta name="description" content="Diamond Ace Growth helps growing businesses build cleaner marketing operations through CRM and pipeline setup, marketing automation, email flow deployment, stack integration, retention campaigns, and fractional ops support." />
+        <meta property="og:title" content="Fractional Marketing Ops, Built Right" />
+        <meta property="og:description" content="Diamond Ace Growth helps growing teams clean up their CRM, automate key workflows, deploy better email programs, and build the marketing ops infrastructure needed to scale." />
+        <meta property="og:image" content="https://diamondacegrowth.com/linkpreview.png?v=3" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://diamondacegrowth.com" />
         <meta property="og:site_name" content="Diamond Ace Growth" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Diamond Ace Growth | Fractional Marketing Operations" />
-        <meta name="twitter:description" content="Fractional marketing ops for growing businesses. I build and run the systems your marketing and revenue engine needs: CRM, automation, email, and ops infrastructure." />
+        <meta name="twitter:title" content="Fractional Marketing Ops, Built Right" />
+        <meta name="twitter:description" content="CRM, automation, email flows, stack cleanup, and marketing ops infrastructure for growing teams." />
+        <meta name="twitter:image" content="https://diamondacegrowth.com/linkpreview.png?v=3" />
         <link rel="canonical" href="https://diamondacegrowth.com" />
       </Helmet>
       <Navbar />
@@ -498,7 +503,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div>
-                  <div className="text-sm font-bold text-white">SaaS • Ecommerce • Service Businesses</div>
+                  <div className="text-sm font-bold text-white">SaaS • Ecommerce • B2B &amp; Services</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div>

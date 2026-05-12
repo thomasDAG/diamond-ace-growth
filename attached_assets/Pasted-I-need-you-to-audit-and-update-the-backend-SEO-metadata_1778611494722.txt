@@ -1,0 +1,180 @@
+I need you to audit and update the backend SEO, metadata, structured data, hidden site descriptions, and any non-visible copy across my Diamond Ace Growth website.
+
+Important: Do NOT redesign the website. Do NOT rewrite the main visible page copy unless you find outdated language that clearly conflicts with the current positioning.
+
+The current visible website is already positioned around:
+
+- Fractional Marketing Operations
+- Marketing ops infrastructure
+- CRM and pipeline architecture
+- Marketing automation
+- Email flow design and deployment
+- Stack integration and cleanup
+- Reactivation and retention campaigns
+- Ops audits
+- Project-based and fractional marketing ops support
+
+The current front-end messaging includes language like:
+- “Your Marketing Ops, Finally Built Right”
+- “Fractional Marketing Operations”
+- “Get Your Free Ops Audit”
+- “Your marketing stack is holding you back”
+- “The Ops Infrastructure We Build”
+- “CRM and Pipeline Architecture”
+- “Marketing Automation”
+- “Email Flow Design and Build”
+- “Stack Integration and Ops Cleanup”
+- “Reactivation and Retention Campaigns”
+
+That positioning is correct. I want the backend SEO and metadata to match this current version.
+
+Please search the entire codebase for outdated backend or hidden references to the old positioning, especially anything related to:
+
+- “Never Miss a Lead Again”
+- “missed call”
+- “missed calls”
+- “text back”
+- “lead response”
+- “slow follow-up”
+- “local service business”
+- “local service businesses”
+- “service business lead generation”
+- “small business lead generation”
+- “turn more inquiries into customers”
+- “simple systems that respond instantly”
+- “stop losing leads”
+- “inquiries”
+- “free revenue audit”
+- “lead generation system”
+- “lead gen”
+- “follow-up automation” if used too narrowly
+- “service businesses” if used as the primary ICP
+
+Look in all relevant places, including but not limited to:
+
+- HTML head tags
+- React/Next/Vite metadata files
+- index.html
+- App files
+- layout files
+- route metadata
+- SEO components
+- config files
+- package metadata
+- sitemap files
+- robots files
+- manifest files
+- schema/structured data
+- Open Graph tags
+- Twitter/X card tags
+- image alt text
+- JSON-LD
+- backend constants
+- server-rendered metadata
+- form labels
+- CRM/internal lead source labels
+- email notification subject lines
+- page preview data
+- favicon/manifest app name and description
+- any hardcoded descriptions used for link previews
+
+Update anything outdated so it aligns with the current Diamond Ace Growth positioning.
+
+Use this as the primary SEO positioning:
+
+Diamond Ace Growth is a fractional marketing operations consultancy that helps growing businesses build cleaner marketing systems, fix messy CRM and automation workflows, deploy lifecycle and email campaigns, connect their marketing stack, and create the ops infrastructure needed to scale.
+
+Preferred meta title:
+Diamond Ace Growth | Fractional Marketing Operations Consultant
+
+Preferred homepage title tag:
+Diamond Ace Growth | Fractional Marketing Ops, CRM, Automation & Email Systems
+
+Preferred meta description:
+Diamond Ace Growth helps growing businesses build cleaner marketing operations through CRM and pipeline setup, marketing automation, email flow deployment, stack integration, retention campaigns, and fractional ops support.
+
+Preferred Open Graph title:
+Fractional Marketing Ops, Built Right
+
+Preferred Open Graph description:
+Diamond Ace Growth helps growing teams clean up their CRM, automate key workflows, deploy better email programs, and build the marketing ops infrastructure needed to scale.
+
+Preferred Twitter/X card title:
+Fractional Marketing Ops, Built Right
+
+Preferred Twitter/X card description:
+CRM, automation, email flows, stack cleanup, and marketing ops infrastructure for growing teams.
+
+Preferred site/app description:
+Fractional marketing operations consulting for CRM, automation, email marketing, lifecycle campaigns, stack integration, and revenue operations infrastructure.
+
+Preferred SEO keywords to use naturally where appropriate:
+- fractional marketing operations consultant
+- fractional marketing ops
+- marketing operations consultant
+- marketing ops consultant
+- CRM and pipeline setup
+- CRM cleanup
+- marketing automation consultant
+- email marketing operations
+- lifecycle marketing consultant
+- email flow deployment
+- marketing stack integration
+- retention campaigns
+- reactivation campaigns
+- revenue systems
+- campaign operations
+- marketing infrastructure
+- ops audit
+
+Do not keyword stuff. Keep metadata clean, readable, and human.
+
+If schema/structured data exists, update it to reflect:
+Business name: Diamond Ace Growth
+Business type/category: Marketing Consultant / Marketing Operations Consultant
+Description: Fractional marketing operations consulting focused on CRM, automation, email marketing, lifecycle campaigns, stack integration, and marketing infrastructure.
+Founder/consultant: Thomas Nilsen
+Location: Utah County, Utah
+Service area: Remote / United States, with Utah County as local base
+Services:
+- Fractional Marketing Operations
+- CRM and Pipeline Setup
+- Marketing Automation
+- Email Flow Design and Deployment
+- Stack Integration and Cleanup
+- Reactivation and Retention Campaigns
+- Marketing Ops Audit
+
+For form/backend labels:
+Replace old labels like “Lead Response Audit,” “Revenue Audit,” “Missed Lead Audit,” or “Service Business Inquiry” with:
+- “Free Ops Audit”
+- “Marketing Ops Audit”
+- “Fractional Marketing Ops Inquiry”
+- “Ops Audit Request”
+
+Do not change the public CTA unless needed. The current CTA “Get Your Free Ops Audit” is good.
+
+Please also make sure social/link previews are updated for:
+- Google search
+- LinkedIn
+- Slack
+- iMessage
+- Facebook
+- X/Twitter
+
+If there is an OG image or link preview image configured, do not redesign it unless it contains outdated wording. If it does contain outdated wording, update the image/text reference so it matches the current positioning:
+“Fractional Marketing Ops, Built Right”
+or
+“Your Marketing Ops, Finally Built Right”
+
+After completing the audit and updates, give me a summary with:
+
+1. Files changed
+2. Metadata updated
+3. SEO descriptions updated
+4. Schema/structured data updated
+5. Backend/internal labels updated
+6. Any outdated lead-gen or service-business language that still remains and why
+7. Anything I need to manually refresh, redeploy, or re-cache for Google/social previews to update
+
+Again: do not revamp the visual website. This is primarily a backend SEO, metadata, schema, hidden copy, and config cleanup so the site’s behind-the-scenes data matches the current Fractional Marketing Operations positioning.
