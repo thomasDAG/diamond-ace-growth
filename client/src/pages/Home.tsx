@@ -77,9 +77,9 @@ const TESTIMONIALS = [
     author: "Hailey, Director of Content Strategy"
   },
   {
-    stat: "$5,000+",
+    stat: "Thousands",
     metric: "Revenue Generated",
-    quote: "Thomas is a marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated over $5,000 in sales during the 3 months it has been active.",
+    quote: "Thomas is a marketing professional who is not afraid to jump in and make a positive difference right from the start. He concepted, wrote copy, and deployed an email welcome flow that currently has a 75% open rate, a 10% click rate and has generated thousands in sales during the 3 months it has been active.",
     author: "Mary, Marketing & Branding Strategist"
   },
   {
@@ -338,7 +338,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow — all without the overhead of a full-time hire.
+              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow. All without the overhead of a full-time hire.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
