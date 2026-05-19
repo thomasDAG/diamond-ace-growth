@@ -169,9 +169,10 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-end">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Type of business?</label>
+            <label htmlFor="businessType" className="text-sm font-medium text-foreground/90">Type of business?</label>
             <select
               {...form.register("businessType")}
+              id="businessType"
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-business-type"
@@ -188,9 +189,10 @@ export function ContactForm() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Primary marketing or CRM tool?</label>
+            <label htmlFor="currentPlatform" className="text-sm font-medium text-foreground/90">Primary marketing or CRM tool?</label>
             <select
               {...form.register("currentPlatform")}
+              id="currentPlatform"
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-platform"
@@ -211,9 +213,10 @@ export function ContactForm() {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Monthly revenue?</label>
+            <label htmlFor="revenueRange" className="text-sm font-medium text-foreground/90">Monthly revenue?</label>
             <select
               {...form.register("revenueRange")}
+              id="revenueRange"
               defaultValue=""
               className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
               data-testid="select-revenue"

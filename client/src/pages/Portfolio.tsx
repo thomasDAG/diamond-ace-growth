@@ -68,7 +68,7 @@ export default function Portfolio() {
               Terms of Service
             </a>
           </div>
-          <div className="text-sm text-muted-foreground/60">
+          <div className="text-sm text-muted-foreground/80">
             &copy; {new Date().getFullYear()} Diamond Ace Growth. All rights reserved.
           </div>
         </div>

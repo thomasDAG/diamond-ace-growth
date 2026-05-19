@@ -317,6 +317,7 @@ export default function Home() {
       </Helmet>
       <Navbar />
 
+      <main>
       {/* HERO */}
       <section className="hero-section relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="hero-gradient-glow" aria-hidden="true" />
@@ -661,6 +662,8 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
+
       {/* FOOTER */}
       <footer className="py-12 border-t border-border/20 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
@@ -672,7 +675,7 @@ export default function Home() {
             <a href="/terms" className="text-sm text-muted-foreground hover:text-white transition-colors">Terms of Service</a>
           </div>
 
-          <div className="text-sm text-muted-foreground/60">
+          <div className="text-sm text-muted-foreground/80">
             &copy; {new Date().getFullYear()} Diamond Ace Growth. All rights reserved.
           </div>
         </div>
