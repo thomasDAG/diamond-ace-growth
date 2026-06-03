@@ -184,17 +184,17 @@ function TestimonialCarousel() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction * -40 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="bg-background border border-border/50 p-8 md:p-12 rounded-3xl"
+            className="bg-background border border-border/50 p-5 md:p-12 rounded-2xl md:rounded-3xl"
           >
-            <div className="mb-6">
-              <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-1">
+            <div className="mb-4 md:mb-6">
+              <div className="text-3xl md:text-5xl font-display font-bold text-primary mb-1">
                 {testimonial.stat}
               </div>
-              <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              <div className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wider">
                 {testimonial.metric}
               </div>
             </div>
-            <p className="text-foreground/90 italic mb-6 leading-relaxed text-lg">
+            <p className="text-foreground/90 italic mb-4 md:mb-6 leading-relaxed text-sm md:text-lg">
               "{testimonial.quote}"
             </p>
             <div className="text-sm font-bold text-white/70">
@@ -205,21 +205,21 @@ function TestimonialCarousel() {
 
         <button
           onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-5 w-9 h-9 md:w-10 md:h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
           aria-label="Previous testimonial"
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft size={16} />
         </button>
         <button
           onClick={next}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-5 w-9 h-9 md:w-10 md:h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 transition-all"
           aria-label="Next testimonial"
         >
-          <ChevronRight size={18} />
+          <ChevronRight size={16} />
         </button>
       </div>
 
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 mt-6 md:mt-8">
         {TESTIMONIALS.map((_, i) => (
           <button
             key={i}
@@ -268,28 +268,28 @@ function SimpleContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="text-center py-12">
-        <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="text-center py-10">
+        <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-display font-bold text-white mb-2">Message Sent</h3>
-        <p className="text-muted-foreground">Thanks for reaching out. I'll be in touch soon.</p>
+        <h3 className="text-xl font-display font-bold text-white mb-2">Message Sent</h3>
+        <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll be in touch soon.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className="text-sm font-medium text-foreground/80">Name</label>
           <input
             value={name}
             onChange={e => setName(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+            className="w-full px-3 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none text-sm"
             placeholder="Your name"
             data-testid="input-contact-name"
           />
@@ -301,7 +301,7 @@ function SimpleContactForm() {
             value={email}
             onChange={e => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
+            className="w-full px-3 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none text-sm"
             placeholder="you@company.com"
             data-testid="input-contact-email"
           />
@@ -313,8 +313,8 @@ function SimpleContactForm() {
           value={message}
           onChange={e => setMessage(e.target.value)}
           required
-          rows={5}
-          className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
+          rows={4}
+          className="w-full px-3 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none text-sm"
           placeholder="What's on your mind?"
           data-testid="textarea-contact-message"
         />
@@ -323,7 +323,7 @@ function SimpleContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="w-full py-3.5 rounded-xl font-semibold text-base bg-card border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
+        className="w-full py-3.5 min-h-[48px] rounded-xl font-semibold text-sm bg-card border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
         data-testid="button-contact-submit"
       >
         {isPending ? (
@@ -383,53 +383,53 @@ export default function Home() {
       <Navbar />
 
       <main>
-      {/* HERO */}
-      <section className="hero-section relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="hero-section relative pt-24 pb-12 md:pt-48 md:pb-32 overflow-hidden">
         <div className="hero-gradient-glow" aria-hidden="true" />
         <div className="hero-vignette" aria-hidden="true" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             className="max-w-4xl mx-auto text-center"
           >
-            <motion.div variants={fadeInUp} className="inline-block mb-6 px-4 py-1.5 rounded-full bg-card border border-border/50 text-sm font-medium text-accent">
+            <motion.div variants={fadeInUp} className="inline-block mb-5 px-3 py-1.5 rounded-full bg-card border border-border/50 text-xs md:text-sm font-medium text-accent">
               Funnels&nbsp;•&nbsp;Email&nbsp;•&nbsp;Automation&nbsp;•&nbsp;AI Workflows
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
+            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-5 md:mb-6">
               Turn More Leads<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Into Customers</span>
             </motion.h1>
 
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-base md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
               Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and convert more people into paying customers.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
+            <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-3">
               <a
                 href="#contact"
-                className="cta-hero px-8 py-4 min-h-[52px] rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
+                className="cta-hero px-6 md:px-8 py-4 min-h-[52px] rounded-xl bg-primary text-white font-bold text-base md:text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
                 Get Your Free Marketing Engine Audit
                 <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs md:text-sm text-muted-foreground">
                 See what's missing, what's leaking, and what to fix first.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-20 pt-10 border-t border-border/30 overflow-hidden relative marquee-container">
-              <div className="flex whitespace-nowrap gap-16 animate-marquee">
+            <motion.div variants={fadeInUp} className="mt-12 md:mt-20 pt-8 md:pt-10 border-t border-border/30 overflow-hidden relative marquee-container">
+              <div className="flex whitespace-nowrap gap-10 md:gap-16 animate-marquee">
                 {[0, 1].map((copy) =>
                   MARQUEE_SERVICES.map((service, i) => (
                     <span
                       key={`${copy}-${i}`}
-                      className="marquee-item relative shrink-0 text-lg font-display font-medium text-white/70 flex items-center cursor-default"
+                      className="marquee-item relative shrink-0 text-sm md:text-lg font-display font-medium text-white/70 flex items-center cursor-default"
                     >
-                      {service} <span className="ml-8 text-primary">•</span>
+                      {service} <span className="ml-6 md:ml-8 text-primary">•</span>
                     </span>
                   ))
                 )}
@@ -439,24 +439,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM */}
-      <section id="problem" className="py-16 md:py-24 bg-card/30 border-y border-border/20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── PROBLEM ──────────────────────────────────────────────────────── */}
+      <section id="problem" className="py-12 md:py-24 bg-card/30 border-y border-border/20">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6">
                 Your marketing has pieces.
                 <span className="block"><span className="text-highlight">Now it needs a system.</span></span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-sm md:text-lg text-muted-foreground mb-6">
                 Most businesses are doing some marketing. They have a website, a few campaigns, maybe some social content, referrals, forms, emails, or a CRM. But if those pieces are not connected, leads slip through the cracks and revenue gets left on the table.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   "Leads come in, but follow-up is slow or inconsistent",
                   "Your website is not built to capture and convert interest",
@@ -467,19 +467,19 @@ export default function Home() {
                   "You know marketing should be working better, but the system is not clear",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
-                    <XCircle className="w-6 h-6 text-destructive shrink-0 mr-3 mt-0.5" />
-                    <span className="text-foreground/90">{item}</span>
+                    <XCircle className="w-5 h-5 text-destructive shrink-0 mr-3 mt-0.5" />
+                    <span className="text-sm md:text-base text-foreground/90">{item}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="bg-card border border-border p-8 rounded-3xl relative">
-              <div className="absolute -top-4 -right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-6">
+            <motion.div variants={fadeInUp} className="bg-card border border-border p-5 md:p-8 rounded-2xl md:rounded-3xl relative mt-2 lg:mt-0">
+              <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-6">
                 HOW WE FIX IT
               </div>
-              <h3 className="text-2xl font-display font-bold text-white mb-6">The Marketing Engine We Build</h3>
-              <div className="space-y-6">
+              <h3 className="text-lg md:text-2xl font-display font-bold text-white mb-4 md:mb-6">The Marketing Engine We Build</h3>
+              <div className="space-y-4 md:space-y-6">
                 {[
                   { emoji: "🎯", title: "Sales Funnel Builds", desc: "We build landing pages, lead magnets, forms, and booking paths that turn interest into action." },
                   { emoji: "📧", title: "Email Campaigns and Automations", desc: "We write, build, and launch email sequences that welcome, nurture, reactivate, and convert." },
@@ -489,12 +489,12 @@ export default function Home() {
                   { emoji: "📊", title: "Reporting and Optimization", desc: "We track what is working, find the leaks, and keep improving the system over time." },
                 ].map((item, i) => (
                   <div key={i} className="flex">
-                    <div className="w-10 h-10 flex items-center justify-center shrink-0 mr-4 text-2xl leading-none">
+                    <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shrink-0 mr-3 text-xl md:text-2xl leading-none">
                       {item.emoji}
                     </div>
                     <div>
-                      <h4 className="font-bold text-white mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h4 className="text-sm md:text-base font-bold text-white mb-0.5">{item.title}</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -504,39 +504,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── SERVICES ─────────────────────────────────────────────────────── */}
+      <section id="services" className="py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-6">
               What We Build For You
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm md:text-lg text-muted-foreground">
               Clear, practical marketing systems that help you attract leads, follow up, use AI wisely, and convert more customers.
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-5 md:space-y-8">
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
             >
               {SERVICE_CARDS.slice(0, 3).map((service, i) => (
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-8 rounded-3xl group"
+                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-5 md:p-8 rounded-2xl md:rounded-3xl group"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-background flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-3xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-background flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-2xl md:text-3xl">
                     {service.emoji}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 min-h-[3.5rem] flex items-start">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+                  <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -544,19 +544,19 @@ export default function Home() {
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-2/3 lg:mx-auto"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
             >
               {SERVICE_CARDS.slice(3).map((service, i) => (
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-8 rounded-3xl group"
+                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-5 md:p-8 rounded-2xl md:rounded-3xl group"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-background flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-3xl">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-background flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-2xl md:text-3xl">
                     {service.emoji}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 min-h-[3.5rem] flex items-start">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+                  <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -564,33 +564,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* OFFERS */}
-      <section id="offers" className="py-16 md:py-24 bg-card/20 border-y border-border/20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── OFFERS ───────────────────────────────────────────────────────── */}
+      <section id="offers" className="py-12 md:py-24 bg-card/20 border-y border-border/20">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-6">
               How to Work With Us
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm md:text-lg text-muted-foreground">
               Transparent pricing, no pressure. Start with what you need.
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
             >
               {OFFERS.slice(0, 3).map((offer, i) => (
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${
+                  className={`relative flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border transition-all duration-300 ${
                     offer.featured
                       ? "bg-primary/10 border-primary/60 hover:border-primary shadow-lg shadow-primary/10"
                       : "bg-card/50 hover:bg-card border-border/50 hover:border-primary/50"
@@ -601,19 +601,19 @@ export default function Home() {
                       START HERE
                     </div>
                   )}
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-white mb-2">{offer.name}</h3>
-                    <div className={`text-2xl font-display font-extrabold ${offer.featured ? "text-primary" : "text-white"}`}>
+                  <div className="mb-3 md:mb-4">
+                    <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
+                    <div className={`text-xl md:text-2xl font-display font-extrabold ${offer.featured ? "text-primary" : "text-white"}`}>
                       {offer.price}
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed flex-1 mb-6">{offer.desc}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
                   <a
                     href={offer.href}
-                    className={`w-full py-3 rounded-xl font-semibold text-center text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
+                    className={`w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
                       offer.featured
-                        ? "bg-primary text-white hover:bg-primary/90 hover:-translate-y-0.5"
-                        : "bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5"
+                        ? "bg-primary text-white hover:bg-primary/90"
+                        : "bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10"
                     }`}
                   >
                     {offer.cta} <ArrowRight className="w-4 h-4" />
@@ -625,22 +625,22 @@ export default function Home() {
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-2/3 lg:mx-auto"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
             >
               {OFFERS.slice(3).map((offer, i) => (
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="flex flex-col p-8 rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300"
+                  className="flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300"
                 >
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-white mb-2">{offer.name}</h3>
-                    <div className="text-2xl font-display font-extrabold text-white">{offer.price}</div>
+                  <div className="mb-3 md:mb-4">
+                    <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
+                    <div className="text-xl md:text-2xl font-display font-extrabold text-white">{offer.price}</div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed flex-1 mb-6">{offer.desc}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
                   <a
                     href={offer.href}
-                    className="w-full py-3 rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+                    className="w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 flex items-center justify-center gap-2"
                   >
                     {offer.cta} <ArrowRight className="w-4 h-4" />
                   </a>
@@ -651,20 +651,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MARKETING ENGINE */}
-      <section id="engine" className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* ── MARKETING ENGINE ─────────────────────────────────────────────── */}
+      <section id="engine" className="py-12 md:py-24 bg-background relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
               How the Marketing Engine Works
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm md:text-lg text-muted-foreground">
               We connect the pieces so more people move from interested to ready to buy.
             </p>
           </motion.div>
@@ -672,22 +672,22 @@ export default function Home() {
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-16"
           >
             {ENGINE_STEPS.map((step, i) => (
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="relative bg-card/50 border border-border/50 rounded-2xl p-6 group hover:border-primary/40 transition-colors"
+                className="relative bg-card/50 border border-border/50 rounded-xl md:rounded-2xl p-4 md:p-6 group hover:border-primary/40 transition-colors"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold shrink-0">
+                <div className="flex items-center gap-3 mb-2 md:mb-3">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold shrink-0">
                     {i + 1}
                   </div>
-                  <span className="text-2xl">{step.icon}</span>
+                  <span className="text-xl md:text-2xl">{step.icon}</span>
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{step.label}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <h3 className="text-sm md:text-base font-bold text-white mb-1 md:mb-2">{step.label}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 {i < ENGINE_STEPS.length - 1 && (
                   <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-border z-10">
                     <ArrowRight className="w-5 h-5" />
@@ -701,14 +701,14 @@ export default function Home() {
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="bg-card border border-primary/20 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+            className="bg-card border border-primary/20 rounded-2xl md:rounded-3xl p-6 md:p-12 relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
             <div className="relative">
-              <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-widest">
+              <div className="inline-block mb-3 md:mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-widest">
                 AI, used where it actually helps
               </div>
-              <p className="text-lg text-foreground/90 leading-relaxed max-w-3xl">
+              <p className="text-sm md:text-lg text-foreground/90 leading-relaxed">
                 We can layer practical AI workflows into the system to speed up campaign planning, draft and repurpose content, summarize lead or customer insights, support follow-up, and reduce repetitive marketing tasks. No hype. Just useful workflows that make the system easier to run.
               </p>
             </div>
@@ -716,20 +716,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section id="process" className="py-16 md:py-24 bg-card/20 border-y border-border/20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── PROCESS ──────────────────────────────────────────────────────── */}
+      <section id="process" className="py-12 md:py-24 bg-card/20 border-y border-border/20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="mb-16"
+            className="mb-8 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">
               How It Works
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-sm md:text-lg text-muted-foreground max-w-2xl">
               A simple 3-step engagement that gets your marketing system built and running.
             </p>
           </motion.div>
@@ -737,7 +737,7 @@ export default function Home() {
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
             {[
               {
@@ -759,14 +759,14 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="flex flex-col md:flex-row items-start md:items-center p-8 md:p-10 bg-card rounded-3xl border border-border/30 hover:border-primary/40 transition-colors"
+                className="flex flex-row items-center p-5 md:p-10 bg-card rounded-2xl md:rounded-3xl border border-border/30 hover:border-primary/40 transition-colors"
               >
-                <div className="w-24 md:w-32 text-6xl md:text-8xl font-display font-extrabold text-white/5 mr-8 mb-4 md:mb-0 shrink-0 text-center">
+                <div className="w-14 md:w-32 text-4xl md:text-8xl font-display font-extrabold text-white/5 mr-4 md:mr-8 shrink-0 text-center">
                   {step.num}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl">{step.desc}</p>
+                  <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-2">{step.title}</h3>
+                  <p className="text-xs md:text-lg text-muted-foreground">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -774,18 +774,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROOF */}
-      <section id="proof" className="py-16 md:py-24 bg-background border-b border-border/20">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* ── PROOF ────────────────────────────────────────────────────────── */}
+      <section id="proof" className="py-12 md:py-24 bg-background border-b border-border/20">
+        <div className="max-w-4xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-4">
               Real Systems.
             </h2>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-primary mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-0">
               Real Results.
             </h2>
           </motion.div>
@@ -794,15 +794,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── ABOUT ────────────────────────────────────────────────────────── */}
+      <section id="about" className="py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={staggerContainer}
-            className="bg-gradient-to-br from-card to-background border border-border/50 rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-2xl"
+            className="bg-gradient-to-br from-card to-background border border-border/50 rounded-[24px] md:rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-2xl"
           >
-            <motion.div variants={fadeInUp} className="w-full md:w-2/5 h-[400px] md:h-auto relative">
+            <motion.div variants={fadeInUp} className="w-full md:w-2/5 h-[260px] md:h-auto relative">
               <img
                 src={operatorPhoto}
                 alt="Thomas Nilsen, founder of Diamond Ace Growth marketing systems agency"
@@ -810,29 +810,29 @@ export default function Home() {
               />
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+            <motion.div variants={fadeInUp} className="w-full md:w-3/5 p-6 md:p-16 flex flex-col justify-center">
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-4 md:mb-6">
                 Meet Thomas
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-8 leading-relaxed">
                 Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the funnels, email campaigns, automations, lead follow-up systems, and practical AI workflows they need to turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.
               </p>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-sm font-bold text-white">Funnels, Email, Automation and AI Workflows</div>
+                  <div className="text-xs md:text-sm font-bold text-white">Funnels, Email, Automation and AI Workflows</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
-                  <div className="text-sm font-bold text-white">Based in Utah County, UT</div>
+                  <div className="text-xs md:text-sm font-bold text-white">Based in Utah County, UT</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div>
-                  <div className="text-sm font-bold text-white">SaaS • Ecommerce • Service Businesses • Agencies</div>
+                  <div className="text-xs md:text-sm font-bold text-white">SaaS • Ecommerce • Service Businesses • Agencies</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div>
-                  <div className="text-sm font-bold text-white">Projects • Sprints • Retainers</div>
+                  <div className="text-xs md:text-sm font-bold text-white">Projects • Sprints • Retainers</div>
                 </div>
               </div>
             </motion.div>
@@ -840,11 +840,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-16 md:py-24 relative">
+      {/* ── CONTACT ──────────────────────────────────────────────────────── */}
+      <section id="contact" className="py-12 md:py-24 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
@@ -854,19 +854,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GET IN TOUCH */}
-      <section id="get-in-touch" className="py-16 md:py-24 border-t border-border/20 relative">
-        <div className="max-w-2xl mx-auto px-6">
+      {/* ── GET IN TOUCH ─────────────────────────────────────────────────── */}
+      <section id="get-in-touch" className="py-12 md:py-24 border-t border-border/20 relative">
+        <div className="max-w-2xl mx-auto px-5">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-10"
+            className="text-center mb-8 md:mb-10"
           >
-            <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">Get In Touch</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Get In Touch</p>
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-3 md:mb-4">
               Just want to say hello?
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-sm md:text-base text-muted-foreground">
               No forms, no commitments. Drop me a message and I'll get back to you.
             </p>
           </motion.div>
@@ -874,7 +874,7 @@ export default function Home() {
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeInUp}
-            className="bg-card rounded-3xl p-6 md:p-10 border border-border/30 shadow-xl"
+            className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-10 border border-border/30 shadow-xl"
           >
             <SimpleContactForm />
           </motion.div>
@@ -883,18 +883,18 @@ export default function Home() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="py-12 border-t border-border/20 bg-background text-center">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <img src={logoWhite} alt="Diamond Ace Growth - Sales funnels, email campaigns, and marketing automation" className="h-12 w-auto mb-6" />
-          <p className="text-muted-foreground mb-8">Funnels, email, automation, and AI workflows built to turn leads into customers.</p>
+      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      <footer className="py-10 md:py-12 border-t border-border/20 bg-background text-center">
+        <div className="max-w-7xl mx-auto px-5 flex flex-col items-center">
+          <img src={logoWhite} alt="Diamond Ace Growth - Sales funnels, email campaigns, and marketing automation" className="h-10 md:h-12 w-auto mb-5 md:mb-6" />
+          <p className="text-sm text-muted-foreground mb-6 md:mb-8 max-w-sm">Funnels, email, automation, and AI workflows built to turn leads into customers.</p>
 
-          <div className="flex gap-6 mb-8">
-            <a href="/privacy" className="text-sm text-muted-foreground hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms" className="text-sm text-muted-foreground hover:text-white transition-colors">Terms of Service</a>
+          <div className="flex gap-5 md:gap-6 mb-6 md:mb-8">
+            <a href="/privacy" className="text-xs md:text-sm text-muted-foreground hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-xs md:text-sm text-muted-foreground hover:text-white transition-colors">Terms of Service</a>
           </div>
 
-          <div className="text-sm text-muted-foreground/80">
+          <div className="text-xs md:text-sm text-muted-foreground/80">
             &copy; {new Date().getFullYear()} Diamond Ace Growth. All rights reserved.
           </div>
         </div>
