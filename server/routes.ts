@@ -37,21 +37,27 @@ export async function registerRoutes(
         lastName: input.lastName,
         email: input.email,
         companyName: input.companyName,
+        websiteUrl: input.websiteUrl,
         businessType: input.businessType,
-        currentPlatform: input.currentPlatform,
-        revenueRange: input.revenueRange,
-        implementedFeatures: input.implementedFeatures,
-        painPoints: input.painPoints,
-        marketingOptIn: input.marketingOptIn,
-        leadSource: "website_form",
+        currentTools: input.currentTools,
+        monthlyRevenueRange: input.monthlyRevenueRange,
+        serviceInterests: input.serviceInterests,
+        biggestBottleneck: input.biggestBottleneck,
+        marketingConsent: input.marketingConsent,
+        monthlyLeadVolume: input.monthlyLeadVolume,
+        currentAiUsage: input.currentAiUsage,
+        timeline: input.timeline,
+        budgetRange: input.budgetRange,
+        offerRequested: "Free Marketing Engine Audit",
+        leadSource: "Website",
       });
 
       await storage.createActivity({
         leadId: lead.id,
         type: "form_submitted",
         note: isNew
-          ? "Lead submitted audit request form"
-          : "Lead re-submitted audit request form",
+          ? "Lead submitted Free Marketing Engine Audit request"
+          : "Lead re-submitted Free Marketing Engine Audit request",
         meta: { isNew },
       });
 

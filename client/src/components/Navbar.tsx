@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation } from "wouter";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
-  const alwaysSolid = location === "/ai-portfolio";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,17 +19,17 @@ export function Navbar() {
     { name: "Home", href: "/#" },
     { name: "Problem", href: "/#problem" },
     { name: "Services", href: "/#services" },
+    { name: "Offers", href: "/#offers" },
     { name: "Process", href: "/#process" },
     { name: "Proof", href: "/#proof" },
     { name: "About", href: "/#about" },
     { name: "Contact", href: "/#get-in-touch" },
-    { name: "AI Work", href: "/ai-portfolio" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || alwaysSolid ? "glass-nav py-3 shadow-lg" : "bg-transparent py-5"
+        isScrolled ? "glass-nav py-3 shadow-lg" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -60,7 +57,7 @@ export function Navbar() {
             href="/#contact"
             className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all"
           >
-            Get a Free Ops Audit
+            Get a Free Marketing Audit
           </a>
         </div>
 
@@ -96,7 +93,7 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 min-h-[52px] text-center rounded-xl bg-primary text-white font-semibold flex items-center justify-center"
             >
-              Get a Free Ops Audit
+              Get a Free Marketing Audit
             </a>
           </motion.div>
         )}

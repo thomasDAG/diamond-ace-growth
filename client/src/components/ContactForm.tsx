@@ -5,6 +5,29 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
+const SERVICE_INTEREST_OPTIONS = [
+  "Sales funnel",
+  "Landing page",
+  "Lead capture form",
+  "Email campaigns",
+  "Email automation / nurture sequence",
+  "CRM or pipeline setup",
+  "Lead intake / follow-up process",
+  "AI workflow setup",
+  "Campaign strategy",
+  "Content repurposing",
+  "Reactivation or retention campaign",
+  "Reporting / analytics",
+  "Not sure yet",
+];
+
+const inputClass =
+  "w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none";
+const selectClass =
+  "w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none";
+const labelClass = "text-sm font-medium text-foreground/90";
+const errorClass = "text-xs text-destructive mt-1";
+
 export function ContactForm() {
   const [isPending, setIsPending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -17,12 +40,17 @@ export function ContactForm() {
       lastName: "",
       email: "",
       companyName: "",
-      businessType: undefined as any,
-      currentPlatform: undefined as any,
-      revenueRange: undefined as any,
-      implementedFeatures: [],
-      painPoints: "",
-      marketingOptIn: false,
+      websiteUrl: "",
+      businessType: "",
+      monthlyRevenueRange: "",
+      serviceInterests: [],
+      biggestBottleneck: "",
+      currentTools: "",
+      monthlyLeadVolume: "",
+      currentAiUsage: "",
+      timeline: "",
+      budgetRange: "",
+      marketingConsent: false,
     },
   });
 
@@ -40,9 +68,7 @@ export function ContactForm() {
       });
 
       if (!res.ok) {
-        const err = await res
-          .json()
-          .catch(() => ({ message: "Submission failed" }));
+        const err = await res.json().catch(() => ({ message: "Submission failed" }));
         setServerError(err.message || "Submission failed");
         return;
       }
@@ -54,17 +80,6 @@ export function ContactForm() {
       setIsPending(false);
     }
   };
-
-  const systemOptions = [
-    "CRM (any kind)",
-    "Marketing Automation",
-    "Email Sequences or Flows",
-    "Lead Capture Forms",
-    "Pipeline Tracking",
-    "Analytics or Reporting Setup",
-    "Paid Ads Running",
-    "None / Starting from scratch",
-  ];
 
   if (isSuccess) {
     return (
@@ -80,7 +95,7 @@ export function ContactForm() {
           Audit Request Received
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for reaching out. I am reviewing your details and will be in touch soon to schedule your free audit.
+          Thank you for reaching out. I am reviewing your details and will be in touch soon to schedule your free Marketing Engine Audit.
         </p>
       </motion.div>
     );
@@ -92,16 +107,16 @@ export function ContactForm() {
 
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Get Your Free Ops Audit
+          Get Your Free Marketing Engine Audit
         </h3>
         <p className="text-muted-foreground mb-5">
-          I'll review your current marketing ops setup and show you exactly where the gaps are and how to fix them.
+          We'll review your current marketing setup and show you where leads are leaking, follow-up is missing, AI could help, and what to fix first.
         </p>
         <ul className="space-y-2">
           {[
-            "Where your biggest ops gaps and bottlenecks are",
-            "Which tools and automations are working against you",
-            "A clear starting point for building your ops infrastructure",
+            "Where your biggest lead capture and follow-up gaps are",
+            "Which funnel, email, CRM, AI, or campaign pieces are missing",
+            "A clear starting point for turning more interest into customers",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -112,133 +127,81 @@ export function ContactForm() {
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+
+        {/* Name row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">First Name</label>
-            <input
-              {...form.register("firstName")}
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="John"
-              data-testid="input-first-name"
-            />
-            {form.formState.errors.firstName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.firstName.message}</p>
-            )}
+            <label htmlFor="firstName" className={labelClass}>First Name <span className="text-destructive">*</span></label>
+            <input id="firstName" {...form.register("firstName")} className={inputClass} placeholder="Jane" data-testid="input-first-name" />
+            {form.formState.errors.firstName && <p className={errorClass}>{form.formState.errors.firstName.message}</p>}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Last Name</label>
-            <input
-              {...form.register("lastName")}
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="Doe"
-              data-testid="input-last-name"
-            />
-            {form.formState.errors.lastName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.lastName.message}</p>
-            )}
+            <label htmlFor="lastName" className={labelClass}>Last Name <span className="text-destructive">*</span></label>
+            <input id="lastName" {...form.register("lastName")} className={inputClass} placeholder="Smith" data-testid="input-last-name" />
+            {form.formState.errors.lastName && <p className={errorClass}>{form.formState.errors.lastName.message}</p>}
           </div>
         </div>
 
+        {/* Email + Company */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Email</label>
-            <input
-              {...form.register("email")}
-              type="email"
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="john@company.com"
-              data-testid="input-email"
-            />
-            {form.formState.errors.email && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
-            )}
+            <label htmlFor="email" className={labelClass}>Email <span className="text-destructive">*</span></label>
+            <input id="email" {...form.register("email")} type="email" className={inputClass} placeholder="jane@company.com" data-testid="input-email" />
+            {form.formState.errors.email && <p className={errorClass}>{form.formState.errors.email.message}</p>}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-foreground/90">Company Name</label>
-            <input
-              {...form.register("companyName")}
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none"
-              placeholder="Your Business Name"
-              data-testid="input-company"
-            />
-            {form.formState.errors.companyName && (
-              <p className="text-xs text-destructive mt-1">{form.formState.errors.companyName.message}</p>
-            )}
+            <label htmlFor="companyName" className={labelClass}>Company Name <span className="text-destructive">*</span></label>
+            <input id="companyName" {...form.register("companyName")} className={inputClass} placeholder="Your Business Name" data-testid="input-company" />
+            {form.formState.errors.companyName && <p className={errorClass}>{form.formState.errors.companyName.message}</p>}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-end">
+        {/* Website URL */}
+        <div className="space-y-2">
+          <label htmlFor="websiteUrl" className={labelClass}>Website URL <span className="text-destructive">*</span></label>
+          <input id="websiteUrl" {...form.register("websiteUrl")} className={inputClass} placeholder="www.yourwebsite.com" data-testid="input-website-url" />
+          {form.formState.errors.websiteUrl && <p className={errorClass}>{form.formState.errors.websiteUrl.message}</p>}
+        </div>
+
+        {/* Business Type + Revenue */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label htmlFor="businessType" className="text-sm font-medium text-foreground/90">Type of business?</label>
-            <select
-              {...form.register("businessType")}
-              id="businessType"
-              defaultValue=""
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
-              data-testid="select-business-type"
-            >
-              <option value="" disabled>Select your answer</option>
-              <option value="SaaS / Software">SaaS / Software</option>
+            <label htmlFor="businessType" className={labelClass}>Type of Business <span className="text-destructive">*</span></label>
+            <select id="businessType" {...form.register("businessType")} defaultValue="" className={selectClass} data-testid="select-business-type">
+              <option value="" disabled>Select your type</option>
+              <option value="Service Business">Service Business</option>
               <option value="Ecommerce">Ecommerce</option>
-              <option value="Agency or Consulting">Agency or Consulting</option>
-              <option value="Health and Wellness">Health and Wellness</option>
-              <option value="Professional Services">Professional Services</option>
-              <option value="Real Estate">Real Estate</option>
-              <option value="Home Services">Home Services</option>
+              <option value="SaaS / Software">SaaS / Software</option>
+              <option value="Creator / Coach / Consultant">Creator / Coach / Consultant</option>
+              <option value="Agency">Agency</option>
+              <option value="Local Business">Local Business</option>
               <option value="Other">Other</option>
             </select>
+            {form.formState.errors.businessType && <p className={errorClass}>{form.formState.errors.businessType.message}</p>}
           </div>
           <div className="space-y-2">
-            <label htmlFor="currentPlatform" className="text-sm font-medium text-foreground/90">Primary marketing or CRM tool?</label>
-            <select
-              {...form.register("currentPlatform")}
-              id="currentPlatform"
-              defaultValue=""
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
-              data-testid="select-platform"
-            >
-              <option value="" disabled>Select your answer</option>
-              <option value="None / Manual">None / Manual</option>
-              <option value="GoHighLevel">GoHighLevel</option>
-              <option value="HubSpot">HubSpot</option>
-              <option value="Salesforce">Salesforce</option>
-              <option value="ActiveCampaign">ActiveCampaign</option>
-              <option value="Klaviyo">Klaviyo</option>
-              <option value="Mailchimp">Mailchimp</option>
-              <option value="Pipedrive">Pipedrive</option>
-              <option value="Zoho">Zoho</option>
-              <option value="Multiple / Mixed Stack">Multiple / Mixed Stack</option>
-              <option value="Not Sure">Not Sure</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="revenueRange" className="text-sm font-medium text-foreground/90">Monthly revenue?</label>
-            <select
-              {...form.register("revenueRange")}
-              id="revenueRange"
-              defaultValue=""
-              className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white outline-none appearance-none"
-              data-testid="select-revenue"
-            >
-              <option value="" disabled>Select one</option>
-              <option value="Under $10k">Under $10k</option>
-              <option value="$10k-$25k">$10k-$25k</option>
-              <option value="$25k-$50k">$25k-$50k</option>
-              <option value="$50k-$100k">$50k-$100k</option>
-              <option value="$100k-$250k">$100k-$250k</option>
-              <option value="$250k+">$250k+</option>
+            <label htmlFor="monthlyRevenueRange" className={labelClass}>Monthly Revenue Range <span className="text-destructive">*</span></label>
+            <select id="monthlyRevenueRange" {...form.register("monthlyRevenueRange")} defaultValue="" className={selectClass} data-testid="select-revenue">
+              <option value="" disabled>Select range</option>
+              <option value="Pre-revenue / Just starting">Pre-revenue / Just starting</option>
+              <option value="Under $10k/month">Under $10k/month</option>
+              <option value="$10k–$50k/month">$10k–$50k/month</option>
+              <option value="$50k–$100k/month">$50k–$100k/month</option>
+              <option value="$100k–$250k/month">$100k–$250k/month</option>
+              <option value="$250k+/month">$250k+/month</option>
               <option value="Prefer not to say">Prefer not to say</option>
             </select>
+            {form.formState.errors.monthlyRevenueRange && <p className={errorClass}>{form.formState.errors.monthlyRevenueRange.message}</p>}
           </div>
         </div>
 
+        {/* Service Interests */}
         <div className="space-y-3">
-          <label className="text-sm font-medium text-foreground/90">
-            Which of these does your business currently have? (Select all that apply)
+          <label className={labelClass}>
+            What do you need help with? <span className="text-destructive">*</span> <span className="text-muted-foreground font-normal">(Select all that apply)</span>
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {systemOptions.map((option) => (
+            {SERVICE_INTEREST_OPTIONS.map((option) => (
               <label
                 key={option}
                 className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors"
@@ -246,7 +209,7 @@ export function ContactForm() {
                 <input
                   type="checkbox"
                   value={option}
-                  {...form.register("implementedFeatures")}
+                  {...form.register("serviceInterests")}
                   className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border shrink-0"
                   data-testid={`checkbox-${option.replace(/[\s/()]/g, "-").toLowerCase()}`}
                 />
@@ -254,39 +217,127 @@ export function ContactForm() {
               </label>
             ))}
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground/90">
-            What is the biggest gap or bottleneck in your marketing ops right now?
-          </label>
-          <textarea
-            {...form.register("painPoints")}
-            rows={4}
-            className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-white placeholder:text-muted-foreground/50 outline-none resize-none"
-            placeholder="For example: our CRM is a mess, automations are broken, our tools do not connect, or we have no real system at all..."
-            data-testid="textarea-pain-points"
-          />
-          {form.formState.errors.painPoints && (
-            <p className="text-xs text-destructive mt-1">{form.formState.errors.painPoints.message}</p>
+          {form.formState.errors.serviceInterests && (
+            <p className={errorClass}>{form.formState.errors.serviceInterests.message}</p>
           )}
         </div>
 
+        {/* Biggest Bottleneck */}
+        <div className="space-y-2">
+          <label htmlFor="biggestBottleneck" className={labelClass}>
+            What is your biggest marketing bottleneck right now? <span className="text-destructive">*</span>
+          </label>
+          <textarea
+            id="biggestBottleneck"
+            {...form.register("biggestBottleneck")}
+            rows={4}
+            className={`${inputClass} resize-none`}
+            placeholder="For example: we get leads but do not follow up well, we need a sales funnel, our emails are inconsistent, our CRM is a mess, our website does not convert, we want to use AI but do not know how, or we are not sure what to fix first…"
+            data-testid="textarea-bottleneck"
+          />
+          {form.formState.errors.biggestBottleneck && (
+            <p className={errorClass}>{form.formState.errors.biggestBottleneck.message}</p>
+          )}
+        </div>
+
+        {/* Optional Section Header */}
+        <div className="border-t border-border/30 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Optional — helps us prepare</p>
+
+          <div className="space-y-6">
+            {/* Current Tools */}
+            <div className="space-y-2">
+              <label htmlFor="currentTools" className={labelClass}>Current marketing, CRM, or email tools</label>
+              <select id="currentTools" {...form.register("currentTools")} defaultValue="" className={selectClass} data-testid="select-current-tools">
+                <option value="">Select if applicable</option>
+                <option value="HubSpot">HubSpot</option>
+                <option value="Klaviyo">Klaviyo</option>
+                <option value="Mailchimp">Mailchimp</option>
+                <option value="MailerLite">MailerLite</option>
+                <option value="GoHighLevel">GoHighLevel</option>
+                <option value="Salesforce / SFMC">Salesforce / SFMC</option>
+                <option value="Shopify">Shopify</option>
+                <option value="WordPress">WordPress</option>
+                <option value="Squarespace / Wix">Squarespace / Wix</option>
+                <option value="Google Sheets">Google Sheets</option>
+                <option value="Multiple / Mixed Stack">Multiple / Mixed Stack</option>
+                <option value="Other">Other</option>
+                <option value="Not sure / none yet">Not sure / none yet</option>
+              </select>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Lead Volume */}
+              <div className="space-y-2">
+                <label htmlFor="monthlyLeadVolume" className={labelClass}>Current monthly lead volume</label>
+                <select id="monthlyLeadVolume" {...form.register("monthlyLeadVolume")} defaultValue="" className={selectClass} data-testid="select-lead-volume">
+                  <option value="">Select if known</option>
+                  <option value="0–10 leads/month">0–10 leads/month</option>
+                  <option value="11–50 leads/month">11–50 leads/month</option>
+                  <option value="51–100 leads/month">51–100 leads/month</option>
+                  <option value="101–500 leads/month">101–500 leads/month</option>
+                  <option value="500+ leads/month">500+ leads/month</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+
+              {/* AI Usage */}
+              <div className="space-y-2">
+                <label htmlFor="currentAiUsage" className={labelClass}>Current AI usage</label>
+                <select id="currentAiUsage" {...form.register("currentAiUsage")} defaultValue="" className={selectClass} data-testid="select-ai-usage">
+                  <option value="">Select if applicable</option>
+                  <option value="Not using AI yet">Not using AI yet</option>
+                  <option value="Using ChatGPT or Claude casually">Using ChatGPT or Claude casually</option>
+                  <option value="Using AI for content creation">Using AI for content creation</option>
+                  <option value="Using AI for marketing workflows">Using AI for marketing workflows</option>
+                  <option value="Using AI inside our CRM or automation tools">Using AI inside our CRM or automation tools</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+
+              {/* Timeline */}
+              <div className="space-y-2">
+                <label htmlFor="timeline" className={labelClass}>Timeline</label>
+                <select id="timeline" {...form.register("timeline")} defaultValue="" className={selectClass} data-testid="select-timeline">
+                  <option value="">Select if known</option>
+                  <option value="ASAP">ASAP</option>
+                  <option value="Next 2–4 weeks">Next 2–4 weeks</option>
+                  <option value="Next 1–3 months">Next 1–3 months</option>
+                  <option value="Just researching">Just researching</option>
+                </select>
+              </div>
+
+              {/* Budget */}
+              <div className="space-y-2">
+                <label htmlFor="budgetRange" className={labelClass}>Budget range</label>
+                <select id="budgetRange" {...form.register("budgetRange")} defaultValue="" className={selectClass} data-testid="select-budget">
+                  <option value="">Select if known</option>
+                  <option value="Under $1,000">Under $1,000</option>
+                  <option value="$1,000–$3,500">$1,000–$3,500</option>
+                  <option value="$3,500–$7,500">$3,500–$7,500</option>
+                  <option value="$7,500–$15,000">$7,500–$15,000</option>
+                  <option value="$15,000+">$15,000+</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Marketing Consent */}
         <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
-            {...form.register("marketingOptIn")}
+            {...form.register("marketingConsent")}
             className="w-4 h-4 mt-0.5 rounded text-primary focus:ring-primary bg-background border-border shrink-0"
-            data-testid="checkbox-marketing-opt-in"
+            data-testid="checkbox-marketing-consent"
           />
           <span className="text-sm text-muted-foreground">
             I'd like to receive occasional email tips, strategies, and updates from Diamond Ace Growth. I can unsubscribe at any time.
           </span>
         </label>
 
-        {serverError && (
-          <p className="text-sm text-destructive">{serverError}</p>
-        )}
+        {serverError && <p className="text-sm text-destructive">{serverError}</p>}
 
         <button
           type="submit"
@@ -300,11 +351,11 @@ export function ContactForm() {
               Submitting...
             </>
           ) : (
-            "Get My Free Ops Audit"
+            "Get My Free Marketing Engine Audit"
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">
-          Takes less than 2 minutes. No pressure. Just clarity.
+          Takes less than 3 minutes. No pressure. Just clarity.
         </p>
         <p className="text-center text-xs text-muted-foreground">
           Your information is secure. We never share your data.

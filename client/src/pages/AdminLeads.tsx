@@ -75,7 +75,7 @@ export default function AdminLeads() {
   };
 
   const handleStatusUpdate = (id: number, status: string) => {
-    setLeads(prev => prev.map(l => l.id === id ? { ...l, status } : l));
+    setLeads(prev => prev.map(l => l.id === id ? { ...l, status: status as any } : l));
   };
 
   const filtered = filterStatus === "all"

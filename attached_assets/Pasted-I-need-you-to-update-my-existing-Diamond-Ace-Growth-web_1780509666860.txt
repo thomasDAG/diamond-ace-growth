@@ -1,0 +1,518 @@
+I need you to update my existing Diamond Ace Growth website to reposition the business from a narrow “fractional marketing operations” consultancy into a clearer founder-led funnel and marketing systems agency.
+
+Important: before making changes, inspect the existing project structure and identify the stack/framework being used. Preserve the current visual design, branding, dark premium aesthetic, colors, layout quality, logo usage, responsive behavior, animations, and overall feel as much as possible. This is a copy/positioning/scope transformation, not a full redesign.
+
+The new positioning:
+
+Diamond Ace Growth is a founder-led funnel and marketing systems agency that helps businesses turn more leads into customers by building sales funnels, email campaigns, automations, CRM/lead intake systems, campaign support, and practical AI-enhanced marketing workflows.
+
+The site should be extremely clear to a normal business owner. Avoid vague language like “ops infrastructure” as the main front-facing message. We can still mention systems and operations, but the homepage should immediately communicate what we do in plain English:
+
+We build sales funnels, email campaigns, and automations that help businesses capture leads, follow up fast, and turn more people into paying customers.
+
+AI positioning:
+
+Remove the existing standalone “AI Work” page and remove “AI Work” from the header navigation.
+
+However, AI should still be a visible and recurring part of the website messaging. Do not make the whole brand sound like a generic “AI-powered agency,” because that phrase is overused. Instead, position AI as a practical advantage inside the systems we build.
+
+Use language like:
+
+* AI-enhanced marketing systems
+* Practical AI workflows
+* Smarter follow-up with AI
+* AI-assisted campaign planning
+* AI-supported content repurposing
+* AI-informed segmentation and reporting
+* AI where it actually helps
+
+Avoid phrases like:
+
+* AI-powered growth machine
+* Revolutionary AI marketing
+* AI automation wizardry
+* Generic hype language
+
+The core idea:
+We use AI to help businesses move faster, clean up repetitive work, improve campaign planning, repurpose content, strengthen follow-up, and make marketing systems easier to operate.
+
+Main homepage hero changes:
+
+Replace the current badge “Fractional Marketing Operations” with:
+“Funnels • Email • Automation • AI Workflows”
+
+Replace the current hero headline with:
+“Turn More Leads Into Customers”
+
+Replace the current hero subheadline with:
+“Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and convert more people into paying customers.”
+
+Replace the main CTA text with:
+“Get Your Free Marketing Engine Audit”
+
+Replace the small supporting text under the CTA with:
+“See what’s missing, what’s leaking, and what to fix first.”
+
+Navigation changes:
+
+Update navigation as needed so it fits the new positioning. Suggested nav:
+Home
+Problem
+Services
+Offers
+Process
+Proof
+About
+Contact
+
+Remove “AI Work” from the nav entirely.
+
+Delete or fully decommission the standalone AI Work page if it exists. If removing the page creates routing or build errors, clean up all related routes, imports, nav references, links, and unused components safely.
+
+Update the homepage carousel items.
+
+The current carousel items are:
+
+* CRM Setup and Optimization
+* Marketing Automation Builds
+* Lead and Lifecycle Systems
+* Email Flow Architecture
+* Pipeline and Revenue Ops
+* Fractional Marketing Ops
+* Stack Audit and Cleanup
+* Campaign Operations
+* Systems Integration
+* Reporting and Analytics Infrastructure
+* Onboarding Automation
+* Retention and Reactivation Flows
+
+Replace them with carousel items that better match the new business positioning:
+
+* Sales Funnel Builds
+* Email Campaigns
+* Marketing Automations
+* AI-Enhanced Workflows
+* Lead Capture Systems
+* Follow-Up Sequences
+* Landing Pages
+* CRM and Pipeline Setup
+* Nurture Campaigns
+* Reactivation Campaigns
+* Campaign Strategy
+* Content Repurposing Systems
+* Lead Intake Forms
+* Reporting and Analytics
+
+Problem section:
+
+Update the problem section so it focuses less on “your marketing stack is holding you back” and more on the broader business problem of leads, campaigns, follow-up, and tools being disconnected.
+
+Suggested headline:
+“Your marketing has pieces. Now it needs a system.”
+
+Suggested body copy:
+“Most businesses are doing some marketing. They have a website, a few campaigns, maybe some social content, referrals, forms, emails, or a CRM. But if those pieces are not connected, leads slip through the cracks and revenue gets left on the table.”
+
+Suggested bullet points:
+
+* Leads come in, but follow-up is slow or inconsistent
+* Your website is not built to capture and convert interest
+* Email campaigns are random, outdated, or nonexistent
+* Your CRM, forms, and automations do not work together
+* Your team is doing too much repetitive marketing work manually
+* AI tools are available, but no one knows how to use them in a practical workflow
+* You know marketing should be working better, but the system is not clear
+
+Right-side card in the problem section:
+
+Change heading from “The Ops Infrastructure We Build” to:
+“The Marketing Engine We Build”
+
+Update the items to:
+
+1. Sales Funnel Builds
+   Description: “We build landing pages, lead magnets, forms, and booking paths that turn interest into action.”
+
+2. Email Campaigns and Automations
+   Description: “We write, build, and launch email sequences that welcome, nurture, reactivate, and convert.”
+
+3. CRM and Lead Intake Systems
+   Description: “We connect forms, pipelines, tagging, lead routing, and follow-up so every lead has a clear next step.”
+
+4. AI-Enhanced Workflows
+   Description: “We help you use AI for campaign planning, content repurposing, customer insights, follow-up support, and repetitive marketing tasks.”
+
+5. Campaign Support
+   Description: “We help plan and execute campaigns that drive people into your funnel and keep your business top of mind.”
+
+6. Reporting and Optimization
+   Description: “We track what is working, find the leaks, and keep improving the system over time.”
+
+Services section:
+
+Rename the section headline from “What We Actually Set Up For You” to:
+“What We Build For You”
+
+Section subheadline:
+“Clear, practical marketing systems that help you attract leads, follow up, use AI wisely, and convert more customers.”
+
+Create/replace service cards with these five primary service buckets:
+
+1. Sales Funnel Builds
+   Description:
+   “Landing pages, lead magnets, offer pages, forms, booking flows, and funnel paths that help turn attention into leads and sales.”
+
+2. Email Campaigns and Automations
+   Description:
+   “Welcome flows, nurture sequences, launch campaigns, reactivation campaigns, retention emails, newsletters, and automated follow-up.”
+
+3. CRM and Lead Intake Systems
+   Description:
+   “CRM setup, pipeline cleanup, lead routing, forms, tagging, automations, reporting, and the backend structure that keeps leads from falling through the cracks.”
+
+4. AI-Enhanced Marketing Workflows
+   Description:
+   “Practical AI workflows for campaign planning, content repurposing, email drafts, customer research, lead follow-up support, reporting summaries, and internal marketing efficiency.”
+
+5. Campaign Support
+   Description:
+   “Campaign planning, copywriting, launch support, email/social coordination, and promotional strategy that moves people into your funnel.”
+
+Do not list paid ads management as a primary service. If paid traffic is mentioned anywhere, say:
+“Paid traffic coordination available when needed through trusted partners.”
+Do not present paid ads as something Diamond Ace Growth directly manages yet.
+
+Do not list social media management as a primary standalone service. Keep social tucked under “Campaign Support” as social/email coordination, content direction, content repurposing, or campaign support.
+
+Add or update an “Offers” or “Pricing” section.
+
+I want transparent pricing shown on the site. Use this structure:
+
+1. Free Marketing Engine Audit
+   Price: Free
+   Description:
+   “A quick diagnostic to identify where your marketing is leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.”
+   CTA: “Get Your Free Audit”
+
+2. Marketing Engine Blueprint
+   Price: Starting at $497
+   Description:
+   “A deeper strategy session and roadmap that reviews your funnel, website, email follow-up, CRM, campaign path, AI workflow opportunities, and biggest growth gaps.”
+   CTA: “Book a Blueprint”
+
+3. Funnel and Follow-Up Sprint
+   Price: Starting at $3,500
+   Description:
+   “A done-for-you build that can include a landing page, lead capture form, email sequence, CRM setup, automations, AI-assisted workflows, and launch support.”
+   CTA: “Start a Sprint”
+
+4. Marketing Engine Management
+   Price: Starting at $2,500/month
+   Description:
+   “Ongoing support for email campaigns, funnel optimization, automations, reporting, campaign planning, AI workflow refinement, and system improvements.”
+   CTA: “Explore Monthly Support”
+
+5. Growth Systems Partner
+   Price: Starting at $6,000/month
+   Description:
+   “A more embedded partnership for businesses that need deeper marketing systems, campaign, funnel, automation, and practical AI implementation support without hiring full-time.”
+   CTA: “Talk Through Fit”
+
+Make the pricing feel clean, premium, and not too cluttered. Use “starting at” language.
+
+Add a simple visual “Marketing Engine” section.
+
+This section should show the system in a simple sequence:
+Attention / Traffic → Landing Page → Lead Capture → Email Follow-Up → Booking or Sale → Retention
+
+Headline:
+“How the Marketing Engine Works”
+
+Subheadline:
+“We connect the pieces so more people move from interested to ready to buy.”
+
+Each step can have a short one-line description:
+
+* Attention / Traffic: “People hear about your business through referrals, content, campaigns, search, or ads.”
+* Landing Page: “They land on a page with one clear message and one clear next step.”
+* Lead Capture: “They fill out a form, request a resource, book a call, or start the buying process.”
+* Email Follow-Up: “Automated emails nurture, educate, remind, and move them forward.”
+* Booking or Sale: “The system pushes qualified leads toward the right conversion.”
+* Retention: “Follow-up campaigns keep customers engaged and coming back.”
+
+Add a short AI callout either inside this section or immediately after it.
+
+Suggested AI callout headline:
+“AI, used where it actually helps.”
+
+Suggested copy:
+“We can layer practical AI workflows into the system to speed up campaign planning, draft and repurpose content, summarize lead or customer insights, support follow-up, and reduce repetitive marketing tasks. No hype. Just useful workflows that make the system easier to run.”
+
+Process section:
+
+Update the current 3-step process to:
+
+1. Audit the Engine
+   Description:
+   “We review your current website, funnel, email, CRM, forms, automations, campaigns, AI usage, and follow-up to find what is missing or leaking.”
+
+2. Build the System
+   Description:
+   “We build or clean up the funnels, emails, automations, lead intake, AI workflows, and campaign pieces your business needs.”
+
+3. Launch and Optimize
+   Description:
+   “We launch the system, monitor performance, improve what is working, and keep tightening the path from lead to customer.”
+
+Proof section:
+
+Keep the proof/testimonial carousel and design, but update the heading from:
+“Real Results. Real Businesses.”
+to:
+“Real Systems. Real Results.”
+
+Keep the existing testimonial content unless it needs small wording adjustments for fit. Do not fabricate new testimonials.
+
+About section:
+
+Keep the “Meet Thomas” founder-led section, but update the copy so it supports the broader positioning and the AI capability.
+
+Suggested copy:
+“Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the funnels, email campaigns, automations, lead follow-up systems, and practical AI workflows they need to turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing clearer, more connected, and easier to turn into customers.”
+
+Update the focus labels:
+Focus:
+Funnels, Email, Automation and AI Workflows
+
+Experience:
+SaaS • Ecommerce • Service Businesses • Agencies
+
+Location:
+Based in Utah County, UT
+
+Engagement:
+Projects • Sprints • Retainers
+
+Lead form/request form changes:
+
+Update the main form from “Get Your Free Ops Audit” to:
+“Get Your Free Marketing Engine Audit”
+
+Intro copy:
+“We’ll review your current marketing setup and show you where leads are leaking, follow-up is missing, AI could help, and what to fix first.”
+
+Bullets:
+
+* Where your biggest lead capture and follow-up gaps are
+* Which funnel, email, CRM, AI, or campaign pieces are missing
+* A clear starting point for turning more interest into customers
+
+Update the form fields to capture the right information for the new positioning.
+
+Recommended fields:
+
+Required:
+
+* First Name
+* Last Name
+* Email
+* Company Name
+* Website URL
+* Type of Business
+* Monthly Revenue Range
+* What do you need help with?
+* What is your biggest marketing bottleneck right now?
+
+Optional:
+
+* Current marketing/CRM/email tools
+* Current monthly lead volume
+* Current AI usage
+* Timeline
+* Budget range
+
+Suggested dropdown/checkbox options:
+
+Type of Business:
+
+* Service Business
+* Ecommerce
+* SaaS / Software
+* Creator / Coach / Consultant
+* Agency
+* Local Business
+* Other
+
+Monthly Revenue Range:
+
+* Pre-revenue / Just starting
+* Under $10k/month
+* $10k–$50k/month
+* $50k–$100k/month
+* $100k–$250k/month
+* $250k+/month
+* Prefer not to say
+
+What do you need help with? Use checkboxes:
+
+* Sales funnel
+* Landing page
+* Lead capture form
+* Email campaigns
+* Email automation / nurture sequence
+* CRM or pipeline setup
+* Lead intake / follow-up process
+* AI workflow setup
+* Campaign strategy
+* Content repurposing
+* Reactivation or retention campaign
+* Reporting / analytics
+* Not sure yet
+
+Current marketing/CRM/email tools:
+
+* HubSpot
+* Klaviyo
+* Mailchimp
+* MailerLite
+* GoHighLevel
+* Salesforce / SFMC
+* Shopify
+* WordPress
+* Squarespace / Wix
+* Google Sheets
+* Other
+* Not sure / none yet
+
+Current monthly lead volume:
+
+* 0–10 leads/month
+* 11–50 leads/month
+* 51–100 leads/month
+* 101–500 leads/month
+* 500+ leads/month
+* Not sure
+
+Current AI usage:
+
+* Not using AI yet
+* Using ChatGPT or Claude casually
+* Using AI for content creation
+* Using AI for marketing workflows
+* Using AI inside our CRM or automation tools
+* Not sure
+
+Timeline:
+
+* ASAP
+* Next 2–4 weeks
+* Next 1–3 months
+* Just researching
+
+Budget range:
+
+* Under $1,000
+* $1,000–$3,500
+* $3,500–$7,500
+* $7,500–$15,000
+* $15,000+
+* Not sure yet
+
+Biggest marketing bottleneck textarea placeholder:
+“For example: we get leads but do not follow up well, we need a sales funnel, our emails are inconsistent, our CRM is a mess, our website does not convert, we want to use AI but do not know how, or we are not sure what to fix first…”
+
+Newsletter/marketing consent checkbox:
+“I’d like to receive occasional email tips, strategies, and updates from Diamond Ace Growth. I can unsubscribe at any time.”
+
+Backend CRM alignment:
+
+Very important: the existing lead form is connected to a backend CRM. Do not break existing lead capture.
+
+Before changing the form, inspect how the current form submits data and where the CRM field mapping happens.
+
+Update the backend CRM/data handling so every new, removed, or renamed form field maps correctly. There should be no mismatch between front-end form fields and backend CRM fields.
+
+Specifically:
+
+* Preserve the existing CRM integration and submission flow.
+* Identify all current form field names/IDs and where they are processed.
+* Add backend handling for all new fields.
+* Remove or deprecate old field names only if they are no longer used.
+* Make sure checkbox arrays submit cleanly and are stored in readable format.
+* Make sure dropdown values are captured exactly.
+* Make sure required field validation matches the new form.
+* Make sure the CRM record includes the source/offer name: “Free Marketing Engine Audit”.
+* Make sure the CRM record includes a clear service interest summary based on the selected checkboxes.
+* Make sure the CRM record includes the current AI usage field.
+* Make sure form submission success and error states still work.
+* After implementation, test the form submission end-to-end and verify the backend receives the expected payload.
+
+Recommended backend field names:
+
+* firstName
+* lastName
+* email
+* companyName
+* websiteUrl
+* businessType
+* monthlyRevenueRange
+* serviceInterests
+* currentTools
+* monthlyLeadVolume
+* currentAiUsage
+* timeline
+* budgetRange
+* biggestBottleneck
+* marketingConsent
+* leadSource
+* offerRequested
+
+Set:
+leadSource = “Website”
+offerRequested = “Free Marketing Engine Audit”
+
+If the existing CRM expects different field names, map the new front-end fields to the existing CRM schema or update the CRM schema carefully so both sides match.
+
+Contact form:
+
+Keep the casual “Just want to say hello?” contact form, but make sure it still works independently from the audit form if that is how it is currently structured.
+
+Footer tagline:
+
+Replace:
+“Building marketing ops that scale.”
+
+With:
+“Funnels, email, automation, and AI workflows built to turn leads into customers.”
+
+Tone and copy guidelines:
+
+* Clear over clever.
+* Founder-led and personable, but still professional.
+* Avoid corporate jargon.
+* Avoid making the company sound like a huge agency.
+* Use “we” language across the site, but keep the founder-led feel in the About section.
+* Avoid overpromising paid ads or social media management.
+* Make AI visible and practical throughout the site without making the brand sound like generic AI hype.
+* Make it obvious within 5 seconds that Diamond Ace Growth builds funnels, email campaigns, automations, AI workflows, and lead follow-up systems.
+
+Do not:
+
+* Redesign the whole site from scratch.
+* Break the current styling or layout quality.
+* Break the CRM/form integration.
+* Add fake testimonials, fake logos, or fake case studies.
+* Promise paid ads management as a core service.
+* Make social media management a primary service.
+* Keep the standalone AI Work page.
+* Use generic “AI-powered agency” hype language.
+* Remove the premium look and feel.
+
+After finishing:
+
+1. Provide a summary of what files/components were changed.
+2. Confirm the current stack/framework.
+3. Confirm the AI Work page and nav item were removed safely.
+4. Confirm the form fields and backend CRM mapping were updated.
+5. Confirm whether the audit form and contact form were tested.
+6. Flag any assumptions or anything that still requires manual CRM configuration.

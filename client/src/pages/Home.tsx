@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, XCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, XCircle, ChevronLeft, ChevronRight, Check } from "lucide-react";
 import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
@@ -21,46 +21,100 @@ const staggerContainer = {
 };
 
 const MARQUEE_SERVICES = [
-  "CRM Setup and Optimization",
-  "Marketing Automation Builds",
-  "Lead and Lifecycle Systems",
-  "Email Flow Architecture",
-  "Pipeline and Revenue Ops",
-  "Fractional Marketing Ops",
-  "Stack Audit and Cleanup",
-  "Campaign Operations",
-  "Systems Integration",
-  "Reporting and Analytics Infrastructure",
-  "Onboarding Automation",
-  "Retention and Reactivation Flows",
+  "Sales Funnel Builds",
+  "Email Campaigns",
+  "Marketing Automations",
+  "AI-Enhanced Workflows",
+  "Lead Capture Systems",
+  "Follow-Up Sequences",
+  "Landing Pages",
+  "CRM and Pipeline Setup",
+  "Nurture Campaigns",
+  "Reactivation Campaigns",
+  "Campaign Strategy",
+  "Content Repurposing Systems",
+  "Lead Intake Forms",
+  "Reporting and Analytics",
 ];
 
 const SERVICE_CARDS = [
   {
-    emoji: "⚙️",
-    title: "CRM and Pipeline Setup",
-    desc: "We build your CRM from scratch or clean up what is already there so your pipeline reflects reality and your team has a system they trust.",
-  },
-  {
-    emoji: "🔁",
-    title: "Marketing Automation Builds",
-    desc: "We design and deploy the automations that handle your lead flow, nurture sequences, and internal ops so nothing falls through the cracks.",
+    emoji: "🎯",
+    title: "Sales Funnel Builds",
+    desc: "Landing pages, lead magnets, offer pages, forms, booking flows, and funnel paths that help turn attention into leads and sales.",
   },
   {
     emoji: "📧",
-    title: "Email Architecture and Deployment",
-    desc: "We build complete email programs including welcome flows, drip sequences, and re-engagement campaigns with copy and deployment included.",
+    title: "Email Campaigns and Automations",
+    desc: "Welcome flows, nurture sequences, launch campaigns, reactivation campaigns, retention emails, newsletters, and automated follow-up.",
   },
   {
-    emoji: "🔗",
-    title: "Stack Integration and Cleanup",
-    desc: "We audit your full tool stack, identify the gaps and redundancies, and connect everything so your data flows cleanly across systems.",
+    emoji: "⚙️",
+    title: "CRM and Lead Intake Systems",
+    desc: "CRM setup, pipeline cleanup, lead routing, forms, tagging, automations, reporting, and the backend structure that keeps leads from falling through the cracks.",
   },
   {
-    emoji: "♻️",
-    title: "Reactivation and Retention",
-    desc: "We build campaigns that bring back old leads and past customers, getting more revenue from the audience you have already built.",
+    emoji: "🤖",
+    title: "AI-Enhanced Marketing Workflows",
+    desc: "Practical AI workflows for campaign planning, content repurposing, email drafts, customer research, lead follow-up support, reporting summaries, and internal marketing efficiency.",
   },
+  {
+    emoji: "📣",
+    title: "Campaign Support",
+    desc: "Campaign planning, copywriting, launch support, email/social coordination, and promotional strategy that moves people into your funnel.",
+  },
+];
+
+const OFFERS = [
+  {
+    name: "Free Marketing Engine Audit",
+    price: "Free",
+    desc: "A quick diagnostic to identify where your marketing is leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.",
+    cta: "Get Your Free Audit",
+    href: "#contact",
+    featured: true,
+  },
+  {
+    name: "Marketing Engine Blueprint",
+    price: "Starting at $497",
+    desc: "A deeper strategy session and roadmap that reviews your funnel, website, email follow-up, CRM, campaign path, AI workflow opportunities, and biggest growth gaps.",
+    cta: "Book a Blueprint",
+    href: "#contact",
+    featured: false,
+  },
+  {
+    name: "Funnel and Follow-Up Sprint",
+    price: "Starting at $3,500",
+    desc: "A done-for-you build that can include a landing page, lead capture form, email sequence, CRM setup, automations, AI-assisted workflows, and launch support.",
+    cta: "Start a Sprint",
+    href: "#contact",
+    featured: false,
+  },
+  {
+    name: "Marketing Engine Management",
+    price: "Starting at $2,500/month",
+    desc: "Ongoing support for email campaigns, funnel optimization, automations, reporting, campaign planning, AI workflow refinement, and system improvements.",
+    cta: "Explore Monthly Support",
+    href: "#contact",
+    featured: false,
+  },
+  {
+    name: "Growth Systems Partner",
+    price: "Starting at $6,000/month",
+    desc: "A more embedded partnership for businesses that need deeper marketing systems, campaign, funnel, automation, and practical AI implementation support without hiring full-time.",
+    cta: "Talk Through Fit",
+    href: "#contact",
+    featured: false,
+  },
+];
+
+const ENGINE_STEPS = [
+  { icon: "📡", label: "Attention / Traffic", desc: "People hear about your business through referrals, content, campaigns, search, or ads." },
+  { icon: "🖥️", label: "Landing Page", desc: "They land on a page with one clear message and one clear next step." },
+  { icon: "📋", label: "Lead Capture", desc: "They fill out a form, request a resource, book a call, or start the buying process." },
+  { icon: "📧", label: "Email Follow-Up", desc: "Automated emails nurture, educate, remind, and move them forward." },
+  { icon: "💰", label: "Booking or Sale", desc: "The system pushes qualified leads toward the right conversion." },
+  { icon: "🔄", label: "Retention", desc: "Follow-up campaigns keep customers engaged and coming back." },
 ];
 
 const TESTIMONIALS = [
@@ -299,21 +353,32 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Diamond Ace Growth | Fractional Marketing Ops, CRM, Automation &amp; Email Systems</title>
-        <meta name="description" content="Diamond Ace Growth helps growing businesses build cleaner marketing operations through CRM and pipeline setup, marketing automation, email flow deployment, stack integration, retention campaigns, and fractional ops support." />
-        <meta property="og:title" content="Fractional Marketing Ops, Built Right" />
-        <meta property="og:description" content="Diamond Ace Growth helps growing teams clean up their CRM, automate key workflows, deploy better email programs, and build the marketing ops infrastructure needed to scale." />
-        <meta property="og:image" content="https://diamondacegrowth.com/linkpreview.png?v=3" />
+        <title>Diamond Ace Growth | Sales Funnels, Email Campaigns, Automations &amp; AI Workflows</title>
+        <meta name="description" content="Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and turn more people into paying customers." />
+        <meta property="og:title" content="Turn More Leads Into Customers | Diamond Ace Growth" />
+        <meta property="og:description" content="We build sales funnels, email campaigns, automations, CRM systems, and practical AI workflows for growing businesses." />
+        <meta property="og:image" content="https://diamondacegrowth.com/linkpreview.png?v=4" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://diamondacegrowth.com" />
         <meta property="og:site_name" content="Diamond Ace Growth" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fractional Marketing Ops, Built Right" />
-        <meta name="twitter:description" content="CRM, automation, email flows, stack cleanup, and marketing ops infrastructure for growing teams." />
-        <meta name="twitter:image" content="https://diamondacegrowth.com/linkpreview.png?v=3" />
+        <meta name="twitter:title" content="Turn More Leads Into Customers | Diamond Ace Growth" />
+        <meta name="twitter:description" content="Sales funnels, email campaigns, automations, and AI workflows for growing businesses." />
+        <meta name="twitter:image" content="https://diamondacegrowth.com/linkpreview.png?v=4" />
         <link rel="canonical" href="https://diamondacegrowth.com" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Diamond Ace Growth",
+            "description": "Sales funnels, email campaigns, automations, and AI-enhanced marketing workflows for growing businesses.",
+            "url": "https://diamondacegrowth.com",
+            "areaServed": "United States",
+            "serviceType": ["Sales Funnel Builds", "Email Marketing", "Marketing Automation", "CRM Setup", "AI Marketing Workflows"]
+          }
+        `}</script>
       </Helmet>
       <Navbar />
 
@@ -331,15 +396,15 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={fadeInUp} className="inline-block mb-6 px-4 py-1.5 rounded-full bg-card border border-border/50 text-sm font-medium text-accent">
-              Fractional Marketing Operations
+              Funnels&nbsp;•&nbsp;Email&nbsp;•&nbsp;Automation&nbsp;•&nbsp;AI Workflows
             </motion.div>
 
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-6">
-              Your Marketing Ops, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Finally Built Right</span>
+              Turn More Leads<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Into Customers</span>
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              As your fractional marketing ops partner, I build the systems, automations, and infrastructure your business needs to grow. All without the overhead of a full-time hire.
+              Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and convert more people into paying customers.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-4">
@@ -348,11 +413,11 @@ export default function Home() {
                 className="cta-hero px-8 py-4 min-h-[52px] rounded-xl bg-primary text-white font-bold text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
-                Get Your Free Ops Audit
+                Get Your Free Marketing Engine Audit
                 <ArrowRight className="ml-2 w-5 h-5 cta-arrow" />
               </a>
               <p className="text-sm text-muted-foreground">
-                Walk away with a clear picture of what's broken, what's missing, and exactly how to fix it.
+                See what's missing, what's leaking, and what to fix first.
               </p>
             </motion.div>
 
@@ -384,19 +449,22 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                Your marketing stack is
-                <span className="block"><span className="text-highlight">holding you back</span>.</span>
+                Your marketing has pieces.
+                <span className="block"><span className="text-highlight">Now it needs a system.</span></span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Most growing businesses have the ambition but not the infrastructure. Tools are scattered, automations are broken, no one owns the system, and the team is patching problems instead of building for scale.
+                Most businesses are doing some marketing. They have a website, a few campaigns, maybe some social content, referrals, forms, emails, or a CRM. But if those pieces are not connected, leads slip through the cracks and revenue gets left on the table.
               </p>
 
               <div className="space-y-4">
                 {[
-                  "Your CRM is a mess and no one trusts the data",
-                  "Automations are broken, patched, or just never built",
-                  "Marketing and sales tools do not talk to each other",
-                  "No one owns the ops layer, so it falls through the cracks",
+                  "Leads come in, but follow-up is slow or inconsistent",
+                  "Your website is not built to capture and convert interest",
+                  "Email campaigns are random, outdated, or nonexistent",
+                  "Your CRM, forms, and automations do not work together",
+                  "Your team is doing too much repetitive marketing work manually",
+                  "AI tools are available, but no one knows how to use them in a practical workflow",
+                  "You know marketing should be working better, but the system is not clear",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
                     <XCircle className="w-6 h-6 text-destructive shrink-0 mr-3 mt-0.5" />
@@ -410,14 +478,15 @@ export default function Home() {
               <div className="absolute -top-4 -right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform rotate-6">
                 HOW WE FIX IT
               </div>
-              <h3 className="text-2xl font-display font-bold text-white mb-6">The Ops Infrastructure We Build</h3>
+              <h3 className="text-2xl font-display font-bold text-white mb-6">The Marketing Engine We Build</h3>
               <div className="space-y-6">
                 {[
-                  { emoji: "⚙️", title: "CRM and Pipeline Architecture", desc: "We design, build, and clean up your CRM so your data is reliable and your team actually uses it." },
-                  { emoji: "🔁", title: "Marketing Automation", desc: "We build the automations that run your lead, lifecycle, and customer journeys without manual babysitting." },
-                  { emoji: "📧", title: "Email Flow Design and Build", desc: "From welcome sequences to re-engagement campaigns, we write and deploy emails that convert." },
-                  { emoji: "🔗", title: "Stack Integration and Ops Cleanup", desc: "We connect your tools, remove the redundancies, and make sure your marketing stack works as one system." },
-                  { emoji: "♻️", title: "Reactivation and Retention Campaigns", desc: "We re-engage cold leads and past customers, turning sunk ad spend into new revenue." },
+                  { emoji: "🎯", title: "Sales Funnel Builds", desc: "We build landing pages, lead magnets, forms, and booking paths that turn interest into action." },
+                  { emoji: "📧", title: "Email Campaigns and Automations", desc: "We write, build, and launch email sequences that welcome, nurture, reactivate, and convert." },
+                  { emoji: "⚙️", title: "CRM and Lead Intake Systems", desc: "We connect forms, pipelines, tagging, lead routing, and follow-up so every lead has a clear next step." },
+                  { emoji: "🤖", title: "AI-Enhanced Workflows", desc: "We help you use AI for campaign planning, content repurposing, customer insights, follow-up support, and repetitive marketing tasks." },
+                  { emoji: "📣", title: "Campaign Support", desc: "We help plan and execute campaigns that drive people into your funnel and keep your business top of mind." },
+                  { emoji: "📊", title: "Reporting and Optimization", desc: "We track what is working, find the leaks, and keep improving the system over time." },
                 ].map((item, i) => (
                   <div key={i} className="flex">
                     <div className="w-10 h-10 flex items-center justify-center shrink-0 mr-4 text-2xl leading-none">
@@ -444,10 +513,10 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              What We Actually Set Up For You
+              What We Build For You
             </h2>
             <p className="text-lg text-muted-foreground">
-              Practical ops infrastructure that keeps your marketing running, your data clean, and your revenue growing.
+              Clear, practical marketing systems that help you attract leads, follow up, use AI wisely, and convert more customers.
             </p>
           </motion.div>
 
@@ -495,10 +564,160 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section id="process" className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* OFFERS */}
+      <section id="offers" className="py-16 md:py-24 bg-card/20 border-y border-border/20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              How to Work With Us
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Transparent pricing, no pressure. Start with what you need.
+            </p>
+          </motion.div>
+
+          <div className="space-y-8">
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {OFFERS.slice(0, 3).map((offer, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${
+                    offer.featured
+                      ? "bg-primary/10 border-primary/60 hover:border-primary shadow-lg shadow-primary/10"
+                      : "bg-card/50 hover:bg-card border-border/50 hover:border-primary/50"
+                  }`}
+                >
+                  {offer.featured && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
+                      START HERE
+                    </div>
+                  )}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">{offer.name}</h3>
+                    <div className={`text-2xl font-display font-extrabold ${offer.featured ? "text-primary" : "text-white"}`}>
+                      {offer.price}
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed flex-1 mb-6">{offer.desc}</p>
+                  <a
+                    href={offer.href}
+                    className={`w-full py-3 rounded-xl font-semibold text-center text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
+                      offer.featured
+                        ? "bg-primary text-white hover:bg-primary/90 hover:-translate-y-0.5"
+                        : "bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5"
+                    }`}
+                  >
+                    {offer.cta} <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-2/3 lg:mx-auto"
+            >
+              {OFFERS.slice(3).map((offer, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="flex flex-col p-8 rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">{offer.name}</h3>
+                    <div className="text-2xl font-display font-extrabold text-white">{offer.price}</div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed flex-1 mb-6">{offer.desc}</p>
+                  <a
+                    href={offer.href}
+                    className="w-full py-3 rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+                  >
+                    {offer.cta} <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* MARKETING ENGINE */}
+      <section id="engine" className="py-16 md:py-24 bg-background relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+              How the Marketing Engine Works
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We connect the pieces so more people move from interested to ready to buy.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          >
+            {ENGINE_STEPS.map((step, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="relative bg-card/50 border border-border/50 rounded-2xl p-6 group hover:border-primary/40 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold shrink-0">
+                    {i + 1}
+                  </div>
+                  <span className="text-2xl">{step.icon}</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">{step.label}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                {i < ENGINE_STEPS.length - 1 && (
+                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-border z-10">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* AI Callout */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeInUp}
+            className="bg-card border border-primary/20 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
+            <div className="relative">
+              <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-widest">
+                AI, used where it actually helps
+              </div>
+              <p className="text-lg text-foreground/90 leading-relaxed max-w-3xl">
+                We can layer practical AI workflows into the system to speed up campaign planning, draft and repurpose content, summarize lead or customer insights, support follow-up, and reduce repetitive marketing tasks. No hype. Just useful workflows that make the system easier to run.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section id="process" className="py-16 md:py-24 bg-card/20 border-y border-border/20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -511,7 +730,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              A simple 3-step engagement model that gets your ops infrastructure built fast and built right.
+              A simple 3-step engagement that gets your marketing system built and running.
             </p>
           </motion.div>
 
@@ -523,18 +742,18 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "Audit Your Systems",
-                desc: "We map your current stack, automations, and ops workflows to find what's broken, what's missing, and where the biggest opportunities are.",
+                title: "Audit the Engine",
+                desc: "We review your current website, funnel, email, CRM, forms, automations, campaigns, AI usage, and follow-up to find what is missing or leaking.",
               },
               {
                 num: "02",
-                title: "Build the Infrastructure",
-                desc: "We design and deploy the CRM, automation flows, email programs, and integrations your business needs, fast and without the agency markup.",
+                title: "Build the System",
+                desc: "We build or clean up the funnels, emails, automations, lead intake, AI workflows, and campaign pieces your business needs.",
               },
               {
                 num: "03",
-                title: "Improve and Optimize",
-                desc: "We monitor performance, iterate on what is working, and keep refining your ops as your business grows.",
+                title: "Launch and Optimize",
+                desc: "We launch the system, monitor performance, improve what is working, and keep tightening the path from lead to customer.",
               },
             ].map((step, i) => (
               <motion.div
@@ -556,7 +775,7 @@ export default function Home() {
       </section>
 
       {/* PROOF */}
-      <section id="proof" className="py-16 md:py-24 bg-card/20 border-y border-border/20">
+      <section id="proof" className="py-16 md:py-24 bg-background border-b border-border/20">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -564,10 +783,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              Real Results.
+              Real Systems.
             </h2>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-primary mb-16">
-              Real Businesses.
+              Real Results.
             </h2>
           </motion.div>
 
@@ -586,7 +805,7 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="w-full md:w-2/5 h-[400px] md:h-auto relative">
               <img
                 src={operatorPhoto}
-                alt="Thomas Nilsen, fractional marketing operations consultant at Diamond Ace Growth"
+                alt="Thomas Nilsen, founder of Diamond Ace Growth marketing systems agency"
                 className="w-full h-full object-cover object-center"
               />
             </motion.div>
@@ -596,12 +815,12 @@ export default function Home() {
                 Meet Thomas
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                I help growing businesses build the marketing ops infrastructure they need to scale without the overhead of a full-time hire. My background includes building and optimizing lead, lifecycle, and CRM systems at a publicly traded SaaS company. Now I bring that same operational discipline to growing businesses as a fractional partner.
+                Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the funnels, email campaigns, automations, lead follow-up systems, and practical AI workflows they need to turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-sm font-bold text-white">Fractional Marketing Operations</div>
+                  <div className="text-sm font-bold text-white">Funnels, Email, Automation and AI Workflows</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
@@ -609,11 +828,11 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Experience</div>
-                  <div className="text-sm font-bold text-white">SaaS • Ecommerce • B2B &amp; Services</div>
+                  <div className="text-sm font-bold text-white">SaaS • Ecommerce • Service Businesses • Agencies</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Engagement</div>
-                  <div className="text-sm font-bold text-white">Project-Based & Fractional</div>
+                  <div className="text-sm font-bold text-white">Projects • Sprints • Retainers</div>
                 </div>
               </div>
             </motion.div>
@@ -667,8 +886,8 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-12 border-t border-border/20 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <img src={logoWhite} alt="Diamond Ace Growth - Fractional marketing operations consulting" className="h-12 w-auto mb-6" />
-          <p className="text-muted-foreground mb-8">Building marketing ops that scale.</p>
+          <img src={logoWhite} alt="Diamond Ace Growth - Sales funnels, email campaigns, and marketing automation" className="h-12 w-auto mb-6" />
+          <p className="text-muted-foreground mb-8">Funnels, email, automation, and AI workflows built to turn leads into customers.</p>
 
           <div className="flex gap-6 mb-8">
             <a href="/privacy" className="text-sm text-muted-foreground hover:text-white transition-colors">Privacy Policy</a>

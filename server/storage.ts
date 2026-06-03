@@ -19,12 +19,22 @@ export type UpsertLeadData = {
   lastName: string;
   email: string;
   companyName: string;
+  websiteUrl?: string;
   businessType: string;
-  currentPlatform: string;
-  revenueRange: string;
-  implementedFeatures?: string[];
-  painPoints: string;
-  marketingOptIn?: boolean;
+  // currentTools maps to currentPlatform column
+  currentTools?: string;
+  // monthlyRevenueRange maps to revenueRange column
+  monthlyRevenueRange: string;
+  // serviceInterests maps to implementedFeatures column
+  serviceInterests?: string[];
+  // biggestBottleneck maps to painPoints column
+  biggestBottleneck: string;
+  marketingConsent?: boolean;
+  monthlyLeadVolume?: string;
+  currentAiUsage?: string;
+  timeline?: string;
+  budgetRange?: string;
+  offerRequested?: string;
   leadSource?: string;
 };
 
@@ -63,7 +73,7 @@ export class DatabaseStorage implements IStorage {
 
   async upsertLead(data: UpsertLeadData): Promise<{ lead: Lead; isNew: boolean }> {
     const normalizedEmail = data.email.trim().toLowerCase();
-    const features = data.implementedFeatures ?? [];
+    const serviceInterests = data.serviceInterests ?? [];
 
     const existing = await db
       .select()
@@ -78,12 +88,18 @@ export class DatabaseStorage implements IStorage {
           firstName: data.firstName,
           lastName: data.lastName,
           companyName: data.companyName,
+          websiteUrl: data.websiteUrl ?? null,
           businessType: data.businessType,
-          currentPlatform: data.currentPlatform,
-          revenueRange: data.revenueRange,
-          implementedFeatures: features as any,
-          painPoints: data.painPoints,
-          marketingOptIn: data.marketingOptIn ?? false,
+          currentPlatform: data.currentTools ?? null,
+          revenueRange: data.monthlyRevenueRange,
+          implementedFeatures: serviceInterests as any,
+          painPoints: data.biggestBottleneck,
+          marketingOptIn: data.marketingConsent ?? false,
+          monthlyLeadVolume: data.monthlyLeadVolume ?? null,
+          currentAiUsage: data.currentAiUsage ?? null,
+          timeline: data.timeline ?? null,
+          budgetRange: data.budgetRange ?? null,
+          offerRequested: data.offerRequested ?? "Free Marketing Engine Audit",
           updatedAt: new Date(),
         })
         .where(eq(leads.email, normalizedEmail))
@@ -102,13 +118,19 @@ export class DatabaseStorage implements IStorage {
         lastName: data.lastName,
         email: normalizedEmail,
         companyName: data.companyName,
+        websiteUrl: data.websiteUrl ?? null,
         businessType: data.businessType,
-        currentPlatform: data.currentPlatform,
-        revenueRange: data.revenueRange,
-        implementedFeatures: features as any,
-        painPoints: data.painPoints,
-        marketingOptIn: data.marketingOptIn ?? false,
-        leadSource: data.leadSource ?? "website_form",
+        currentPlatform: data.currentTools ?? null,
+        revenueRange: data.monthlyRevenueRange,
+        implementedFeatures: serviceInterests as any,
+        painPoints: data.biggestBottleneck,
+        marketingOptIn: data.marketingConsent ?? false,
+        monthlyLeadVolume: data.monthlyLeadVolume ?? null,
+        currentAiUsage: data.currentAiUsage ?? null,
+        timeline: data.timeline ?? null,
+        budgetRange: data.budgetRange ?? null,
+        offerRequested: data.offerRequested ?? "Free Marketing Engine Audit",
+        leadSource: data.leadSource ?? "Website",
         nextFollowUpDate: tomorrowStr,
         status: "new",
         lifecycle: "lead",

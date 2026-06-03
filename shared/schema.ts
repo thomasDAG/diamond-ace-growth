@@ -56,12 +56,23 @@ export const leads = pgTable("leads", {
   lastName: text("last_name").notNull(),
   email: text("email").notNull().unique(),
   companyName: text("company_name").notNull(),
+  websiteUrl: text("website_url"),
   businessType: text("business_type").notNull(),
-  currentPlatform: text("current_platform").notNull(),
+  // currentPlatform stores currentTools value from new form
+  currentPlatform: text("current_platform"),
+  // revenueRange stores monthlyRevenueRange value from new form
   revenueRange: text("revenue_range").notNull(),
+  // implementedFeatures stores serviceInterests array from new form
   implementedFeatures: jsonb("implemented_features").$type<string[]>().default([]),
+  // painPoints stores biggestBottleneck value from new form
   painPoints: text("pain_points").notNull(),
   marketingOptIn: boolean("marketing_opt_in").default(false),
+  // New fields
+  monthlyLeadVolume: text("monthly_lead_volume"),
+  currentAiUsage: text("current_ai_usage"),
+  timeline: text("timeline"),
+  budgetRange: text("budget_range"),
+  offerRequested: text("offer_requested"),
   status: text("status").$type<LeadStatus>().default("new").notNull(),
   lifecycle: text("lifecycle").default("lead").notNull(),
   leadSource: text("lead_source"),
@@ -119,17 +130,22 @@ export const insertTaskSchema = createInsertSchema(tasks).omit({
 export type InsertTask = z.infer<typeof insertTaskSchema>;
 export type Task = typeof tasks.$inferSelect;
 
-// ── Contact form submission schema (used by the public form) ─────────────────
+// ── Contact form submission schema (used by the public audit form) ────────────
 export const contactFormSchema = z.object({
   firstName: z.string().min(1, "Required"),
   lastName: z.string().min(1, "Required"),
   email: z.string().email("Invalid email").transform(v => v.trim().toLowerCase()),
   companyName: z.string().min(1, "Required"),
+  websiteUrl: z.string().min(1, "Required"),
   businessType: z.string().min(1, "Required"),
-  currentPlatform: z.string().min(1, "Required"),
-  revenueRange: z.string().min(1, "Required"),
-  implementedFeatures: z.array(z.string()).default([]),
-  painPoints: z.string().min(1, "Required"),
-  marketingOptIn: z.boolean().default(false),
+  monthlyRevenueRange: z.string().min(1, "Required"),
+  serviceInterests: z.array(z.string()).min(1, "Please select at least one area"),
+  biggestBottleneck: z.string().min(1, "Required"),
+  currentTools: z.string().optional().default(""),
+  monthlyLeadVolume: z.string().optional().default(""),
+  currentAiUsage: z.string().optional().default(""),
+  timeline: z.string().optional().default(""),
+  budgetRange: z.string().optional().default(""),
+  marketingConsent: z.boolean().default(false),
 });
 export type ContactFormData = z.infer<typeof contactFormSchema>;
