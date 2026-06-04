@@ -188,9 +188,15 @@ export default function AdminLeadDetail() {
               {[
                 ["Email", lead.email],
                 ["Company", lead.companyName],
+                ["Website", lead.websiteUrl ?? "—"],
                 ["Business Type", lead.businessType],
-                ["Primary Tool", lead.currentPlatform],
                 ["Revenue Range", lead.revenueRange],
+                ["Monthly Lead Volume", lead.monthlyLeadVolume ?? "—"],
+                ["Current AI Usage", lead.currentAiUsage ?? "—"],
+                ["Timeline", lead.timeline ?? "—"],
+                ["Budget Range", lead.budgetRange ?? "—"],
+                ["Primary Tool / Stack", lead.currentPlatform ?? "—"],
+                ["Offer Requested", lead.offerRequested ?? "—"],
                 ["Lead Source", lead.leadSource ?? "—"],
                 ["Marketing Opt-In", lead.marketingOptIn ? "Yes" : "No"],
                 ["Lifecycle", lead.lifecycle],
@@ -209,13 +215,13 @@ export default function AdminLeadDetail() {
 
             <div className="space-y-6">
               <div className="bg-card border border-border/30 rounded-2xl p-6">
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Biggest Ops Gap</h3>
+                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Marketing Bottleneck</h3>
                 <p className="text-sm text-foreground/80 leading-relaxed">{lead.painPoints}</p>
               </div>
 
               {features.length > 0 && (
                 <div className="bg-card border border-border/30 rounded-2xl p-6">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Systems In Place</h3>
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">What They Need Help With</h3>
                   <div className="flex flex-wrap gap-2">
                     {features.map(f => (
                       <span key={f} className="text-xs bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full">
