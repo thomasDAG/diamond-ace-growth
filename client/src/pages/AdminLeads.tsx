@@ -145,9 +145,9 @@ export default function AdminLeads() {
                 <tr className="border-b border-border/30 text-xs text-muted-foreground uppercase tracking-wider">
                   <th className="text-left px-6 py-3 font-medium">Name</th>
                   <th className="text-left px-6 py-3 font-medium hidden sm:table-cell">Company</th>
-                  <th className="text-left px-6 py-3 font-medium hidden md:table-cell">Revenue</th>
+                  <th className="text-left px-6 py-3 font-medium hidden md:table-cell">Budget</th>
+                  <th className="text-left px-6 py-3 font-medium hidden lg:table-cell">Timeline</th>
                   <th className="text-left px-6 py-3 font-medium">Status</th>
-                  <th className="text-left px-6 py-3 font-medium hidden lg:table-cell">Last Active</th>
                   <th className="px-6 py-3"></th>
                 </tr>
               </thead>
@@ -164,12 +164,10 @@ export default function AdminLeads() {
                       <div className="text-xs text-muted-foreground">{lead.email}</div>
                     </td>
                     <td className="px-6 py-4 hidden sm:table-cell text-sm text-foreground/80">{lead.companyName}</td>
-                    <td className="px-6 py-4 hidden md:table-cell text-sm text-foreground/80">{lead.revenueRange}</td>
+                    <td className="px-6 py-4 hidden md:table-cell text-sm text-foreground/80">{lead.budgetRange ?? "—"}</td>
+                    <td className="px-6 py-4 hidden lg:table-cell text-sm text-foreground/80">{lead.timeline ?? "—"}</td>
                     <td className="px-6 py-4">
                       <InlineStatusSelect lead={lead} onUpdate={handleStatusUpdate} />
-                    </td>
-                    <td className="px-6 py-4 hidden lg:table-cell text-xs text-muted-foreground">
-                      {lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : "—"}
                     </td>
                     <td className="px-6 py-4">
                       <ChevronRight className="w-4 h-4 text-primary" data-testid={`link-lead-${lead.id}`} />

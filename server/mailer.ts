@@ -61,10 +61,14 @@ export async function sendNewLeadNotification(lead: Lead): Promise<void> {
     ? lead.implementedFeatures.join(", ")
     : "None selected";
 
+  const esc = (v: string | null | undefined) => (v ?? "—").toString().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const row = (label: string, value: string | null | undefined, shade: boolean) => {
     const bg = shade ? "background: #f9f9f9;" : "";
-    const safe = (value ?? "—").toString().replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    return `<tr style="${bg}"><td style="padding: 8px; font-weight: bold; color: #666; white-space: nowrap;">${label}</td><td style="padding: 8px;">${safe}</td></tr>`;
+    return `<tr style="${bg}"><td style="padding: 8px; font-weight: bold; color: #666; white-space: nowrap;">${label}</td><td style="padding: 8px;">${esc(value)}</td></tr>`;
+  };
+  const rawRow = (label: string, html: string, shade: boolean) => {
+    const bg = shade ? "background: #f9f9f9;" : "";
+    return `<tr style="${bg}"><td style="padding: 8px; font-weight: bold; color: #666; white-space: nowrap;">${label}</td><td style="padding: 8px;">${html}</td></tr>`;
   };
 
   const html = `
@@ -72,7 +76,7 @@ export async function sendNewLeadNotification(lead: Lead): Promise<void> {
       <h2 style="color: #146ef4; margin-bottom: 4px;">New Lead: ${lead.firstName} ${lead.lastName}</h2>
       <p style="color: #888; font-size: 13px; margin-top: 0;">Free Marketing Engine Audit request submitted via diamondacegrowth.com</p>
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
-        ${row("Email", `<a href="mailto:${lead.email}">${lead.email}</a>`, false)}
+        ${rawRow("Email", `<a href="mailto:${esc(lead.email)}">${esc(lead.email)}</a>`, false)}
         ${row("Company", lead.companyName, true)}
         ${row("Website", lead.websiteUrl, false)}
         ${row("Business Type", lead.businessType, true)}
