@@ -357,7 +357,7 @@ export default function Home() {
         <meta name="description" content="Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and turn more people into paying customers." />
         <meta property="og:title" content="Turn More Leads Into Customers | Diamond Ace Growth" />
         <meta property="og:description" content="We build sales funnels, email campaigns, automations, CRM systems, and practical AI workflows for growing businesses." />
-        <meta property="og:image" content="https://diamondacegrowth.com/linkpreview.png?v=4" />
+        <meta property="og:image" content="https://diamondacegrowth.com/newlinkpreview.png?v=4" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
@@ -366,7 +366,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Turn More Leads Into Customers | Diamond Ace Growth" />
         <meta name="twitter:description" content="Sales funnels, email campaigns, automations, and AI workflows for growing businesses." />
-        <meta name="twitter:image" content="https://diamondacegrowth.com/linkpreview.png?v=4" />
+        <meta name="twitter:image" content="https://diamondacegrowth.com/newlinkpreview.png?v=4" />
         <link rel="canonical" href="https://diamondacegrowth.com" />
         <script type="application/ld+json">{`
           {
