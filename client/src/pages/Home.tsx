@@ -695,7 +695,7 @@ export default function Home() {
                       <path d="M9 1 L2 4 L9 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </marker>
                   </defs>
-                  <path d="M 86,5 C 68,5 31,18 8,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
+                  <path d="M 86,5 C 60,5 22,20 8,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
                 </svg>
               </div>
 
