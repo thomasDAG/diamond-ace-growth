@@ -639,50 +639,29 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* Retainer cards + handwritten margin annotations */}
-            <div className="relative">
+            {/* Retainer cards + handwritten margin annotations — 3-col grid at lg+ */}
+            <div className="lg:grid lg:items-center" style={{ gridTemplateColumns: '144px 1fr 160px', gap: '0 1.5rem' }}>
 
-              {/* ── Management annotation — left side, xl+ only ── */}
-              <div
-                className="hidden xl:block absolute pointer-events-none select-none z-10"
-                style={{ left: 0, top: '50%', transform: 'translateY(-60%) rotate(-9deg)', width: '164px' }}
-              >
-                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.3rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
+              {/* ── Management annotation — left col, lg+ only ── */}
+              <div className="hidden lg:flex flex-col items-center pointer-events-none select-none" style={{ transform: 'rotate(-9deg)' }}>
+                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
                   $30K/year<br />way less than a<br />full-time hire!
                 </p>
-                <svg width="100" height="58" viewBox="0 0 100 58" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: 'auto', marginRight: '0' }}>
+                <svg width="96" height="54" viewBox="0 0 96 54" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: 'auto', marginRight: '4px' }}>
                   <defs>
                     <marker id="ah-mgmt" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
                       <path d="M1 1 L8 4 L1 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </marker>
                   </defs>
-                  <path d="M 12,6 C 28,6 68,18 91,52" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-mgmt)" />
+                  <path d="M 10,5 C 28,5 65,18 88,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-mgmt)" />
                 </svg>
               </div>
 
-              {/* ── Partner annotation — right side, xl+ only ── */}
-              <div
-                className="hidden xl:block absolute pointer-events-none select-none z-10"
-                style={{ right: 0, top: '50%', transform: 'translateY(-60%) rotate(9deg)', width: '180px' }}
-              >
-                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.3rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
-                  $72K/year<br />cheaper than one<br />senior FT employee!
-                </p>
-                <svg width="100" height="58" viewBox="0 0 100 58" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: '0', marginRight: 'auto' }}>
-                  <defs>
-                    <marker id="ah-partner" markerWidth="10" markerHeight="8" refX="2" refY="4" orient="auto">
-                      <path d="M9 1 L2 4 L9 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </marker>
-                  </defs>
-                  <path d="M 88,6 C 72,6 32,18 9,52" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
-                </svg>
-              </div>
-
-              {/* Cards grid */}
+              {/* ── Cards grid — center col ── */}
               <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={staggerContainer}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
               >
                 {OFFERS.slice(3).map((offer, i) => (
                   <motion.div
@@ -704,6 +683,22 @@ export default function Home() {
                   </motion.div>
                 ))}
               </motion.div>
+
+              {/* ── Partner annotation — right col, lg+ only ── */}
+              <div className="hidden lg:flex flex-col items-center pointer-events-none select-none" style={{ transform: 'rotate(9deg)' }}>
+                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
+                  $72K/year<br />cheaper than one<br />senior FT employee!
+                </p>
+                <svg width="96" height="54" viewBox="0 0 96 54" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: '4px', marginRight: 'auto' }}>
+                  <defs>
+                    <marker id="ah-partner" markerWidth="10" markerHeight="8" refX="2" refY="4" orient="auto">
+                      <path d="M9 1 L2 4 L9 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </marker>
+                  </defs>
+                  <path d="M 86,5 C 68,5 31,18 8,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
+                </svg>
+              </div>
+
             </div>
           </div>
         </div>
