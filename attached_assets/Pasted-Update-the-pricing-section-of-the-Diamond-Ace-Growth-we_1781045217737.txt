@@ -1,0 +1,36 @@
+Update the pricing section of the Diamond Ace Growth website to reflect the following new package structure. Do not change anything else on the site — layout, design, colors, fonts, copy, sections, and all other content should remain exactly as-is. Only update the offers/pricing section.
+Here are the updated packages:
+
+Free Marketing Engine Audit
+Price: Free
+CTA button: "Get Your Free Audit"
+Description: A quick diagnostic to identify where your marketing is leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.
+
+Marketing Engine Blueprint
+Price: Starting at $497
+CTA button: "Book a Blueprint"
+Description: A deeper strategy session and roadmap that reviews your funnel, website, email follow-up, CRM, campaign path, AI workflow opportunities, and biggest growth gaps.
+
+Funnel & Follow-Up Sprint
+Price: Starting at $3,500
+CTA button: "Start a Sprint"
+Description: A done-for-you build that includes a landing page, lead capture form, email sequence, CRM setup, automations, and launch support. Scoped tightly and delivered in 3–4 weeks.
+
+Marketing Engine Management
+Price: Starting at $2,500/month
+CTA button: "Explore Monthly Support"
+Description: Ongoing monthly support for email campaigns, funnel optimization, automations, reporting, campaign planning, and system improvements. Add a small secondary line beneath the description in a subtler style that reads: "$30,000/year — a fraction of what a full-time marketing hire would cost."
+
+Growth Systems Partner
+Price: Starting at $6,000/month
+CTA button: "Talk Through Fit"
+Description: A limited, embedded partnership for businesses that need deeper marketing systems support — strategy, builds, campaigns, automations, and practical AI implementation — without hiring full-time. Limited availability. Add a small secondary line beneath the description in a subtler style that reads: "$72,000/year — less than the fully-loaded cost of a single senior marketing hire, with no benefits, payroll taxes, or onboarding."
+
+Important notes:
+
+Do NOT add or remove any packages — there should still be exactly 5 offerings displayed
+Do NOT change any other section of the site
+Do NOT change the visual design, card layout, button styles, or color scheme
+The annual cost callout lines on the two retainer packages should be styled subtly — smaller font, slightly muted color — so they support the price rather than compete with it visually
+If the site has a placeholder or note about a future digital product (e.g., a $27 product), remove it — that offering does not exist yet and should not appear on the site
+Make sure all CTA buttons remain functional and link to the same destinations they currently link to

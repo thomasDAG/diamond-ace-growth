@@ -70,6 +70,7 @@ const OFFERS = [
     name: "Free Marketing Engine Audit",
     price: "Free",
     desc: "A quick diagnostic to identify where your marketing is leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.",
+    annualCallout: null,
     cta: "Get Your Free Audit",
     href: "#contact",
     featured: true,
@@ -78,14 +79,16 @@ const OFFERS = [
     name: "Marketing Engine Blueprint",
     price: "Starting at $497",
     desc: "A deeper strategy session and roadmap that reviews your funnel, website, email follow-up, CRM, campaign path, AI workflow opportunities, and biggest growth gaps.",
+    annualCallout: null,
     cta: "Book a Blueprint",
     href: "#contact",
     featured: false,
   },
   {
-    name: "Funnel and Follow-Up Sprint",
+    name: "Funnel & Follow-Up Sprint",
     price: "Starting at $3,500",
-    desc: "A done-for-you build that can include a landing page, lead capture form, email sequence, CRM setup, automations, AI-assisted workflows, and launch support.",
+    desc: "A done-for-you build that includes a landing page, lead capture form, email sequence, CRM setup, automations, and launch support. Scoped tightly and delivered in 3–4 weeks.",
+    annualCallout: null,
     cta: "Start a Sprint",
     href: "#contact",
     featured: false,
@@ -93,7 +96,8 @@ const OFFERS = [
   {
     name: "Marketing Engine Management",
     price: "Starting at $2,500/month",
-    desc: "Ongoing support for email campaigns, funnel optimization, automations, reporting, campaign planning, AI workflow refinement, and system improvements.",
+    desc: "Ongoing monthly support for email campaigns, funnel optimization, automations, reporting, campaign planning, and system improvements.",
+    annualCallout: "$30,000/year — a fraction of what a full-time marketing hire would cost.",
     cta: "Explore Monthly Support",
     href: "#contact",
     featured: false,
@@ -101,7 +105,8 @@ const OFFERS = [
   {
     name: "Growth Systems Partner",
     price: "Starting at $6,000/month",
-    desc: "A more embedded partnership for businesses that need deeper marketing systems, campaign, funnel, automation, and practical AI implementation support without hiring full-time.",
+    desc: "A limited, embedded partnership for businesses that need deeper marketing systems support — strategy, builds, campaigns, automations, and practical AI implementation — without hiring full-time. Limited availability.",
+    annualCallout: "$72,000/year — less than the fully-loaded cost of a single senior marketing hire, with no benefits, payroll taxes, or onboarding.",
     cta: "Talk Through Fit",
     href: "#contact",
     featured: false,
@@ -607,7 +612,12 @@ export default function Home() {
                       {offer.price}
                     </div>
                   </div>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
+                  <div className="flex-1 mb-4 md:mb-6">
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{offer.desc}</p>
+                    {offer.annualCallout && (
+                      <p className="text-xs text-muted-foreground/60 leading-relaxed mt-2 italic">{offer.annualCallout}</p>
+                    )}
+                  </div>
                   <a
                     href={offer.href}
                     className={`w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
@@ -637,7 +647,12 @@ export default function Home() {
                     <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
                     <div className="text-xl md:text-2xl font-display font-extrabold text-white">{offer.price}</div>
                   </div>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
+                  <div className="flex-1 mb-4 md:mb-6">
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{offer.desc}</p>
+                    {offer.annualCallout && (
+                      <p className="text-xs text-muted-foreground/60 leading-relaxed mt-2 italic">{offer.annualCallout}</p>
+                    )}
+                  </div>
                   <a
                     href={offer.href}
                     className="w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 flex items-center justify-center gap-2"
