@@ -377,6 +377,9 @@ export default function Home() {
         <meta name="twitter:description" content="Sales funnels, email campaigns, automations, and AI workflows for growing businesses." />
         <meta name="twitter:image" content="https://diamondacegrowth.com/newlinkpreview.png?v=4" />
         <link rel="canonical" href="https://diamondacegrowth.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -636,44 +639,72 @@ export default function Home() {
               ))}
             </motion.div>
 
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
-            >
-              {OFFERS.slice(3).map((offer, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className="relative flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300 overflow-visible"
-                >
-                  {/* Annual cost badge */}
-                  {"badgeText" in offer && offer.badgeText && (
-                    <div className="absolute -top-4 right-4 z-20 group/badge cursor-default">
-                      <div className="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 flex items-center gap-1.5 whitespace-nowrap">
-                        {offer.badgeText}
-                        <span className="text-white/80 text-sm leading-none">↙</span>
-                      </div>
-                      {/* Hover tooltip */}
-                      <div className="absolute right-0 top-full mt-2 bg-background border border-primary/30 text-xs text-muted-foreground px-3 py-2 rounded-xl shadow-xl w-52 leading-snug opacity-0 group-hover/badge:opacity-100 transition-opacity duration-200 pointer-events-none z-30">
-                        {"badgeContext" in offer && offer.badgeContext}
-                      </div>
-                    </div>
-                  )}
-                  <div className="mb-3 md:mb-4">
-                    <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
-                    <div className="text-xl md:text-2xl font-display font-extrabold text-white">{offer.price}</div>
-                  </div>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
-                  <a
-                    href={offer.href}
-                    className="w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 flex items-center justify-center gap-2"
+            {/* Retainer cards + handwritten margin annotations */}
+            <div className="relative">
+
+              {/* ── Management annotation — left side, xl+ only ── */}
+              <div
+                className="hidden xl:block absolute pointer-events-none select-none z-10"
+                style={{ left: 0, top: '50%', transform: 'translateY(-60%) rotate(-9deg)', width: '164px' }}
+              >
+                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.3rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
+                  $30K/year<br />way less than a<br />full-time hire!
+                </p>
+                <svg width="100" height="58" viewBox="0 0 100 58" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: 'auto', marginRight: '0' }}>
+                  <defs>
+                    <marker id="ah-mgmt" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+                      <path d="M1 1 L8 4 L1 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </marker>
+                  </defs>
+                  <path d="M 12,6 C 28,6 68,18 91,52" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-mgmt)" />
+                </svg>
+              </div>
+
+              {/* ── Partner annotation — right side, xl+ only ── */}
+              <div
+                className="hidden xl:block absolute pointer-events-none select-none z-10"
+                style={{ right: 0, top: '50%', transform: 'translateY(-60%) rotate(9deg)', width: '180px' }}
+              >
+                <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.3rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
+                  $72K/year<br />cheaper than one<br />senior FT employee!
+                </p>
+                <svg width="100" height="58" viewBox="0 0 100 58" fill="none" style={{ display: 'block', marginTop: '6px', marginLeft: '0', marginRight: 'auto' }}>
+                  <defs>
+                    <marker id="ah-partner" markerWidth="10" markerHeight="8" refX="2" refY="4" orient="auto">
+                      <path d="M9 1 L2 4 L9 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </marker>
+                  </defs>
+                  <path d="M 88,6 C 72,6 32,18 9,52" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
+                </svg>
+              </div>
+
+              {/* Cards grid */}
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={staggerContainer}
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
+              >
+                {OFFERS.slice(3).map((offer, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    className="flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300"
                   >
-                    {offer.cta} <ArrowRight className="w-4 h-4" />
-                  </a>
-                </motion.div>
-              ))}
-            </motion.div>
+                    <div className="mb-3 md:mb-4">
+                      <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
+                      <div className="text-xl md:text-2xl font-display font-extrabold text-white">{offer.price}</div>
+                    </div>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
+                    <a
+                      href={offer.href}
+                      className="w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 flex items-center justify-center gap-2"
+                    >
+                      {offer.cta} <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

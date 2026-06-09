@@ -1,0 +1,32 @@
+On the two retainer pricing cards — Marketing Engine Management and Growth Systems Partner — remove the current blue badge/bubble at the top of each card and replace it with a handwritten-style annotation that sits off to the outside edge of each card, like a scribbled margin note with a hand-drawn arrow pointing toward the card.
+Here's exactly what I want:
+Visual style:
+
+Use a handwriting-style Google Font for the annotation text — "Caveat" is the preferred font (import it via Google Fonts). It should feel casual, human, and organic against the polished card design.
+The text color should be the site's bright blue accent color so it still ties to the brand but feels like a pen annotation
+The annotation should be slightly rotated (around -8 to -12 degrees) to reinforce the handwritten, informal feel
+Include a hand-drawn style curved arrow pointing from the annotation toward the card. Use an SVG arrow for this — a simple single curved stroke with an arrowhead at the end, drawn in the same bright blue accent color, no fill, stroke only. It should look organic and slightly imperfect, not like a UI icon.
+
+Placement:
+
+Position the annotation and arrow to the outside/left of the Marketing Engine Management card and to the outside/right of the Growth Systems Partner card so they flank the two cards on their outer edges
+The annotation + arrow should be absolutely positioned relative to the section wrapper, not inside the card itself, so they don't disturb the card layout
+On smaller screens where there isn't enough room for side annotations, hide them with a media query (they're a nice-to-have, not essential on mobile)
+
+Text content:
+
+Marketing Engine Management annotation (left side of card):
+Line 1: "$30K/year"
+Line 2: "way less than a"
+Line 3: "full-time hire!"
+Growth Systems Partner annotation (right side of card):
+Line 1: "$72K/year"
+Line 2: "cheaper than one"
+Line 3: "senior FT employee!"
+
+Technical notes:
+
+The section containing the two cards needs position: relative and enough horizontal padding/margin so the annotations have room to sit outside the cards without being clipped
+Use overflow: visible on any parent containers that might clip the annotations
+The SVG arrow should originate near the annotation text and point toward the nearest edge of its respective card
+Do not change any other cards, copy, colors, layout, or functionality on the page
