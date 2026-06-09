@@ -806,7 +806,7 @@ export default function Home() {
               <img
                 src={operatorPhoto}
                 alt="Thomas Nilsen, founder of Diamond Ace Growth marketing systems agency"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-top md:object-center"
               />
             </motion.div>
 
