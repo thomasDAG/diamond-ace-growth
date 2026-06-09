@@ -647,13 +647,9 @@ export default function Home() {
                 <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
                   $30K/year<br />way less than a<br />full-time hire!
                 </p>
-                <svg width="96" height="54" viewBox="0 0 96 54" fill="none" overflow="visible" style={{ display: 'block', marginTop: '6px', marginLeft: 'auto', marginRight: '4px' }}>
-                  <defs>
-                    <marker id="ah-mgmt" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
-                      <path d="M1 1 L8 4 L1 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </marker>
-                  </defs>
-                  <path d="M 10,5 C 28,5 65,18 88,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-mgmt)" />
+                <svg width="96" height="60" viewBox="0 0 96 60" fill="none" overflow="visible" style={{ display: 'block', marginTop: '6px', marginLeft: 'auto', marginRight: '4px' }}>
+                  <path d="M 10,5 C 28,5 65,18 88,50" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+                  <path d="M 81,44 L 88,50 L 82,57" stroke="#146ef4" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
@@ -689,13 +685,9 @@ export default function Home() {
                 <p style={{ fontFamily: "'Caveat', cursive", color: '#146ef4', fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.35, textAlign: 'center', margin: 0 }}>
                   $72K/year<br />cheaper than one<br />senior FT employee!
                 </p>
-                <svg width="96" height="54" viewBox="0 0 96 54" fill="none" overflow="visible" style={{ display: 'block', marginTop: '6px', marginLeft: '4px', marginRight: 'auto' }}>
-                  <defs>
-                    <marker id="ah-partner" markerWidth="10" markerHeight="8" refX="2" refY="4" orient="auto">
-                      <path d="M9 1 L2 4 L9 7" stroke="#146ef4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </marker>
-                  </defs>
-                  <path d="M 86,5 C 60,5 22,20 8,49" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" markerEnd="url(#ah-partner)" />
+                <svg width="96" height="60" viewBox="0 0 96 60" fill="none" overflow="visible" style={{ display: 'block', marginTop: '6px', marginLeft: '4px', marginRight: 'auto' }}>
+                  <path d="M 86,5 C 60,5 22,20 8,50" stroke="#146ef4" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+                  <path d="M 15,44 L 8,50 L 14,57" stroke="#146ef4" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
