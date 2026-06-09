@@ -400,7 +400,7 @@ export default function Home() {
             </motion.div>
 
             <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-5 md:mb-6">
-              Turn More Leads<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Into Customers</span>
+              Stop Manual Marketing.<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Build a Real System.</span>
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-base md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
