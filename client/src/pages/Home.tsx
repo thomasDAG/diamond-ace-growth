@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, XCircle, ChevronLeft, ChevronRight, Check } from "lucide-react";
-import operatorPhoto from "@assets/Untitled_design_(20)_1771891325681.png";
+import operatorPhoto from "@assets/Untitled_design_(7)_1781043710432.png";
 import logoWhite from "@assets/White_L&N_PNG_1771891683420.png";
 
 const fadeInUp = {
