@@ -97,7 +97,9 @@ const OFFERS = [
     name: "Marketing Engine Management",
     price: "Starting at $2,500/month",
     desc: "Ongoing monthly support for email campaigns, funnel optimization, automations, reporting, campaign planning, and system improvements.",
-    annualCallout: "$30,000/year — a fraction of what a full-time marketing hire would cost.",
+    annualCallout: null,
+    badgeText: "$30K/year",
+    badgeContext: "A fraction of what a full-time marketing hire costs.",
     cta: "Explore Monthly Support",
     href: "#contact",
     featured: false,
@@ -106,7 +108,9 @@ const OFFERS = [
     name: "Growth Systems Partner",
     price: "Starting at $6,000/month",
     desc: "A limited, embedded partnership for businesses that need deeper marketing systems support — strategy, builds, campaigns, automations, and practical AI implementation — without hiring full-time. Limited availability.",
-    annualCallout: "$72,000/year — less than the fully-loaded cost of a single senior marketing hire, with no benefits, payroll taxes, or onboarding.",
+    annualCallout: null,
+    badgeText: "$72K/year",
+    badgeContext: "Less than a senior full-time hire — no benefits, taxes, or onboarding.",
     cta: "Talk Through Fit",
     href: "#contact",
     featured: false,
@@ -641,18 +645,26 @@ export default function Home() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300"
+                  className="relative flex flex-col p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-card/50 hover:bg-card border-border/50 hover:border-primary/50 transition-all duration-300 overflow-visible"
                 >
+                  {/* Annual cost badge */}
+                  {"badgeText" in offer && offer.badgeText && (
+                    <div className="absolute -top-4 right-4 z-20 group/badge cursor-default">
+                      <div className="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 flex items-center gap-1.5 whitespace-nowrap">
+                        {offer.badgeText}
+                        <span className="text-white/80 text-sm leading-none">↙</span>
+                      </div>
+                      {/* Hover tooltip */}
+                      <div className="absolute right-0 top-full mt-2 bg-background border border-primary/30 text-xs text-muted-foreground px-3 py-2 rounded-xl shadow-xl w-52 leading-snug opacity-0 group-hover/badge:opacity-100 transition-opacity duration-200 pointer-events-none z-30">
+                        {"badgeContext" in offer && offer.badgeContext}
+                      </div>
+                    </div>
+                  )}
                   <div className="mb-3 md:mb-4">
                     <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{offer.name}</h3>
                     <div className="text-xl md:text-2xl font-display font-extrabold text-white">{offer.price}</div>
                   </div>
-                  <div className="flex-1 mb-4 md:mb-6">
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{offer.desc}</p>
-                    {offer.annualCallout && (
-                      <p className="text-xs text-muted-foreground/60 leading-relaxed mt-2 italic">{offer.annualCallout}</p>
-                    )}
-                  </div>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 mb-4 md:mb-6">{offer.desc}</p>
                   <a
                     href={offer.href}
                     className="w-full py-3 min-h-[44px] rounded-xl font-semibold text-center text-sm bg-background border border-border/60 text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 flex items-center justify-center gap-2"
