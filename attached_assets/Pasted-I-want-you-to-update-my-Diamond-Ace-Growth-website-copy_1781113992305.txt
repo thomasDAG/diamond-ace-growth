@@ -1,0 +1,464 @@
+I want you to update my Diamond Ace Growth website copy, sections, form options, and backend CRM response handling without doing a full visual redesign.
+
+The site is already built and visually styled the way I want: dark navy/teal background, bright blue buttons/accent details, rounded cards, clean spacing, large bold headings, and a modern premium feel. Keep the existing visual identity, layout style, fonts, colors, button styling, cards, and overall structure. Do not create a totally new website. Improve and expand the copy/sections inside the current design.
+
+IMPORTANT BACKEND / FORM / CRM REQUIREMENT
+
+Before making changes, inspect how the current Free Marketing Engine Audit form is connected to the backend, database, CRM/admin view, email notifications, saved submissions, validation, and any schemas/types/interfaces.
+
+When updating the form checkbox options, make sure every new option is fully supported everywhere the form data goes.
+
+This includes, but may not be limited to:
+
+* Front-end checkbox labels and values
+* Form validation
+* TypeScript types/interfaces, if applicable
+* Backend API route or form submission handler
+* Database schema or stored JSON structure
+* Any CRM/admin dashboard where responses are shown
+* Any internal lead detail view
+* Any email notification template
+* Any confirmation message or auto-response
+* Any CSV/export logic, if it exists
+* Any existing mapping between selected needs and backend fields
+* Any labels used to display the selected form responses
+
+Do not only update the visible form. The new checkbox options must be saved, displayed, and passed through correctly in the backend/CRM exactly like the existing options.
+
+If the current setup stores selected needs as an array or JSON field, update the allowed values and display labels accordingly.
+
+If the current setup stores each checkbox as an individual field, add the new fields carefully and make sure old submissions still work.
+
+Do not break existing submissions. Keep backward compatibility with any older submitted values.
+
+After making the changes, test a sample form submission using several of the new checkbox options and verify that:
+
+* The form submits successfully
+* The selected options are saved correctly
+* The selected options appear correctly in the CRM/admin response view
+* The selected options appear correctly in any email notification
+* No undefined, blank, missing, or broken labels appear
+* Existing fields still work correctly
+
+GOAL OF THE WEBSITE UPDATE
+
+I want the website to make it clear that Diamond Ace Growth does more than improve existing marketing systems. We also help businesses get basic marketing off the ground when they do not have much in place yet.
+
+Important positioning:
+
+* We are still not a paid ads agency.
+* We are still not a social media management agency.
+* We do not promise viral growth or overnight traffic.
+* We build practical marketing systems that help businesses get found, capture leads, follow up, and convert more customers.
+* We can help with light marketing strategy and setup, especially things that connect naturally to funnels, email, CRM, automation, AI workflows, and lead follow-up.
+
+CORE MESSAGE TO WORK INTO THE SITE
+
+Use this idea throughout the site:
+
+“Simple marketing systems that help businesses get found, capture leads, follow up fast, and turn more interest into customers.”
+
+Or a slightly more polished version if it fits better:
+
+“Diamond Ace Growth builds simple marketing systems that help businesses get found, capture leads, follow up fast, and convert more people into paying customers.”
+
+HERO SECTION UPDATE
+
+Current hero says:
+“Stop Manual Marketing. Build a Real System.”
+
+I like this general direction, but update the supporting copy so it includes the “get found” idea without making us sound like a full-service marketing agency.
+
+Update hero eyebrow/marquee/tagline area to include:
+“Funnels • Email • Automation • Light Marketing Setup • AI Workflows”
+
+Update the main hero copy to something like:
+
+“Diamond Ace Growth builds simple marketing systems that help businesses get found, capture leads, follow up fast, and convert more people into paying customers without relying on paid ads or daily social media posting.”
+
+Keep CTA:
+“Get Your Free Marketing Engine Audit”
+
+Keep subtext:
+“See what’s missing, what’s leaking, and what to fix first.”
+
+MARQUEE BANNER UPDATE
+
+Current rotating marquee includes:
+
+* Sales Funnel Builds
+* Email Campaigns
+* Marketing Automations
+* AI-Enhanced Workflows
+* Lead Capture Systems
+* Follow-Up Sequences
+* Landing Pages
+* CRM and Pipeline Setup
+* Nurture Campaigns
+* Reactivation Campaigns
+* Campaign Strategy
+* Content Repurposing Systems
+* Lead Intake Forms
+* Reporting and Analytics
+
+Update the marquee list to better reflect the expanded but still focused service offering:
+
+* Sales Funnel Builds
+* Landing Pages
+* Lead Capture Systems
+* Email Campaigns
+* Marketing Automations
+* Follow-Up Sequences
+* CRM and Pipeline Setup
+* Review Request Systems
+* Referral Campaigns
+* Reactivation Campaigns
+* Local Visibility Basics
+* Offer and Messaging Cleanup
+* Nurture Campaigns
+* Content Repurposing Systems
+* Campaign Strategy
+* AI-Enhanced Workflows
+* Reporting and Analytics
+
+PROBLEM SECTION UPDATE
+
+Current section headline:
+“Your marketing has pieces. Now it needs a system.”
+
+Keep this headline. It is strong.
+
+Update the paragraph to include businesses that are starting from scratch:
+
+“Some businesses have marketing pieces scattered everywhere. Others barely have anything in place yet. Either way, growth gets harder when your website, offers, forms, emails, CRM, reviews, referrals, and follow-up are not working together. We help you build the simple marketing engine that turns attention into leads and leads into customers.”
+
+Update the pain point bullets to include:
+
+* You do little or no consistent marketing right now
+* Your website is not built to capture and convert interest
+* Leads come in, but follow-up is slow or inconsistent
+* Past customers and old leads are not being reactivated
+* You need more reviews, referrals, and repeat business
+* Email campaigns are random, outdated, or nonexistent
+* Your CRM, forms, and automations do not work together
+* Your team is doing too much repetitive marketing work manually
+* AI tools are available, but no one knows how to use them practically
+* You know marketing should be working better, but the system is not clear
+
+SERVICES SECTION UPDATE
+
+Current section headline:
+“What We Build For You”
+
+Keep this headline or slightly update it to:
+“What We Build Into Your Marketing Engine”
+
+Keep the current card style. Update the cards so they show the expanded offering without adding too many cards. Use 6 cards if possible.
+
+Card 1:
+Title: Sales Funnels and Landing Pages
+Copy: “Clear landing pages, lead magnets, offer pages, booking flows, and forms that give visitors one clear next step.”
+
+Card 2:
+Title: Lead Capture and Follow-Up Systems
+Copy: “Forms, CRM setup, lead routing, pipeline cleanup, reminders, and automated follow-up so interested people do not fall through the cracks.”
+
+Card 3:
+Title: Email Campaigns and Automations
+Copy: “Welcome flows, nurture sequences, newsletters, quote follow-up, reactivation campaigns, retention emails, and automated customer touchpoints.”
+
+Card 4:
+Title: Light Marketing Setup
+Copy: “Simple campaign planning, offer and messaging cleanup, review request systems, referral campaigns, local visibility basics, and practical ways to start creating demand.”
+
+Card 5:
+Title: AI-Enhanced Marketing Workflows
+Copy: “Practical AI workflows for campaign planning, content repurposing, email drafts, customer research, lead insights, reporting summaries, and repetitive marketing tasks.”
+
+Card 6:
+Title: Reporting and Optimization
+Copy: “Simple tracking, campaign reporting, funnel leak analysis, and ongoing improvements so you can see what is working and what needs to change.”
+
+IMPORTANT: Add a small note near this services section that says:
+“We do not manage paid ads or daily social media posting. We build the marketing engine those channels can plug into.”
+
+MARKETING ENGINE PROCESS SECTION UPDATE
+
+Current section:
+“How the Marketing Engine Works”
+
+Update the flow to include “Get Found” at the beginning.
+
+Use these steps:
+
+1. Attention / Visibility
+   “People hear about your business through referrals, search, reviews, content, partners, campaigns, or other simple visibility channels.”
+
+2. Landing Page / Offer
+   “They land on a page with one clear message, one clear offer, and one clear next step.”
+
+3. Lead Capture
+   “They fill out a form, request a resource, book a call, ask for a quote, or start the buying process.”
+
+4. Follow-Up
+   “Automated emails and reminders educate, nurture, answer objections, and keep the conversation moving.”
+
+5. Booking or Sale
+   “The system helps qualified leads take the next step toward becoming a customer.”
+
+6. Retention / Referrals
+   “Post-sale campaigns help customers come back, leave reviews, refer others, and stay engaged.”
+
+Update the AI callout below this section to:
+“We can layer practical AI workflows into the system to speed up campaign planning, draft and repurpose content, summarize lead or customer insights, support follow-up, and reduce repetitive marketing tasks. No hype. Just useful workflows that make the system easier to run.”
+
+OFFERS / PRICING SECTION UPDATE
+
+Do not change the pricing amounts. Keep the same five offers, but update descriptions so the light marketing setup is clearly included where relevant.
+
+Offer 1:
+Free Marketing Engine Audit
+Price: Free
+Description:
+“A quick diagnostic to identify where your marketing is missing visibility, leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.”
+
+Button:
+“Get Your Free Audit”
+
+Offer 2:
+Marketing Engine Blueprint
+Price: Starting at $497
+Description:
+“A deeper strategy session and roadmap that reviews your website, offer, lead capture, follow-up, CRM, campaigns, reviews/referrals, AI workflow opportunities, and biggest growth gaps.”
+
+Button:
+“Book a Blueprint”
+
+Offer 3:
+Funnel and Follow-Up Sprint
+Price: Starting at $3,500
+Description:
+“A focused done-for-you build that can include a landing page, lead capture form, email sequence, CRM setup, automations, review/referral follow-up, and campaign support. Scoped tightly and delivered in 3–4 weeks.”
+
+Button:
+“Start a Sprint”
+
+Offer 4:
+Marketing Engine Management
+Price: Starting at $2,500/month
+Description:
+“Ongoing monthly support for email campaigns, funnel optimization, automations, campaign planning, content repurposing, review/referral campaigns, reporting, and system improvements.”
+
+Button:
+“Explore Monthly Support”
+
+Offer 5:
+Growth Systems Partner
+Price: Starting at $6,000/month
+Description:
+“A limited, embedded partnership for businesses that need deeper marketing systems support across strategy, builds, campaigns, automations, CRM, AI workflows, light marketing setup, reporting, and ongoing optimization without hiring full-time.”
+
+Button:
+“Talk Through Fit”
+
+ADD A NEW SMALL SECTION AFTER SERVICES OR BEFORE PRICING
+
+Add a section called:
+
+“What We Don’t Do”
+
+Make it visually simple, maybe a two-column section or small card.
+
+Copy:
+
+“We are not here to replace every marketing channel. We do not manage paid ads, post daily on social media, or promise instant traffic. Instead, we build the practical marketing engine that helps your business turn attention into leads and leads into customers.”
+
+Then include three bullets:
+
+* No paid ads management
+* No daily social media management
+* No bloated agency retainers
+
+Then include three positive bullets:
+
+* Clear offers and landing pages
+* Lead capture, follow-up, and CRM systems
+* Email, reactivation, referral, review, and AI workflows
+
+UPDATE ABOUT SECTION
+
+Current About section is good. Slightly update it to reflect the expanded positioning:
+
+“Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the simple marketing engine they need to get found, capture leads, follow up fast, and turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.”
+
+Update focus to:
+“Funnels, Email, Automation, Light Marketing Setup, and AI Workflows”
+
+FORM UPDATE
+
+In the Free Marketing Engine Audit form, update the checkbox options under “What do you need help with?” to include the expanded offers:
+
+* Sales funnel
+* Landing page
+* Lead capture form
+* Email campaigns
+* Email automation / nurture sequence
+* CRM or pipeline setup
+* Lead intake / follow-up process
+* Review request system
+* Referral campaign
+* Reactivation or retention campaign
+* Local visibility basics
+* Campaign strategy
+* Content repurposing
+* AI workflow setup
+* Reporting / analytics
+* Not sure yet
+
+BACKEND FORM / CRM UPDATE DETAILS
+
+After updating the visible checkbox options, update the backend so these exact options are captured and displayed correctly.
+
+Use consistent machine-readable values for each option. Suggested values:
+
+* sales_funnel
+* landing_page
+* lead_capture_form
+* email_campaigns
+* email_automation_nurture_sequence
+* crm_pipeline_setup
+* lead_intake_follow_up_process
+* review_request_system
+* referral_campaign
+* reactivation_retention_campaign
+* local_visibility_basics
+* campaign_strategy
+* content_repurposing
+* ai_workflow_setup
+* reporting_analytics
+* not_sure_yet
+
+Make sure these values map to clean display labels in the CRM/admin response view:
+
+* Sales funnel
+* Landing page
+* Lead capture form
+* Email campaigns
+* Email automation / nurture sequence
+* CRM or pipeline setup
+* Lead intake / follow-up process
+* Review request system
+* Referral campaign
+* Reactivation or retention campaign
+* Local visibility basics
+* Campaign strategy
+* Content repurposing
+* AI workflow setup
+* Reporting / analytics
+* Not sure yet
+
+Inspect the current codebase and update every place where the old options are referenced.
+
+Specifically search the codebase for existing form options such as:
+
+* Sales funnel
+* Landing page
+* Lead capture form
+* Email campaigns
+* Email automation
+* CRM or pipeline setup
+* Campaign strategy
+* Content repurposing
+* Reactivation
+* Reporting
+
+Then update all relevant arrays, enums, schemas, validators, display mappings, backend handlers, CRM/admin components, email templates, and database submission logic.
+
+If there is a lead detail page or CRM response card, make sure the selected needs display as readable labels, not raw snake_case values.
+
+If there is a notification email sent to me when a form is submitted, update the email so it includes the full list of selected needs under a clear label like:
+
+“What they need help with:”
+
+If there is an internal admin/CRM list view, make sure it still displays selected needs cleanly and does not break layout if many options are selected.
+
+If the backend currently expects an array called something like selectedNeeds, helpNeeded, services, needs, or similar, keep the existing field name if possible so old data and current logic do not break. Just update the accepted values and labels.
+
+If there are migrations needed, create them carefully. Do not delete old submissions.
+
+FORM PLACEHOLDER UPDATE
+
+Update the placeholder under “What is your biggest marketing bottleneck right now?” to include:
+
+“For example: we do little or no marketing, our website does not convert, we need more reviews/referrals, we get leads but do not follow up well, our emails are inconsistent, our CRM is messy, or we are not sure what to fix first…”
+
+OPTIONAL FORM FIELDS CHECK
+
+Keep the existing optional fields, but make sure they still make sense:
+
+* Current marketing, CRM, or email tools
+* Current monthly lead volume
+* Current AI usage
+* Timeline
+* Budget range
+
+If any dropdown options need light cleanup to align with the updated positioning, do that carefully, but do not overcomplicate the form.
+
+NAVIGATION
+
+Keep the existing nav, but if needed, change “Services” to “What We Build” or leave as “Services.” Do not overcomplicate the navigation.
+
+TONE
+
+Keep the copy:
+
+* Plain English
+* Non-jargony
+* Confident but not hypey
+* Clear for non-technical business owners
+* Helpful and practical
+* Not too corporate
+* Not too cute
+
+IMPORTANT POSITIONING RULES
+
+Do not make Diamond Ace Growth sound like:
+
+* A paid ads agency
+* A social media agency
+* A generic marketing agency that does everything
+* A branding agency
+* A creative content studio
+
+Do make it sound like:
+
+* A practical marketing systems partner
+* A business that can help someone start from zero or clean up what they already have
+* A hands-on builder of funnels, emails, automations, CRM, light campaigns, reviews/referrals, reactivation, reporting, and AI workflows
+
+FINAL QA / TESTING REQUIREMENTS
+
+After making updates, review the whole homepage and make sure:
+
+* The message is clear within 5 seconds
+* It is obvious that we help businesses get found, capture leads, follow up, and convert
+* It is clear we do not manage paid ads or daily social posting
+* The pricing descriptions match the new expanded positioning
+* The site still feels focused and not like we offer everything
+* The layout remains polished, symmetrical, clean, and consistent with the current design
+* No sections feel overcrowded
+* Buttons and CTAs still point toward the Free Marketing Engine Audit
+
+Then test the form and backend/CRM specifically:
+
+* Submit a test audit request with multiple new checkbox options selected
+* Verify the submission succeeds
+* Verify the selected options are saved correctly
+* Verify the selected options show correctly in the CRM/admin response view
+* Verify the selected options show correctly in any email notification
+* Verify there are no missing labels, undefined values, blank values, or broken mappings
+* Verify older/existing submissions still display correctly
+* Verify the form still works on mobile
+* Verify no console errors appear
+
+Do not consider the task complete until the front-end form, backend submission handling, CRM/admin response display, and email notification display all match the updated checkbox options.
