@@ -22,46 +22,54 @@ const staggerContainer = {
 
 const MARQUEE_SERVICES = [
   "Sales Funnel Builds",
+  "Landing Pages",
+  "Lead Capture Systems",
   "Email Campaigns",
   "Marketing Automations",
-  "AI-Enhanced Workflows",
-  "Lead Capture Systems",
   "Follow-Up Sequences",
-  "Landing Pages",
   "CRM and Pipeline Setup",
-  "Nurture Campaigns",
+  "Review Request Systems",
+  "Referral Campaigns",
   "Reactivation Campaigns",
-  "Campaign Strategy",
+  "Local Visibility Basics",
+  "Offer and Messaging Cleanup",
+  "Nurture Campaigns",
   "Content Repurposing Systems",
-  "Lead Intake Forms",
+  "Campaign Strategy",
+  "AI-Enhanced Workflows",
   "Reporting and Analytics",
 ];
 
 const SERVICE_CARDS = [
   {
     emoji: "🎯",
-    title: "Sales Funnel Builds",
-    desc: "Landing pages, lead magnets, offer pages, forms, booking flows, and funnel paths that help turn attention into leads and sales.",
+    title: "Sales Funnels and Landing Pages",
+    desc: "Clear landing pages, lead magnets, offer pages, booking flows, and forms that give visitors one clear next step.",
+  },
+  {
+    emoji: "⚙️",
+    title: "Lead Capture and Follow-Up Systems",
+    desc: "Forms, CRM setup, lead routing, pipeline cleanup, reminders, and automated follow-up so interested people do not fall through the cracks.",
   },
   {
     emoji: "📧",
     title: "Email Campaigns and Automations",
-    desc: "Welcome flows, nurture sequences, launch campaigns, reactivation campaigns, retention emails, newsletters, and automated follow-up.",
+    desc: "Welcome flows, nurture sequences, newsletters, quote follow-up, reactivation campaigns, retention emails, and automated customer touchpoints.",
   },
   {
-    emoji: "⚙️",
-    title: "CRM and Lead Intake Systems",
-    desc: "CRM setup, pipeline cleanup, lead routing, forms, tagging, automations, reporting, and the backend structure that keeps leads from falling through the cracks.",
+    emoji: "📣",
+    title: "Light Marketing Setup",
+    desc: "Simple campaign planning, offer and messaging cleanup, review request systems, referral campaigns, local visibility basics, and practical ways to start creating demand.",
   },
   {
     emoji: "🤖",
     title: "AI-Enhanced Marketing Workflows",
-    desc: "Practical AI workflows for campaign planning, content repurposing, email drafts, customer research, lead follow-up support, reporting summaries, and internal marketing efficiency.",
+    desc: "Practical AI workflows for campaign planning, content repurposing, email drafts, customer research, lead insights, reporting summaries, and repetitive marketing tasks.",
   },
   {
-    emoji: "📣",
-    title: "Campaign Support",
-    desc: "Campaign planning, copywriting, launch support, email/social coordination, and promotional strategy that moves people into your funnel.",
+    emoji: "📊",
+    title: "Reporting and Optimization",
+    desc: "Simple tracking, campaign reporting, funnel leak analysis, and ongoing improvements so you can see what is working and what needs to change.",
   },
 ];
 
@@ -69,7 +77,7 @@ const OFFERS = [
   {
     name: "Free Marketing Engine Audit",
     price: "Free",
-    desc: "A quick diagnostic to identify where your marketing is leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.",
+    desc: "A quick diagnostic to identify where your marketing is missing visibility, leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.",
     annualCallout: null,
     cta: "Get Your Free Audit",
     href: "#contact",
@@ -78,7 +86,7 @@ const OFFERS = [
   {
     name: "Marketing Engine Blueprint",
     price: "Starting at $497",
-    desc: "A deeper strategy session and roadmap that reviews your funnel, website, email follow-up, CRM, campaign path, AI workflow opportunities, and biggest growth gaps.",
+    desc: "A deeper strategy session and roadmap that reviews your website, offer, lead capture, follow-up, CRM, campaigns, reviews/referrals, AI workflow opportunities, and biggest growth gaps.",
     annualCallout: null,
     cta: "Book a Blueprint",
     href: "#contact",
@@ -87,7 +95,7 @@ const OFFERS = [
   {
     name: "Funnel & Follow-Up Sprint",
     price: "Starting at $3,500",
-    desc: "A done-for-you build that includes a landing page, lead capture form, email sequence, CRM setup, automations, and launch support. Scoped tightly and delivered in 3–4 weeks.",
+    desc: "A focused done-for-you build that can include a landing page, lead capture form, email sequence, CRM setup, automations, review/referral follow-up, and campaign support. Scoped tightly and delivered in 3–4 weeks.",
     annualCallout: null,
     cta: "Start a Sprint",
     href: "#contact",
@@ -96,7 +104,7 @@ const OFFERS = [
   {
     name: "Marketing Engine Management",
     price: "Starting at $2,500/month",
-    desc: "Ongoing monthly support for email campaigns, funnel optimization, automations, reporting, campaign planning, and system improvements.",
+    desc: "Ongoing monthly support for email campaigns, funnel optimization, automations, campaign planning, content repurposing, review/referral campaigns, reporting, and system improvements.",
     annualCallout: null,
     badgeText: "$30K/year",
     badgeContext: "A fraction of what a full-time marketing hire costs.",
@@ -107,7 +115,7 @@ const OFFERS = [
   {
     name: "Growth Systems Partner",
     price: "Starting at $6,000/month",
-    desc: "A limited, embedded partnership for businesses that need deeper marketing systems support — strategy, builds, campaigns, automations, and practical AI implementation — without hiring full-time. Limited availability.",
+    desc: "A limited, embedded partnership for businesses that need deeper marketing systems support across strategy, builds, campaigns, automations, CRM, AI workflows, light marketing setup, reporting, and ongoing optimization without hiring full-time.",
     annualCallout: null,
     badgeText: "$72K/year",
     badgeContext: "Less than a senior full-time hire — no benefits, taxes, or onboarding.",
@@ -118,12 +126,12 @@ const OFFERS = [
 ];
 
 const ENGINE_STEPS = [
-  { icon: "📡", label: "Attention / Traffic", desc: "People hear about your business through referrals, content, campaigns, search, or ads." },
-  { icon: "🖥️", label: "Landing Page", desc: "They land on a page with one clear message and one clear next step." },
-  { icon: "📋", label: "Lead Capture", desc: "They fill out a form, request a resource, book a call, or start the buying process." },
-  { icon: "📧", label: "Email Follow-Up", desc: "Automated emails nurture, educate, remind, and move them forward." },
-  { icon: "💰", label: "Booking or Sale", desc: "The system pushes qualified leads toward the right conversion." },
-  { icon: "🔄", label: "Retention", desc: "Follow-up campaigns keep customers engaged and coming back." },
+  { icon: "📡", label: "Attention / Visibility", desc: "People hear about your business through referrals, search, reviews, content, partners, campaigns, or other simple visibility channels." },
+  { icon: "🖥️", label: "Landing Page / Offer", desc: "They land on a page with one clear message, one clear offer, and one clear next step." },
+  { icon: "📋", label: "Lead Capture", desc: "They fill out a form, request a resource, book a call, ask for a quote, or start the buying process." },
+  { icon: "📧", label: "Follow-Up", desc: "Automated emails and reminders educate, nurture, answer objections, and keep the conversation moving." },
+  { icon: "💰", label: "Booking or Sale", desc: "The system helps qualified leads take the next step toward becoming a customer." },
+  { icon: "🔄", label: "Retention / Referrals", desc: "Post-sale campaigns help customers come back, leave reviews, refer others, and stay engaged." },
 ];
 
 const TESTIMONIALS = [
@@ -408,7 +416,7 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <motion.div variants={fadeInUp} className="inline-block mb-5 px-3 py-1.5 rounded-full bg-card border border-border/50 text-xs md:text-sm font-medium text-accent">
-              Funnels&nbsp;•&nbsp;Email&nbsp;•&nbsp;Automation&nbsp;•&nbsp;AI Workflows
+              Funnels&nbsp;•&nbsp;Email&nbsp;•&nbsp;Automation&nbsp;•&nbsp;Light Marketing Setup&nbsp;•&nbsp;AI Workflows
             </motion.div>
 
             <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-5 md:mb-6">
@@ -416,7 +424,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-base md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-              Diamond Ace Growth builds sales funnels, email campaigns, automations, and practical AI workflows that help businesses capture leads, follow up fast, and convert more people into paying customers.
+              Diamond Ace Growth builds simple marketing systems that help businesses get found, capture leads, follow up fast, and convert more people into paying customers — without relying on paid ads or daily social media posting.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-3">
@@ -465,17 +473,20 @@ export default function Home() {
                 <span className="block"><span className="text-highlight">Now it needs a system.</span></span>
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground mb-6">
-                Most businesses are doing some marketing. They have a website, a few campaigns, maybe some social content, referrals, forms, emails, or a CRM. But if those pieces are not connected, leads slip through the cracks and revenue gets left on the table.
+                Some businesses have marketing pieces scattered everywhere. Others barely have anything in place yet. Either way, growth gets harder when your website, offers, forms, emails, CRM, reviews, referrals, and follow-up are not working together. We help you build the simple marketing engine that turns attention into leads and leads into customers.
               </p>
 
               <div className="space-y-3 md:space-y-4">
                 {[
-                  "Leads come in, but follow-up is slow or inconsistent",
+                  "You do little or no consistent marketing right now",
                   "Your website is not built to capture and convert interest",
+                  "Leads come in, but follow-up is slow or inconsistent",
+                  "Past customers and old leads are not being reactivated",
+                  "You need more reviews, referrals, and repeat business",
                   "Email campaigns are random, outdated, or nonexistent",
                   "Your CRM, forms, and automations do not work together",
                   "Your team is doing too much repetitive marketing work manually",
-                  "AI tools are available, but no one knows how to use them in a practical workflow",
+                  "AI tools are available, but no one knows how to use them practically",
                   "You know marketing should be working better, but the system is not clear",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start">
@@ -493,11 +504,11 @@ export default function Home() {
               <h3 className="text-lg md:text-2xl font-display font-bold text-white mb-4 md:mb-6">The Marketing Engine We Build</h3>
               <div className="space-y-4 md:space-y-6">
                 {[
-                  { emoji: "🎯", title: "Sales Funnel Builds", desc: "We build landing pages, lead magnets, forms, and booking paths that turn interest into action." },
+                  { emoji: "🎯", title: "Sales Funnels and Landing Pages", desc: "We build landing pages, lead magnets, offer pages, and booking paths that give visitors one clear next step." },
+                  { emoji: "⚙️", title: "Lead Capture and Follow-Up Systems", desc: "We connect forms, CRM, lead routing, reminders, and automated follow-up so no lead falls through the cracks." },
                   { emoji: "📧", title: "Email Campaigns and Automations", desc: "We write, build, and launch email sequences that welcome, nurture, reactivate, and convert." },
-                  { emoji: "⚙️", title: "CRM and Lead Intake Systems", desc: "We connect forms, pipelines, tagging, lead routing, and follow-up so every lead has a clear next step." },
-                  { emoji: "🤖", title: "AI-Enhanced Workflows", desc: "We help you use AI for campaign planning, content repurposing, customer insights, follow-up support, and repetitive marketing tasks." },
-                  { emoji: "📣", title: "Campaign Support", desc: "We help plan and execute campaigns that drive people into your funnel and keep your business top of mind." },
+                  { emoji: "📣", title: "Light Marketing Setup", desc: "We help with offer and messaging cleanup, review requests, referral campaigns, local visibility basics, and simple ways to start creating demand." },
+                  { emoji: "🤖", title: "AI-Enhanced Workflows", desc: "We layer in practical AI for campaign planning, content repurposing, customer insights, follow-up support, and repetitive marketing tasks." },
                   { emoji: "📊", title: "Reporting and Optimization", desc: "We track what is working, find the leaks, and keep improving the system over time." },
                 ].map((item, i) => (
                   <div key={i} className="flex">
@@ -525,54 +536,96 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           >
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-6">
-              What We Build For You
+              What We Build Into Your Marketing Engine
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              Clear, practical marketing systems that help you attract leads, follow up, use AI wisely, and convert more customers.
+              Practical marketing systems that help you get found, capture leads, follow up, and convert more customers.
             </p>
           </motion.div>
 
-          <div className="space-y-5 md:space-y-8">
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
-            >
-              {SERVICE_CARDS.slice(0, 3).map((service, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-5 md:p-8 rounded-2xl md:rounded-3xl group"
-                >
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-background flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-2xl md:text-3xl">
-                    {service.emoji}
-                  </div>
-                  <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
-                </motion.div>
-              ))}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+          >
+            {SERVICE_CARDS.map((service, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-5 md:p-8 rounded-2xl md:rounded-3xl group"
+              >
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-background flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-2xl md:text-3xl">
+                  {service.emoji}
+                </div>
+                <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.p
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center text-xs md:text-sm text-muted-foreground/70 mt-8 md:mt-10 max-w-xl mx-auto"
+          >
+            We do not manage paid ads or daily social media posting. We build the marketing engine those channels can plug into.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ── WHAT WE DON'T DO ─────────────────────────────────────────────── */}
+      <section className="py-10 md:py-16 bg-card/20 border-y border-border/20">
+        <div className="max-w-5xl mx-auto px-5">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-8 md:mb-10"
+          >
+            <h2 className="text-xl md:text-3xl font-display font-bold text-white mb-3">
+              What We Don't Do
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+              We are not here to replace every marketing channel. We do not manage paid ads, post daily on social media, or promise instant traffic. Instead, we build the practical marketing engine that helps your business turn attention into leads and leads into customers.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto"
+          >
+            <motion.div variants={fadeInUp} className="bg-card border border-border/40 rounded-2xl p-5 md:p-8">
+              <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">Not our thing</h3>
+              <ul className="space-y-3">
+                {[
+                  "No paid ads management",
+                  "No daily social media management",
+                  "No bloated agency retainers",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-foreground/70">
+                    <XCircle className="w-4 h-4 text-destructive/70 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
 
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:w-2/3 lg:mx-auto"
-            >
-              {SERVICE_CARDS.slice(3).map((service, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className="bg-card/50 hover:bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 p-5 md:p-8 rounded-2xl md:rounded-3xl group"
-                >
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-background flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner text-2xl md:text-3xl">
-                    {service.emoji}
-                  </div>
-                  <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
-                </motion.div>
-              ))}
+            <motion.div variants={fadeInUp} className="bg-primary/5 border border-primary/20 rounded-2xl p-5 md:p-8">
+              <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">What we focus on</h3>
+              <ul className="space-y-3">
+                {[
+                  "Clear offers and landing pages",
+                  "Lead capture, follow-up, and CRM systems",
+                  "Email, reactivation, referral, review, and AI workflows",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-foreground/80">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -764,6 +817,7 @@ export default function Home() {
               <p className="text-sm md:text-lg text-foreground/90 leading-relaxed">
                 We can layer practical AI workflows into the system to speed up campaign planning, draft and repurpose content, summarize lead or customer insights, support follow-up, and reduce repetitive marketing tasks. No hype. Just useful workflows that make the system easier to run.
               </p>
+
             </div>
           </motion.div>
         </div>
@@ -868,12 +922,12 @@ export default function Home() {
                 Meet Thomas
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-8 leading-relaxed">
-                Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the funnels, email campaigns, automations, lead follow-up systems, and practical AI workflows they need to turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.
+                Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the simple marketing engine they need to get found, capture leads, follow up fast, and turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.
               </p>
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Focus</div>
-                  <div className="text-xs md:text-sm font-bold text-white">Funnels, Email, Automation and AI Workflows</div>
+                  <div className="text-xs md:text-sm font-bold text-white">Funnels, Email, Automation, Light Marketing Setup, and AI Workflows</div>
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>

@@ -13,10 +13,13 @@ const SERVICE_INTEREST_OPTIONS = [
   "Email automation / nurture sequence",
   "CRM or pipeline setup",
   "Lead intake / follow-up process",
-  "AI workflow setup",
+  "Review request system",
+  "Referral campaign",
+  "Reactivation or retention campaign",
+  "Local visibility basics",
   "Campaign strategy",
   "Content repurposing",
-  "Reactivation or retention campaign",
+  "AI workflow setup",
   "Reporting / analytics",
   "Not sure yet",
 ];
@@ -232,7 +235,7 @@ export function ContactForm() {
             {...form.register("biggestBottleneck")}
             rows={4}
             className={`${inputClass} resize-none`}
-            placeholder="For example: we get leads but do not follow up well, we need a sales funnel, our emails are inconsistent, our CRM is a mess, our website does not convert, we want to use AI but do not know how, or we are not sure what to fix first…"
+            placeholder="For example: we do little or no marketing, our website does not convert, we need more reviews/referrals, we get leads but do not follow up well, our emails are inconsistent, our CRM is messy, or we are not sure what to fix first…"
             data-testid="textarea-bottleneck"
           />
           {form.formState.errors.biggestBottleneck && (
