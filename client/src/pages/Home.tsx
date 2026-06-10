@@ -59,7 +59,7 @@ const SERVICE_CARDS = [
   {
     emoji: "📣",
     title: "Light Marketing Setup",
-    desc: "Simple campaign planning, offer and messaging cleanup, review request systems, referral campaigns, local visibility basics, and practical ways to start creating demand.",
+    desc: "Campaign planning, offer and messaging cleanup, review request systems, referral campaigns, and local visibility basics for businesses that need to start building consistent demand.",
   },
   {
     emoji: "🤖",
@@ -77,7 +77,7 @@ const OFFERS = [
   {
     name: "Free Marketing Engine Audit",
     price: "Free",
-    desc: "A quick diagnostic to identify where your marketing is missing visibility, leaking leads, missing follow-up, underusing AI, or leaving revenue on the table.",
+    desc: "A quick look at your current marketing setup to find where leads are slipping through, follow-up is inconsistent, AI could help, and where the biggest gaps are.",
     annualCallout: null,
     cta: "Get Your Free Audit",
     href: "#contact",
@@ -126,12 +126,12 @@ const OFFERS = [
 ];
 
 const ENGINE_STEPS = [
-  { icon: "📡", label: "Attention / Visibility", desc: "People hear about your business through referrals, search, reviews, content, partners, campaigns, or other simple visibility channels." },
-  { icon: "🖥️", label: "Landing Page / Offer", desc: "They land on a page with one clear message, one clear offer, and one clear next step." },
+  { icon: "📡", label: "Attention / Visibility", desc: "People find your business through referrals, search results, reviews, campaigns, or other visibility channels." },
+  { icon: "🖥️", label: "Landing Page / Offer", desc: "They land on a page with a clear message, a relevant offer, and one simple next step." },
   { icon: "📋", label: "Lead Capture", desc: "They fill out a form, request a resource, book a call, ask for a quote, or start the buying process." },
-  { icon: "📧", label: "Follow-Up", desc: "Automated emails and reminders educate, nurture, answer objections, and keep the conversation moving." },
-  { icon: "💰", label: "Booking or Sale", desc: "The system helps qualified leads take the next step toward becoming a customer." },
-  { icon: "🔄", label: "Retention / Referrals", desc: "Post-sale campaigns help customers come back, leave reviews, refer others, and stay engaged." },
+  { icon: "📧", label: "Follow-Up", desc: "Automated emails and reminders keep leads warm, answer common questions, and push things forward." },
+  { icon: "💰", label: "Booking or Sale", desc: "The system moves qualified leads toward a booking or purchase." },
+  { icon: "🔄", label: "Retention / Referrals", desc: "Post-sale campaigns keep customers engaged, drive repeat business, and bring in referrals." },
 ];
 
 const TESTIMONIALS = [
@@ -424,7 +424,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-base md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-              Diamond Ace Growth builds simple marketing systems that help businesses get found, capture leads, follow up fast, and convert more people into paying customers — without relying on paid ads or daily social media posting.
+              Diamond Ace Growth builds simple marketing systems that help businesses get found, capture leads, follow up fast, and turn more people into paying customers. No paid ads. No daily social posting required.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center gap-3">
@@ -473,7 +473,7 @@ export default function Home() {
                 <span className="block"><span className="text-highlight">Now it needs a system.</span></span>
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground mb-6">
-                Some businesses have marketing pieces scattered everywhere. Others barely have anything in place yet. Either way, growth gets harder when your website, offers, forms, emails, CRM, reviews, referrals, and follow-up are not working together. We help you build the simple marketing engine that turns attention into leads and leads into customers.
+                Some businesses have marketing pieces scattered everywhere. Others barely have anything running yet. In both cases, growth stalls when nothing is connected. The website, emails, forms, follow-up, and CRM are all doing their own thing. We help pull it together into a system that turns attention into leads and leads into customers.
               </p>
 
               <div className="space-y-3 md:space-y-4">
@@ -536,7 +536,7 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           >
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-6">
-              What We Build Into Your Marketing Engine
+              What We Build Into Your Marketing&nbsp;Engine
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
               Practical marketing systems that help you get found, capture leads, follow up, and convert more customers.
@@ -585,7 +585,7 @@ export default function Home() {
               What We Don't Do
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              We are not here to replace every marketing channel. We do not manage paid ads, post daily on social media, or promise instant traffic. Instead, we build the practical marketing engine that helps your business turn attention into leads and leads into customers.
+              We do not manage paid ads, post daily on social media, or promise overnight traffic. We build the practical marketing engine that helps your business capture leads, follow up consistently, and turn more of them into customers.
             </p>
           </motion.div>
 
@@ -922,7 +922,7 @@ export default function Home() {
                 Meet Thomas
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-8 leading-relaxed">
-                Diamond Ace Growth is a founder-led marketing systems agency built by Thomas Nilsen. We help growing businesses build the simple marketing engine they need to get found, capture leads, follow up fast, and turn more interest into revenue. Thomas brings hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted marketing workflows for growing businesses and SaaS teams. The goal is simple: make your marketing system work so more leads become customers.
+                Diamond Ace Growth is run by Thomas Nilsen. We work with growing businesses to build the marketing engine that gets them found, captures leads, follows up consistently, and turns more interest into revenue. Thomas has hands-on experience in email marketing, marketing operations, automation, analytics, campaign execution, and AI-assisted workflows across growing businesses and SaaS teams. The goal is to make the marketing system actually work so more leads become customers.
               </p>
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div>

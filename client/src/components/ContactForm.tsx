@@ -113,7 +113,7 @@ export function ContactForm() {
           Get Your Free Marketing Engine Audit
         </h3>
         <p className="text-muted-foreground mb-5">
-          We'll review your current marketing setup and show you where leads are leaking, follow-up is missing, AI could help, and what to fix first.
+          Tell us about your business and we'll take a look at your current setup, identify where leads are slipping through, and let you know what to focus on first.
         </p>
         <ul className="space-y-2">
           {[
@@ -358,7 +358,7 @@ export function ContactForm() {
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">
-          Takes less than 3 minutes. No pressure. Just clarity.
+          Takes less than 3 minutes. No sales pitch, just useful feedback.
         </p>
         <p className="text-center text-xs text-muted-foreground">
           Your information is secure. We never share your data.
