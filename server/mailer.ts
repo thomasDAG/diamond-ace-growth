@@ -15,11 +15,13 @@ export async function sendAuditConfirmation(lead: Lead): Promise<void> {
 
   const text = `${greeting}
 
-Thanks for submitting your free Marketing Engine Audit request to Diamond Ace Growth.
+Thanks for submitting your AI Workflow Leak Scorecard request to Diamond Ace Growth.
 
-I received your request and will be taking a look at your current marketing setup shortly. I'll review your funnel, email follow-up, lead capture, automations, CRM, and any AI workflow opportunities to find where leads are slipping through and where the biggest growth gaps are.
+I received your submission and will take a look at where your business may be losing time, leads, or clarity through messy manual workflows.
 
-If it looks like I can help, I'll follow up with next steps soon.
+I'll review things like your follow-up process, client onboarding, content workflows, reporting, internal admin, current tools, and AI workflow opportunities so I can identify the biggest places systems could help.
+
+If it looks like I can help, I'll follow up with a few practical next steps.
 
 Thanks,
 Thomas
@@ -28,7 +30,7 @@ Diamond Ace Growth`;
   await transporter.sendMail({
     from: '"Thomas @ Diamond Ace Growth" <thomas@diamondacegrowth.com>',
     to: lead.email,
-    subject: "Marketing Audit Request Received",
+    subject: "Your AI Workflow Leak Scorecard request",
     text,
   });
 }
@@ -74,7 +76,7 @@ export async function sendNewLeadNotification(lead: Lead): Promise<void> {
   const html = `
     <div style="font-family: sans-serif; max-width: 640px; margin: 0 auto;">
       <h2 style="color: #146ef4; margin-bottom: 4px;">New Lead: ${lead.firstName} ${lead.lastName}</h2>
-      <p style="color: #888; font-size: 13px; margin-top: 0;">Free Marketing Engine Audit request submitted via diamondacegrowth.com</p>
+      <p style="color: #888; font-size: 13px; margin-top: 0;">AI Workflow Leak Scorecard submitted via diamondacegrowth.com</p>
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
         ${rawRow("Email", `<a href="mailto:${esc(lead.email)}">${esc(lead.email)}</a>`, false)}
         ${row("Company", lead.companyName, true)}
@@ -100,7 +102,7 @@ export async function sendNewLeadNotification(lead: Lead): Promise<void> {
     from: '"Diamond Ace Growth" <thomas@diamondacegrowth.com>',
     to: "thomas@diamondacegrowth.com",
     replyTo: lead.email,
-    subject: `New Lead: ${lead.firstName} ${lead.lastName} — ${lead.companyName}`,
+    subject: `New AI Ops Lead: ${lead.firstName} ${lead.lastName} — ${lead.companyName}`,
     html,
   });
 }
