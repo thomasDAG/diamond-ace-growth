@@ -6,22 +6,20 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 const SERVICE_INTEREST_OPTIONS = [
-  "Sales funnel",
-  "Landing page",
-  "Lead capture form",
-  "Email campaigns",
-  "Email automation / nurture sequence",
+  "Lead follow-up system",
+  "Client onboarding workflow",
+  "AI-assisted content workflow",
+  "Reporting or visibility dashboard",
+  "Internal admin automation",
+  "SOP or process documentation",
   "CRM or pipeline setup",
-  "Lead intake / follow-up process",
-  "Review request system",
-  "Referral campaign",
+  "Email automation or nurture sequence",
+  "Meeting-to-task system",
+  "AI prompt library or templates",
   "Reactivation or retention campaign",
-  "Local visibility basics",
-  "Campaign strategy",
-  "Content repurposing",
-  "AI workflow setup",
-  "Reporting / analytics",
-  "Not sure yet",
+  "Review request or referral system",
+  "Full AI ops buildout",
+  "Not sure yet — need a full audit",
 ];
 
 const inputClass =
@@ -98,7 +96,7 @@ export function ContactForm() {
           Audit Request Received
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for reaching out. I am reviewing your details and will be in touch soon to schedule your free Marketing Engine Audit.
+          Thank you for reaching out. I'm reviewing your details and will be in touch soon to map out your biggest workflow leaks and what to fix first.
         </p>
       </motion.div>
     );
@@ -110,16 +108,16 @@ export function ContactForm() {
 
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Get Your Free Marketing Engine Audit
+          Get Your Free AI Ops Audit
         </h3>
         <p className="text-muted-foreground mb-5">
-          Tell us about your business and we'll take a look at your current setup, identify where leads are slipping through, and let you know what to focus on first.
+          Tell us about your business and we'll map out where your biggest workflow leaks are, what to automate first, and how to get your time back.
         </p>
         <ul className="space-y-2">
           {[
-            "Where your biggest lead capture and follow-up gaps are",
-            "Which funnel, email, CRM, AI, or campaign pieces are missing",
-            "A clear starting point for turning more interest into customers",
+            "Where your biggest workflow leaks and time drains are",
+            "Which follow-up, onboarding, content, or admin workflows to automate first",
+            "A clear starting point for building systems without adding headcount",
           ].map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -201,7 +199,7 @@ export function ContactForm() {
         {/* Service Interests */}
         <div className="space-y-3">
           <label className={labelClass}>
-            What do you need help with? <span className="text-destructive">*</span> <span className="text-muted-foreground font-normal">(Select all that apply)</span>
+            What workflows do you need help with? <span className="text-destructive">*</span> <span className="text-muted-foreground font-normal">(Select all that apply)</span>
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {SERVICE_INTEREST_OPTIONS.map((option) => (
@@ -228,14 +226,14 @@ export function ContactForm() {
         {/* Biggest Bottleneck */}
         <div className="space-y-2">
           <label htmlFor="biggestBottleneck" className={labelClass}>
-            What is your biggest marketing bottleneck right now? <span className="text-destructive">*</span>
+            What is your biggest workflow bottleneck right now? <span className="text-destructive">*</span>
           </label>
           <textarea
             id="biggestBottleneck"
             {...form.register("biggestBottleneck")}
             rows={4}
             className={`${inputClass} resize-none`}
-            placeholder="For example: we do little or no marketing, our website does not convert, we need more reviews/referrals, we get leads but do not follow up well, our emails are inconsistent, our CRM is messy, or we are not sure what to fix first…"
+            placeholder="For example: follow-up is slow or inconsistent, onboarding is manual every time, we do no marketing at all, reports take forever to build, content never gets done, our CRM is a mess, or we're not sure what to fix first…"
             data-testid="textarea-bottleneck"
           />
           {form.formState.errors.biggestBottleneck && (
@@ -250,7 +248,7 @@ export function ContactForm() {
           <div className="space-y-6">
             {/* Current Tools */}
             <div className="space-y-2">
-              <label htmlFor="currentTools" className={labelClass}>Current marketing, CRM, or email tools</label>
+              <label htmlFor="currentTools" className={labelClass}>Current tools or systems</label>
               <select id="currentTools" {...form.register("currentTools")} defaultValue="" className={selectClass} data-testid="select-current-tools">
                 <option value="">Select if applicable</option>
                 <option value="HubSpot">HubSpot</option>
@@ -354,11 +352,11 @@ export function ContactForm() {
               Submitting...
             </>
           ) : (
-            "Get My Free Marketing Engine Audit"
+            "Request My Free AI Ops Audit"
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">
-          Takes less than 3 minutes. No sales pitch, just useful feedback.
+          Takes less than 3 minutes. No sales pitch — just a clear look at what to fix first.
         </p>
         <p className="text-center text-xs text-muted-foreground">
           Your information is secure. We never share your data.

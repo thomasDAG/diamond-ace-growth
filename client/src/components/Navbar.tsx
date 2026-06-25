@@ -17,11 +17,11 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/#" },
-    { name: "Problem", href: "/#problem" },
-    { name: "Services", href: "/#services" },
-    { name: "Offers", href: "/#offers" },
-    { name: "Process", href: "/#process" },
-    { name: "Proof", href: "/#proof" },
+    { name: "The Problem", href: "/#problem" },
+    { name: "What We Build", href: "/#services" },
+    { name: "Pricing", href: "/#offers" },
+    { name: "How It Works", href: "/#process" },
+    { name: "Results", href: "/#proof" },
     { name: "About", href: "/#about" },
     { name: "Contact", href: "/#get-in-touch" },
   ];
@@ -57,7 +57,7 @@ export function Navbar() {
             href="/#contact"
             className="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all"
           >
-            Get a Free Marketing Audit
+            Get Your Free AI Ops Audit
           </a>
         </div>
 
@@ -93,7 +93,7 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 min-h-[52px] text-center rounded-xl bg-primary text-white font-semibold flex items-center justify-center"
             >
-              Get a Free Marketing Audit
+              Get Your Free AI Ops Audit
             </a>
           </motion.div>
         )}
