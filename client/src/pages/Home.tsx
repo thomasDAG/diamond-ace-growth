@@ -813,7 +813,7 @@ export default function Home() {
           >
             <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">What We Don't Do</h3>
             <div className="flex flex-wrap gap-3">
-              {["No paid ads management", "No daily social media posting", "No bloated agency retainers"].map((item) => (
+              {["No paid ads management", "No daily social media posting", "No vague retainers with unclear deliverables"].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-foreground/60">
                   <XCircle className="w-4 h-4 text-destructive/50 shrink-0" />
                   {item}
@@ -942,7 +942,7 @@ export default function Home() {
               Ready to find your biggest workflow leak?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-sm md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-xl mx-auto">
-              Start with a free AI Ops Audit request. We'll map out where your business is losing time and what to fix first.
+              Start with a free AI Workflow Leak Scorecard. We'll identify where your business is losing time and what to fix first.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 justify-center">
               <a

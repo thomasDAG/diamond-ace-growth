@@ -93,7 +93,7 @@ export function ContactForm() {
           <CheckCircle2 className="w-10 h-10 text-primary" />
         </div>
         <h3 className="text-3xl font-display font-bold text-white mb-4">
-          Audit Request Received
+          Scorecard Submitted
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
           Thank you for reaching out. I'm reviewing your details and will be in touch soon to map out your biggest workflow leaks and what to fix first.
@@ -108,10 +108,10 @@ export function ContactForm() {
 
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Get Your Free AI Ops Audit
+          Find Your Biggest Workflow Leak
         </h3>
         <p className="text-muted-foreground mb-5">
-          Tell us about your business and we'll map out where your biggest workflow leaks are, what to automate first, and how to get your time back.
+          Tell us about your business and we'll help identify where manual workflows are costing you time, leads, and clarity.
         </p>
         <ul className="space-y-2">
           {[
@@ -352,7 +352,7 @@ export function ContactForm() {
               Submitting...
             </>
           ) : (
-            "Request My Free AI Ops Audit"
+            "Start My Free Scorecard"
           )}
         </button>
         <p className="text-center text-xs text-muted-foreground mt-1">
