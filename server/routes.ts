@@ -48,7 +48,7 @@ export async function registerRoutes(
         currentAiUsage: input.currentAiUsage,
         timeline: input.timeline,
         budgetRange: input.budgetRange,
-        offerRequested: "Free Marketing Engine Audit",
+        offerRequested: "AI Workflow Leak Scorecard",
         leadSource: "Website",
       });
 
@@ -56,8 +56,8 @@ export async function registerRoutes(
         leadId: lead.id,
         type: "form_submitted",
         note: isNew
-          ? "Lead submitted Free Marketing Engine Audit request"
-          : "Lead re-submitted Free Marketing Engine Audit request",
+          ? "Lead submitted AI Workflow Leak Scorecard request"
+          : "Lead re-submitted AI Workflow Leak Scorecard request",
         meta: { isNew },
       });
 

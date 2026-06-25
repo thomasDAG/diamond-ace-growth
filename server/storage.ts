@@ -99,7 +99,7 @@ export class DatabaseStorage implements IStorage {
           currentAiUsage: data.currentAiUsage ?? null,
           timeline: data.timeline ?? null,
           budgetRange: data.budgetRange ?? null,
-          offerRequested: data.offerRequested ?? "Free Marketing Engine Audit",
+          offerRequested: data.offerRequested ?? "AI Workflow Leak Scorecard",
           updatedAt: new Date(),
         })
         .where(eq(leads.email, normalizedEmail))
@@ -129,7 +129,7 @@ export class DatabaseStorage implements IStorage {
         currentAiUsage: data.currentAiUsage ?? null,
         timeline: data.timeline ?? null,
         budgetRange: data.budgetRange ?? null,
-        offerRequested: data.offerRequested ?? "Free Marketing Engine Audit",
+        offerRequested: data.offerRequested ?? "AI Workflow Leak Scorecard",
         leadSource: data.leadSource ?? "Website",
         nextFollowUpDate: tomorrowStr,
         status: "new",
