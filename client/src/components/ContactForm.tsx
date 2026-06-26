@@ -5,6 +5,23 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
+const CURRENT_TOOLS_OPTIONS = [
+  "HubSpot",
+  "Klaviyo",
+  "Mailchimp",
+  "MailerLite",
+  "GoHighLevel",
+  "Salesforce / SFMC",
+  "Shopify",
+  "WordPress",
+  "Squarespace / Wix",
+  "Google Sheets / Airtable",
+  "Notion",
+  "Zapier / Make",
+  "Other",
+  "Not sure / none yet",
+];
+
 const SERVICE_INTEREST_OPTIONS = [
   "Lead follow-up system",
   "Client onboarding workflow",
@@ -46,7 +63,7 @@ export function ContactForm() {
       monthlyRevenueRange: "",
       serviceInterests: [],
       biggestBottleneck: "",
-      currentTools: "",
+      currentTools: [],
       monthlyLeadVolume: "",
       currentAiUsage: "",
       timeline: "",
@@ -247,24 +264,25 @@ export function ContactForm() {
 
           <div className="space-y-6">
             {/* Current Tools */}
-            <div className="space-y-2">
-              <label htmlFor="currentTools" className={labelClass}>Current tools or systems</label>
-              <select id="currentTools" {...form.register("currentTools")} defaultValue="" className={selectClass} data-testid="select-current-tools">
-                <option value="">Select if applicable</option>
-                <option value="HubSpot">HubSpot</option>
-                <option value="Klaviyo">Klaviyo</option>
-                <option value="Mailchimp">Mailchimp</option>
-                <option value="MailerLite">MailerLite</option>
-                <option value="GoHighLevel">GoHighLevel</option>
-                <option value="Salesforce / SFMC">Salesforce / SFMC</option>
-                <option value="Shopify">Shopify</option>
-                <option value="WordPress">WordPress</option>
-                <option value="Squarespace / Wix">Squarespace / Wix</option>
-                <option value="Google Sheets">Google Sheets</option>
-                <option value="Multiple / Mixed Stack">Multiple / Mixed Stack</option>
-                <option value="Other">Other</option>
-                <option value="Not sure / none yet">Not sure / none yet</option>
-              </select>
+            <div className="space-y-3">
+              <label className={labelClass}>Current tools or systems <span className="text-muted-foreground font-normal">(Select all that apply)</span></label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {CURRENT_TOOLS_OPTIONS.map((option) => (
+                  <label
+                    key={option}
+                    className="flex items-center space-x-3 bg-background/50 border border-border/50 rounded-lg p-3 cursor-pointer hover:bg-background transition-colors"
+                  >
+                    <input
+                      type="checkbox"
+                      value={option}
+                      {...form.register("currentTools")}
+                      className="w-4 h-4 rounded text-primary focus:ring-primary bg-background border-border shrink-0"
+                      data-testid={`checkbox-tool-${option.replace(/[\s/()]/g, "-").toLowerCase()}`}
+                    />
+                    <span className="text-sm text-foreground/80">{option}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

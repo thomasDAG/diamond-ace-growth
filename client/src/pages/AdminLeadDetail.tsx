@@ -195,7 +195,6 @@ export default function AdminLeadDetail() {
                 ["Current AI Usage", lead.currentAiUsage ?? "—"],
                 ["Timeline", lead.timeline ?? "—"],
                 ["Budget Range", lead.budgetRange ?? "—"],
-                ["Primary Tool / Stack", lead.currentPlatform ?? "—"],
                 ["Offer Requested", lead.offerRequested ?? "—"],
                 ["Lead Source", lead.leadSource ?? "—"],
                 ["Marketing Opt-In", lead.marketingOptIn ? "Yes" : "No"],
@@ -226,6 +225,19 @@ export default function AdminLeadDetail() {
                     {features.map(f => (
                       <span key={f} className="text-xs bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded-full">
                         {f}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {lead.currentPlatform && lead.currentPlatform !== "—" && (
+                <div className="bg-card border border-border/30 rounded-2xl p-6">
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Current Tools / Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {lead.currentPlatform.split(", ").filter(Boolean).map(tool => (
+                      <span key={tool} className="text-xs bg-accent/10 text-accent border border-accent/30 px-2 py-0.5 rounded-full">
+                        {tool}
                       </span>
                     ))}
                   </div>

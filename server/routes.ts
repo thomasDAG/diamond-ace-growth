@@ -39,7 +39,7 @@ export async function registerRoutes(
         companyName: input.companyName,
         websiteUrl: input.websiteUrl,
         businessType: input.businessType,
-        currentTools: input.currentTools,
+        currentTools: Array.isArray(input.currentTools) ? input.currentTools.join(", ") : (input.currentTools || ""),
         monthlyRevenueRange: input.monthlyRevenueRange,
         serviceInterests: input.serviceInterests,
         biggestBottleneck: input.biggestBottleneck,

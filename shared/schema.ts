@@ -141,7 +141,7 @@ export const contactFormSchema = z.object({
   monthlyRevenueRange: z.string().min(1, "Required"),
   serviceInterests: z.array(z.string()).min(1, "Please select at least one area"),
   biggestBottleneck: z.string().min(1, "Required"),
-  currentTools: z.string().optional().default(""),
+  currentTools: z.array(z.string()).optional().default([]),
   monthlyLeadVolume: z.string().optional().default(""),
   currentAiUsage: z.string().optional().default(""),
   timeline: z.string().optional().default(""),
