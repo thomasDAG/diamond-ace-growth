@@ -471,8 +471,9 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-4xl mx-auto text-center"
           >
-            <motion.div variants={fadeInUp} className="inline-block mb-5 px-3 py-1.5 rounded-full bg-card border border-border/50 text-xs md:text-sm font-medium text-accent">
-              AI-Powered Operations&nbsp;•&nbsp;No More Manual Workflows
+            <motion.div variants={fadeInUp} className="inline-block mb-5 px-4 py-2 rounded-full bg-card border border-border/50 text-xs md:text-sm font-medium text-accent text-center">
+              AI-Powered Operations<br />
+              <span>•&nbsp;No More Manual Workflows&nbsp;•</span>
             </motion.div>
 
             <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.1] mb-5 md:mb-6">
@@ -486,7 +487,7 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#contact"
-                className="cta-hero px-6 md:px-8 py-4 min-h-[52px] rounded-xl bg-primary text-white font-bold text-base md:text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
+                className="cta-hero px-6 md:px-8 py-4 min-h-[64px] sm:min-h-[52px] rounded-xl bg-primary text-white font-bold text-base md:text-lg hover:-translate-y-1 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
                 data-testid="link-hero-cta"
               >
                 Find Your Biggest Workflow Leak
@@ -494,7 +495,7 @@ export default function Home() {
               </a>
               <a
                 href="#offers"
-                className="px-6 md:px-8 py-4 min-h-[52px] rounded-xl bg-card border border-border/50 text-white font-semibold text-base md:text-lg hover:-translate-y-1 hover:border-primary/50 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
+                className="px-6 md:px-8 py-4 min-h-[64px] sm:min-h-[52px] rounded-xl bg-card border border-border/50 text-white font-semibold text-base md:text-lg hover:-translate-y-1 hover:border-primary/50 transition-all duration-200 flex items-center group w-full sm:w-auto justify-center"
               >
                 View Offers &amp; Pricing
                 <ArrowRight className="ml-2 w-4 h-4" />
